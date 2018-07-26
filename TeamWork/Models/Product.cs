@@ -10,7 +10,7 @@ namespace TeamWork.Models
         private string productName;
         private decimal price;
 
-        public Product(string name, int price)
+        public Product(string name, decimal price)
         {
             this.ProductName = name;
             this.Price = price;

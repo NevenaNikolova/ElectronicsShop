@@ -2,16 +2,116 @@
 using System.Collections.Generic;
 using System.Text;
 using TeamWork.Models;
+using TeamWork.Models.Products.Electronics.Common;
+
 namespace TeamWork.Models.Electronics.AbstractClasses
 {
     public abstract class Phones : Product
     {
-        bool parameters;
-
-        protected Phones(bool parameters, string productName, int price) : base(productName, price)
+        private string brand;
+        private string model;
+        private Colors color;
+        private BatteryType battery;
+        private int displaySize;
+        private double height;
+        private double width;
+        private double thickness;
+       
+        public Phones(string productName, decimal price, string brand, string model, Colors color, BatteryType battery, int displaySize, double height, double width, double thickness) 
+            : base(productName, price)
         {
-            this.parameters = parameters;
+            this.Brand = brand;
+            this.Model = model;
+            this.Color = color;
+            this.Battery = battery;
+            this.DisplaySize = displaySize;
+            this.Height = height;
+            this.Width = width;
+            this.Thickness = thickness;
+        }
+        
+        public string Brand
+        {
+            get
+            {
+                return this.brand;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException();
+                }
+                this.brand = value;
+            }
         }
 
+        public string Model
+        {
+            get
+            {
+                return this.model;
+            }
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException();
+                }
+                this.brand = model;
+            }
+        }
+        public Colors Color { get; set; }
+
+        public BatteryType Battery { get; set; }
+
+        public int DisplaySize
+        {
+            get { return this.displaySize; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                this.displaySize = value;
+            }
+        }
+        public double Height
+        {
+            get { return this.height; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                this.height = value;
+            }
+        }
+        public double Width
+        {
+            get { return this.width; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                this.width = value;
+            }
+        }
+        public double Thickness
+        {
+            get { return this.thickness; }
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                this.thickness = value;
+            }
+        }
     }
 }
