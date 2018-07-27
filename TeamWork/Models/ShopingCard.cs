@@ -8,7 +8,8 @@ namespace TeamWork.Models
 {
     class ShopingCard
     {
-        private readonly ICollection<IProducts> productList;
+        private readonly List<IProducts> productList;
+
         public ShopingCard()
         {
             this.productList = new List<IProducts>();

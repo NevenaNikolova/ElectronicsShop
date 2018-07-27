@@ -3,7 +3,7 @@
     public interface IProducts
     {
 
-        string ProductName { get; }
+        string Name { get; }
         decimal Price { get; }
 
 

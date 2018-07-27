@@ -7,19 +7,19 @@ namespace TeamWork.Models
 {
     public abstract class Product : IProducts 
     {
-        private string productName;
+        private string name;
         private decimal price;
 
         public Product(string name, decimal price)
         {
-            this.ProductName = name;
+            this.Name = name;
             this.Price = price;
         }
 
-        public string ProductName
+        public string Name
         {
-            get { return this.productName; }
-            set { this.productName = value; }
+            get { return this.name; }
+            set { this.name = value; }
         }
 
         public decimal Price

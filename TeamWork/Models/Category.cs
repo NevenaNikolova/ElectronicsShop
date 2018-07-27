@@ -8,7 +8,7 @@ namespace TeamWork.Models
     public class Category
     {
         private readonly string name;
-        private readonly ICollection<IProducts> products;
+        private readonly List<IProducts> products;
 
         public Category(string name)
         {
@@ -18,7 +18,7 @@ namespace TeamWork.Models
 
         public string Name
         {
-            get{return this.name;}
+            get { return this.name; }
         }
 
         public void addProduct(IProducts product)
