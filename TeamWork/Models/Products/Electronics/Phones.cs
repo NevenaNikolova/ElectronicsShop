@@ -10,19 +10,19 @@ namespace TeamWork.Models.Electronics.AbstractClasses
     {
         private string brand;
         private string model;
-        private Colors color;
+        private Colours colour;
         private BatteryType battery;
         private int displaySize;
         private double height;
         private double width;
         private double thickness;
        
-        public Phones(string productName, decimal price, string brand, string model, Colors color, BatteryType battery, int displaySize, double height, double width, double thickness) 
+        public Phones(string productName, decimal price, string brand, string model, Colours colour, BatteryType battery, int displaySize, double height, double width, double thickness) 
             : base(productName, price)
         {
             this.Brand = brand;
             this.Model = model;
-            this.Color = color;
+            this.Colour = colour;
             this.Battery = battery;
             this.DisplaySize = displaySize;
             this.Height = height;
@@ -61,7 +61,7 @@ namespace TeamWork.Models.Electronics.AbstractClasses
                 this.brand = model;
             }
         }
-        public Colors Color { get; set; }
+        public Colours Colour { get; set; }
 
         public BatteryType Battery { get; set; }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TeamWork.Models.Products.Electronics.Common
 {
-    public enum Colors
+    public enum Colours
     {
         Black,
         White,
