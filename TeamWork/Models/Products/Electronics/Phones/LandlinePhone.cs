@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using TeamWork.Models.Electronics.AbstractClasses;
 using TeamWork.Models.Products.Electronics.Common;
+using TeamWork.Models.Products.Electronics.Phones;
 
 namespace TeamWork.Models.Electronics.Phones
 {
-    public class LandlinePhone : Phone
+    public class LandlinePhone : Phone, ILandlinePhone
     {
         private int analogueLines;
 
@@ -16,8 +17,8 @@ namespace TeamWork.Models.Electronics.Phones
         {
         }
 
-        public LandlinePhone(string productName, decimal price, string brand, string model, Colours colour, BatteryType battery, 
-            int displaySize, double height, double width, double thickness, int analogueLines,bool wallMounting) 
+        public LandlinePhone(string productName, decimal price, string brand, string model, Colours colour, BatteryType battery,
+            int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting)
             : base(productName, price, brand, model, colour, battery, displaySize, height, width, thickness)
         {
             this.AnalogueLines = analogueLines;
@@ -47,5 +48,6 @@ namespace TeamWork.Models.Electronics.Phones
                 "display size: {6}, height: {7}, width: {8}, thickness: {9}, number of analogue lines: {10}, possibility for wall mounting: {11}",
                 this.ProductName, this.Price, this.Brand, this.Model, this.Colour, this.Battery, this.DisplaySize, this.Height, this.Width, this.Thickness, this.AnalogueLines, this.WallMounting);
         }
+
     }
 }
