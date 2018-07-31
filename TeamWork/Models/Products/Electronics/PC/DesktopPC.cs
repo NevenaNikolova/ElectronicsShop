@@ -6,30 +6,22 @@ using TeamWork.Models.Interfaces;
 
 namespace TeamWork.Models.Electronics.AbstractClasses
 {
-    public class DesktopPC : IComputer
+    public class DesktopPC : PC, IComputer
     {
-        private const string name = "Destop computer";
+        private readonly string name;
         private string brand;
         private string model;
-        private decimal price;
-        private string processor;
-        private int ram;
-        private int hdd;
-        private int videoCard;
 
-        public string Name => name;
-        public string Processor
+
+        public DesktopPC(string brand, string model, string procesor, int ram,
+            int hdd, int videoCard, string productName, int price)
+            : base(procesor, ram, hdd, videoCard, productName, price)
         {
-            get => processor;
-            set
-            {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Invalid processor value!");
-                }
-                this.Processor = value;
-            }
+            this.name = "Desktop Computer";
+            this.brand = brand;
+            this.model = model;
         }
+        
         public string Brand
         {
             get => brand;
@@ -54,46 +46,10 @@ namespace TeamWork.Models.Electronics.AbstractClasses
                 this.Model = value;
             }
         }
-        public decimal Price
+        
+        public override string Print()
         {
-            get => price;
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Price cannot be negative!");
-                }
-                this.Price = value;
-            }
-        }
-        public int Ram
-        {
-            get => ram;
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException("Ram memory value cannot be negative!");
-                }
-            }
-        }
-        public int Hdd { get => hdd; set => hdd = value; }
-        public int VideoCard { get => videoCard; set => videoCard = value; }
-        public string Print
-        {
-            get
-            {
                 return string.Format("{0} {1} {2}", this.Brand, this.Model, this.Price);
-            }
-        }
-
-        public DesktopPC()
-        {
-        }
-
-        string IProduct.Print()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -12,7 +12,6 @@ namespace TeamWork.Models.Electronics.AbstractClasses
         private int ram;
         private int hdd;
         private int videoCard;
-        private decimal price;
 
         protected PC(string procesor, int ram, int hdd, int videoCard, string productName, int price) : base(productName, price)
         {

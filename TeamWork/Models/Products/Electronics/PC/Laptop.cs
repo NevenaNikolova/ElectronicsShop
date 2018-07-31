@@ -6,19 +6,26 @@ using TeamWork.Models.Interfaces;
 namespace TeamWork.Models.Electronics.AbstractClasses
 {
 
-    public class Laptop : IComputer
+    public class Laptop : PC, IComputer
     {
-        private const string _name = "Laptop";
+        private readonly string _name;
         private string _brand;
         private string _model;
-        //private decimal _price;
-        //private string _processor;
-        //private int _ram;
-        //private int _hdd;
-        //private int _videoCard;
         private int _displaySize;
         private int _batteryCapacity;
         private int _id;
+
+        public Laptop(string brand, string model, int displaySize, int batteryCapacity, int id,
+            string procesor, int ram, int hdd, int videoCard, string productName, int price) 
+            : base(procesor,  ram,  hdd,  videoCard, productName, price)
+        {
+            this._name = "Laptop";
+            _id = id;
+            Brand = brand;
+            Model = model;
+            DisplaySize = displaySize;
+            BatteryCapacity = batteryCapacity;
+        }
 
         public string Name
         {
@@ -53,70 +60,7 @@ namespace TeamWork.Models.Electronics.AbstractClasses
                 this._model = value;
             }
         }
-
-        public decimal Price
-        {
-            get => _price;
-            private set
-            {
-                if (value < 0m)
-                {
-                    throw new ArgumentOutOfRangeException("Price value cannot be negative!");
-                }
-                this._price = value;
-            }
-        }
-
-        public string Processor
-        {
-            get => _processor; set
-            {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Invalid processor value!");
-                }
-                this._processor = value;
-            }
-        }
-
-        public int Ram
-        {
-            get => _ram;
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("RAM memory capacity cannot be negative!");
-                }
-                this._ram = value;
-            }
-        }
-
-        public int Hdd
-        {
-            get => _hdd;
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("HDD capacity canot be negative!");
-                }
-                this._hdd = value;
-            }
-        }
-
-        public int VideoCard
-        {
-            get => _videoCard;
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("Video card capacity cannot be negative!");
-                }
-                this._videoCard = value;
-            }
-        }
+        
 
         public int DisplaySize
         {
@@ -144,26 +88,9 @@ namespace TeamWork.Models.Electronics.AbstractClasses
             }
         }
 
-        public string Print
+        public override string Print()
         {
-            get
-            {
                 return string.Format("{0} {1} {2}", this.Brand, this.Model, this.Price);
-            }
-
-        }
-
-
-        public Laptop(string brand, string model, decimal price)
-        {
-            this.Brand = brand;
-            this.Model = model;
-            this.Price = price;
-        }
-
-        string IProduct.Print()
-        {
-            throw new NotImplementedException();
         }
     }
 }
