@@ -6,6 +6,7 @@
 
         decimal Price { get; }
 
-        string Print { get; }
+        virtual string Print();
+
     }
 }

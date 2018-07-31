@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using TeamWork.Core.Contracts;
 using TeamWork.Models.Interfaces;
 
 namespace TeamWork.Core

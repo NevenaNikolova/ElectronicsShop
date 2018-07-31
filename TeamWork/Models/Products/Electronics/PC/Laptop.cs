@@ -6,7 +6,7 @@ using TeamWork.Models.Interfaces;
 namespace TeamWork.Models.Electronics.AbstractClasses
 {
 
-    public class Laptop : IPC
+    public class Laptop 
     {
         private const string _name = "Laptop";
         private string _brand;

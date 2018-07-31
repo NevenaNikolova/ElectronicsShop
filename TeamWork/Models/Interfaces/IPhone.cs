@@ -5,7 +5,8 @@ using TeamWork.Models.Products.Electronics.Common;
 
 namespace TeamWork.Models.Interfaces
 {
-    public interface IPhone
+    public interface IPhone : IProduct
+
     {
         string Brand { get; set; }
         string Model { get; set; }
