@@ -11,11 +11,11 @@ namespace TeamWork.Models.Electronics.AbstractClasses
         private const string _name = "Laptop";
         private string _brand;
         private string _model;
-        private decimal _price;
-        private string _processor;
-        private int _ram;
-        private int _hdd;
-        private int _videoCard;
+        //private decimal _price;
+        //private string _processor;
+        //private int _ram;
+        //private int _hdd;
+        //private int _videoCard;
         private int _displaySize;
         private int _batteryCapacity;
         private int _id;

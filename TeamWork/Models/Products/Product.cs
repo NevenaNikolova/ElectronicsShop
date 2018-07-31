@@ -31,11 +31,12 @@ namespace TeamWork.Models.Products
             get { return this.price; }
             set
             {
-                if (value<0)
+                if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentException("too low price!");
                 }
-                else this.price = value; }
+                else this.price = value;
+            }
         }
 
         public abstract string Print();
