@@ -1,11 +1,11 @@
 ﻿namespace TeamWork.Models.Interfaces
 {
-    public interface IProducts
+    public interface IProduct
     {
-
         string Name { get; }
+
         decimal Price { get; }
 
-
+        string Print { get; }
     }
 }

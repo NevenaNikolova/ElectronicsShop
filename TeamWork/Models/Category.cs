@@ -8,12 +8,12 @@ namespace TeamWork.Models
     public class Category
     {
         private readonly string name;
-        private readonly List<IProducts> products;
+        private readonly List<IProduct> products;
 
         public Category(string name)
         {
             this.name = name;
-            this.products = new List<IProducts>();
+            this.products = new List<IProduct>();
         }
 
         public string Name
@@ -21,12 +21,12 @@ namespace TeamWork.Models
             get { return this.name; }
         }
 
-        public void addProduct(IProducts product)
+        public void addProduct(IProduct product)
         {
             this.products.Add(product);
         }
 
-        public void RemoveProduct(IProducts product)
+        public void RemoveProduct(IProduct product)
         {
             if (this.products.Contains(product))
             {
