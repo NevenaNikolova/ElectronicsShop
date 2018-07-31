@@ -13,7 +13,8 @@ namespace TeamWork.Models.Electronics.AbstractClasses
         private int hdd;
         private int videoCard;
 
-        protected PC(string procesor, int ram, int hdd, int videoCard, string productName, int price) : base(productName, price)
+        protected PC(string procesor, int ram, int hdd, int videoCard, string productName, int price) 
+            : base(productName, price)
         {
             this.Procesor = procesor;
             this.Ram = ram;
