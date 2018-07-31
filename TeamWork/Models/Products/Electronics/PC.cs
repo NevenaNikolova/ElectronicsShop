@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TeamWork.Models;
+using TeamWork.Models.Products;
 
 namespace TeamWork.Models.Electronics.AbstractClasses
 {

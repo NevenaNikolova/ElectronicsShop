@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TeamWork.Models.Interfaces;
 
-namespace TeamWork.Models
+namespace TeamWork.Models.Products
 {
     public abstract class Product : IProduct
     {
@@ -38,9 +38,6 @@ namespace TeamWork.Models
                 else this.price = value; }
         }
 
-        public string Print()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract string Print();
     }
 }

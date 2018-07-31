@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TeamWork.Models.Contracts;
 using TeamWork.Models.Interfaces;
 
 namespace TeamWork.Core
@@ -9,7 +10,7 @@ namespace TeamWork.Core
         private static IEngine instanceHolder;
         private string exitCommand = "exit";
 
-        IList<IPC> computers { get; }
+        IList<IComputer> computers { get; }
 
         IList<IProduct> products { get; }
 
@@ -41,7 +42,7 @@ namespace TeamWork.Core
                         break;
                     }
 
-                    this.ProcessCommand(commandAsString);
+                    //this.ProcessCommand(commandAsString);
                 }
                 catch (Exception ex)
                 {

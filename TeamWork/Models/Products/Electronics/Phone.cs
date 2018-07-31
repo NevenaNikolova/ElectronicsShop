@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using TeamWork.Models;
 using TeamWork.Models.Interfaces;
+using TeamWork.Models.Products;
 using TeamWork.Models.Products.Electronics.Common;
 
 namespace TeamWork.Models.Electronics.AbstractClasses
