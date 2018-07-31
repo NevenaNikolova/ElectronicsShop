@@ -6,7 +6,7 @@ using TeamWork.Models.Interfaces;
 
 namespace TeamWork.Models.Electronics.AbstractClasses
 {
-    public class DesktopPC : IPC
+    public class DesktopPC : IComputer
     {
         private const string name = "Destop computer";
         private string brand;
@@ -89,6 +89,11 @@ namespace TeamWork.Models.Electronics.AbstractClasses
 
         public DesktopPC()
         {
+        }
+
+        string IProduct.Print()
+        {
+            throw new NotImplementedException();
         }
     }
 }

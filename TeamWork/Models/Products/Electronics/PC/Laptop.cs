@@ -6,7 +6,7 @@ using TeamWork.Models.Interfaces;
 namespace TeamWork.Models.Electronics.AbstractClasses
 {
 
-    public class Laptop 
+    public class Laptop : IComputer
     {
         private const string _name = "Laptop";
         private string _brand;
@@ -161,6 +161,10 @@ namespace TeamWork.Models.Electronics.AbstractClasses
             this.Price = price;
         }
 
+        string IProduct.Print()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

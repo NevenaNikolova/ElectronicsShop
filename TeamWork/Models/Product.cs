@@ -5,7 +5,7 @@ using TeamWork.Models.Interfaces;
 
 namespace TeamWork.Models
 {
-    public abstract class Product : IProducts
+    public abstract class Product : IProduct
     {
         private string name;
         private decimal price;
@@ -19,14 +19,28 @@ namespace TeamWork.Models
         public string Name
         {
             get { return this.name; }
-            set { this.name = value; }
+            set {
+                if (value.Length<=0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                } else this.name = value; }
         }
 
         public decimal Price
         {
             get { return this.price; }
-            set { this.price = value; }
+            set
+            {
+                if (value<0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                else this.price = value; }
         }
 
+        public string Print()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
