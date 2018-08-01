@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TeamWork.Models.AbstractClasses;
 using TeamWork.Models.Electronics.AbstractClasses;
+using TeamWork.Models.Products.Common;
 using TeamWork.Models.Products.Electronics.Common;
 using TeamWork.Models.Products.Electronics.Phones;
 
@@ -13,13 +15,13 @@ namespace TeamWork.Models.Electronics.Phones
 
         private bool wallMounting;
 
-        public LandlinePhone(string productName, decimal price) : base(productName, price)
+        public LandlinePhone(string name, decimal price) : base(name, price)
         {
         }
 
-        public LandlinePhone(string productName, decimal price, string brand, string model, Colours colour, BatteryType battery,
+        public LandlinePhone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
             int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting)
-            : base(productName, price, brand, model, colour, battery, displaySize, height, width, thickness)
+            : base(name, price, brand, model, colour, battery, displaySize, height, width, thickness)
         {
             this.AnalogueLines = analogueLines;
             this.WallMounting = wallMounting;

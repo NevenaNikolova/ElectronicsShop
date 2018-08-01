@@ -14,8 +14,8 @@ namespace TeamWork.Models.Electronics.AbstractClasses
 
 
         public DesktopPC(string brand, string model, string procesor, int ram,
-            int hdd, int videoCard, string productName, int price)
-            : base(procesor, ram, hdd, videoCard, productName, price)
+            int hdd, int videoCard, string name, int price)
+            : base(procesor, ram, hdd, videoCard, name, price)
         {
             this.name = "Desktop Computer";
             this.brand = brand;

@@ -3,11 +3,11 @@ using TeamWork.Models.Interfaces;
 
 namespace TeamWork.Models
 {
-    class ShopingCard
+    class ShopingCart
     {
         private readonly List<IProduct> productList;
 
-        public ShopingCard()
+        public ShopingCart()
         {
             this.productList = new List<IProduct>();
         }

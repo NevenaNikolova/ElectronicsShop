@@ -16,8 +16,8 @@ namespace TeamWork.Models.Electronics.AbstractClasses
         private int _id;
 
         public Laptop(string brand, string model, int displaySize, int batteryCapacity, int id,
-            string procesor, int ram, int hdd, int videoCard, string productName, int price) 
-            : base(procesor,  ram,  hdd,  videoCard, productName, price)
+            string procesor, int ram, int hdd, int videoCard, string name, int price) 
+            : base(procesor,  ram,  hdd,  videoCard, name, price)
         {
             this._name = "Laptop";
             _id = id;
