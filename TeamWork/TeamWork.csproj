@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Core\Providers\" />
+    <Compile Remove="Core\Providers\**" />
+    <EmbeddedResource Remove="Core\Providers\**" />
+    <None Remove="Core\Providers\**" />
   </ItemGroup>
 
 </Project>
