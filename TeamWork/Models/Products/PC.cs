@@ -12,22 +12,25 @@ namespace TeamWork.Models.Electronics.AbstractClasses
         private int ram;
         private int hdd;
         private int videoCard;
-
-        protected PC(string procesor, int ram, int hdd, int videoCard, string productName, int price) 
+        private string brand;
+        private string model;
+        protected PC(string processor, int ram, int hdd, int videoCard, string productName, int price, string brand, string model)
             : base(productName, price)
         {
-            this.Procesor = procesor;
+            this.Processor = processor;
             this.Ram = ram;
             this.Hdd = hdd;
             this.VideoCard = videoCard;
+            this.Brand = brand;
+            this.Model = model;
         }
 
-        public string Procesor
+        public string Processor
         {
             get { return this.processor; }
             set
             {
-                if (value.Length <= 0)
+                if (string.IsNullOrEmpty(value)||string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentOutOfRangeException();
                 }
@@ -39,10 +42,9 @@ namespace TeamWork.Models.Electronics.AbstractClasses
             get { return this.ram; }
             set
             {
-                if (value < 256)
+                if (value < 0)
                 {
-                    throw new ArgumentException("Don't buy this product. \n" +
-                        "There is no Computer with lower ram than 256MB!!");
+                    throw new ArgumentOutOfRangeException("Ram memory value cannot be negative!");
                 }
                 else this.ram = value;
             }
@@ -52,10 +54,9 @@ namespace TeamWork.Models.Electronics.AbstractClasses
             get { return this.hdd; }
             set
             {
-                if (value < 256)
+                if (value < 0)
                 {
-                    throw new ArgumentException("Don't buy this product. \n" +
-                        "There is no Computer with lower hdd than 256MB!!");
+                    throw new ArgumentOutOfRangeException("Ram memory value cannot be negative!");
                 }
                 else this.hdd = value;
             }
@@ -72,7 +73,32 @@ namespace TeamWork.Models.Electronics.AbstractClasses
                 else this.videoCard = value;
             }
         }
-        
 
+        public string Brand
+        {
+            get => brand;
+            private set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Invalid brand value!");
+                }
+                this.brand = value;
+            }
+
+        }
+
+        public string Model
+        {
+            get => model;
+            private set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Invalid model value!");
+                }
+                this.model = value;
+            }
+        }
     }
 }

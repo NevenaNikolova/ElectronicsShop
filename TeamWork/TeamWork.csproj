@@ -7,13 +7,11 @@
 
   <ItemGroup>
     <Compile Remove="Core\Providers\**" />
+    <Compile Remove="Tools\**" />
     <EmbeddedResource Remove="Core\Providers\**" />
+    <EmbeddedResource Remove="Tools\**" />
     <None Remove="Core\Providers\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Core\Tools\" />
-    <Folder Include="Tools\" />
+    <None Remove="Tools\**" />
   </ItemGroup>
 
 </Project>

@@ -36,7 +36,6 @@ namespace TeamWork.Models.Products
                 else this.price = value;
             }
         }
-
-        public abstract string Print();
+        
     }
 }

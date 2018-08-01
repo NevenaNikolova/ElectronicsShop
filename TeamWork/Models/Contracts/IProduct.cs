@@ -5,8 +5,6 @@
         string Name { get; }
 
         decimal Price { get; }
-
-        string Print();
-
+        
     }
 }

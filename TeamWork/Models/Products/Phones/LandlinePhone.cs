@@ -44,12 +44,6 @@ namespace TeamWork.Models.Electronics.Phones
             get { return this.wallMounting; }
             set { this.wallMounting = value; }
         }
-        public override string Print()
-        {
-            return string.Format("Phone: {0}, price: {1}, brand: {2}, model: {3}, colour: {4}, battery: {5}, " +
-                "display size: {6}, height: {7}, width: {8}, thickness: {9}, number of analogue lines: {10}, possibility for wall mounting: {11}",
-                this.Name, this.Price, this.Brand, this.Model, this.Colour, this.Battery, this.DisplaySize, this.Height, this.Width, this.Thickness, this.AnalogueLines, this.WallMounting);
-        }
-
+       
     }
 }
