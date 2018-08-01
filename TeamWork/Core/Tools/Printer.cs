@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TeamWork.Models.AbstractClasses;
-using TeamWork.Models.Electronics.AbstractClasses;
-using TeamWork.Models.Interfaces;
-using TeamWork.Models.Products;
-using TeamWork.Models.Products.Electronics.Phones;
+using ElectronicsShop.Models.AbstractClasses;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products.Electronics.Phones;
 
 namespace TeamWork.Core.Tools
 {
@@ -20,6 +17,7 @@ namespace TeamWork.Core.Tools
         {
             return ProductInfoShortString(pc);
         }
+
         public static string DesktopComputerInfoToLongSting(PC pc)
         {
             return $"{pc.Name}" + $"\nBrand: {pc.Brand}" + $"\nModel: {pc.Model}" + $"Processor: {pc.Processor}"

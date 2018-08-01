@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-<<<<<<< HEAD
 using TeamWork.Core.Tools;
-using TeamWork.Models;
-using TeamWork.Models.Electronics.AbstractClasses;
-using TeamWork.Models.Products;
-=======
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Products;
->>>>>>> b664ffc50c38c229d941edde162ca4da720dc095
 
 namespace ElectronicsShop
 {
