@@ -25,6 +25,7 @@ namespace TeamWork.Models
 
         public void RemoveProduct(IProduct product)
         {
+
             this.productList.Remove(product);
         }
 
@@ -34,10 +35,7 @@ namespace TeamWork.Models
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            else return false;
         }
 
         public double TotalPrice()
