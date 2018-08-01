@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using ElectronicsShop.Models.AbstractClasses;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Interfaces;
@@ -5,6 +6,13 @@ using ElectronicsShop.Models.Products.Electronics.Phones;
 using System;
 using System.Collections.Generic;
 using System.Text;
+=======
+﻿using System;
+using ElectronicsShop.Models.AbstractClasses;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products.Electronics.Phones;
+>>>>>>> e969eaba3cd32c92beff9a6a5649415b107ac992
 
 namespace TeamWork.Core.Tools
 {
@@ -19,6 +27,7 @@ namespace TeamWork.Core.Tools
         {
             return ProductInfoShortString(pc);
         }
+
         public static string DesktopComputerInfoToLongSting(PC pc)
         {
             return $"{pc.Name}" + $"\nBrand: {pc.Brand}" + $"\nModel: {pc.Model}" + $"Processor: {pc.Processor}"
