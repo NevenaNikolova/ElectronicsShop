@@ -20,12 +20,12 @@ namespace TeamWork.Models
             get { return this.name; }
         }
 
-        public virtual void addProduct(IProduct product)
+        public void addProduct(IProduct product)
         {
             this.products.Add(product);
         }
 
-        public virtual void RemoveProduct(IProduct product)
+        public void RemoveProduct(IProduct product)
         {
             if (this.products.Contains(product))
             {
