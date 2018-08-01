@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ElectronicsShop.Core.Contracts
 {
-    interface IEngine
+    public interface ILogger
     {
-        void Start();
+        void Log(string message);
     }
 }

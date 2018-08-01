@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models.Electronics.Phones;
-using TeamWork.Models.Products.Common;
-using TeamWork.Models.Products.Electronics.Common;
-using TeamWork.Models.Products.Electronics.Phones;
+using ElectronicsShop.Models.Electronics.Phones;
+using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Models.Products.Electronics.Common;
+using ElectronicsShop.Models.Products.Electronics.Phones;
 
-namespace TeamWork.Core.Factories
+namespace ElectronicsShop.Core.Factories
 {
     public class ProductFactory : IProductFactory
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamWork.Models.Contracts
+namespace ElectronicsShop.Models.Contracts
 {
     public interface IEngine
     {

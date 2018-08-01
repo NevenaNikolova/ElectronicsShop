@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models.Interfaces;
+using ElectronicsShop.Models.Interfaces;
 
-namespace TeamWork.Models.Products.Electronics.Phones
+namespace ElectronicsShop.Models.Products.Electronics.Phones
 {
     public interface ILandlinePhone : IProduct , IPhone
     {

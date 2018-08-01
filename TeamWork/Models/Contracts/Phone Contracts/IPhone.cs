@@ -1,7 +1,7 @@
-﻿using TeamWork.Models.Products.Common;
-using TeamWork.Models.Products.Electronics.Common;
+﻿using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Models.Products.Electronics.Common;
 
-namespace TeamWork.Models.Interfaces
+namespace ElectronicsShop.Models.Interfaces
 {
     public interface IPhone : IProduct
 

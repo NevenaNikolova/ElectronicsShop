@@ -1,4 +1,4 @@
-﻿namespace TeamWork.Models.Interfaces
+﻿namespace ElectronicsShop.Models.Interfaces
 {
     public interface IProduct
     {

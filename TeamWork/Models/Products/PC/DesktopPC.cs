@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models.Electronics;
-using TeamWork.Models.Interfaces;
+using ElectronicsShop.Models.Electronics;
+using ElectronicsShop.Models.Interfaces;
 
-namespace TeamWork.Models.Electronics.AbstractClasses
+namespace ElectronicsShop.Models.Electronics.AbstractClasses
 {
     public class DesktopPC : PC, IComputer
     {

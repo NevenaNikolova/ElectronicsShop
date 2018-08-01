@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using TeamWork.Models.Contracts;
-using TeamWork.Models.Interfaces;
+using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Models.Interfaces;
 
-namespace TeamWork.Core
+namespace ElectronicsShop.Core
 {
     class Engine : IEngine
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using TeamWork.Models.Interfaces;
+using ElectronicsShop.Models.Interfaces;
 
-namespace TeamWork.Models.Products
+namespace ElectronicsShop.Models.Products
 {
     public abstract class Product : IProduct
     {

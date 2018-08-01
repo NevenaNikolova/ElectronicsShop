@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamWork.Models.Users
+namespace ElectronicsShop.Models.Users
 {
     public abstract class Users
     {
