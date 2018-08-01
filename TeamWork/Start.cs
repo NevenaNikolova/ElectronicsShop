@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 <<<<<<< HEAD
-using TeamWork.Core.Tools;
-using TeamWork.Models;
-using TeamWork.Models.Electronics.AbstractClasses;
-using TeamWork.Models.Products;
+using ElectronicsShop.Core.Tools;
+using ElectronicsShop.Models;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Products;
 =======
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
