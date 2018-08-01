@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models;
-using TeamWork.Models.Products;
+using ElectronicsShop.Models;
+using ElectronicsShop.Models.Products;
 
-namespace TeamWork.Models.Electronics.AbstractClasses
+namespace ElectronicsShop.Models.Electronics.AbstractClasses
 {
     public abstract class PC : Product
     {

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models;
-using TeamWork.Models.Electronics.AbstractClasses;
-using TeamWork.Models.Products;
+using ElectronicsShop.Models;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Products;
 
-namespace TeamWork
+namespace ElectronicsShop
 {
     class Start
     {

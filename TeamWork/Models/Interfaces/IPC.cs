@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models;
-using TeamWork.Models.Interfaces;
+using ElectronicsShop.Models;
+using ElectronicsShop.Models.Interfaces;
 
-namespace TeamWork.Models.Interfaces
+namespace ElectronicsShop.Models.Interfaces
 {
     public interface IPC : IProduct
     {

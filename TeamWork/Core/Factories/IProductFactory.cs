@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models;
-using TeamWork.Models.Interfaces;
-using TeamWork.Models.Products.Common;
-using TeamWork.Models.Products.Electronics.Common;
-using TeamWork.Models.Products.Electronics.Phones;
+using ElectronicsShop.Models;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Models.Products.Electronics.Common;
+using ElectronicsShop.Models.Products.Electronics.Phones;
 
-namespace TeamWork.Core.Factories
+namespace ElectronicsShop.Core.Factories
 {
     public interface IProductFactory
     {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models.AbstractClasses;
-using TeamWork.Models.Electronics.AbstractClasses;
-using TeamWork.Models.Products.Common;
-using TeamWork.Models.Products.Electronics.Common;
-using TeamWork.Models.Products.Electronics.Phones;
+using ElectronicsShop.Models.AbstractClasses;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Models.Products.Electronics.Common;
+using ElectronicsShop.Models.Products.Electronics.Phones;
 
-namespace TeamWork.Models.Electronics.Phones
+namespace ElectronicsShop.Models.Electronics.Phones
 {
     public class LandlinePhone : Phone, ILandlinePhone
     {

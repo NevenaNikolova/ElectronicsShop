@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models.Interfaces;
+using ElectronicsShop.Models.Interfaces;
 
-namespace TeamWork.Models.Electronics.AbstractClasses
+namespace ElectronicsShop.Models.Electronics.AbstractClasses
 {
 
     public class Laptop : PC, IComputer

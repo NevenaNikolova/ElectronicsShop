@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamWork.Models.Products.Common
+namespace ElectronicsShop.Models.Products.Common
 {
     public enum Colour
     {

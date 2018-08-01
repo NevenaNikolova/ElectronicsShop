@@ -1,10 +1,10 @@
 ﻿using System;
-using TeamWork.Models.Interfaces;
-using TeamWork.Models.Products;
-using TeamWork.Models.Products.Common;
-using TeamWork.Models.Products.Electronics.Common;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products;
+using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Models.Products.Electronics.Common;
 
-namespace TeamWork.Models.AbstractClasses
+namespace ElectronicsShop.Models.AbstractClasses
 {
     public abstract class Phone : Product, IPhone
     {

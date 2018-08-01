@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamWork.Models.Interfaces
+namespace ElectronicsShop.Models.Interfaces
 {
     public interface IComputer : IProduct
     {

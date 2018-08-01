@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using TeamWork.Models.Interfaces;
+using ElectronicsShop.Models.Interfaces;
 
-namespace TeamWork.Models
+namespace ElectronicsShop.Models
 {
     public class Category
     {
