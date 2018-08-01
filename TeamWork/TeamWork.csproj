@@ -6,8 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <Folder Include="Core\Providers\" />
     <Folder Include="Tools\" />
+=======
+    <Compile Remove="Core\Providers\**" />
+    <EmbeddedResource Remove="Core\Providers\**" />
+    <None Remove="Core\Providers\**" />
+>>>>>>> d398a55aefc0c73e5e70402102427c4b6fbebbc8
   </ItemGroup>
 
 </Project>

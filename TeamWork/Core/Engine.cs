@@ -33,23 +33,26 @@ namespace TeamWork.Core
         {
             while (true)
             {
-                try
-                {
-                    var commandAsString = Console.ReadLine().Split(" ");
+                string[] commandAsString = Console.ReadLine().Split(" ");
 
-                    if (commandAsString[0] == exitCommand)
-                    {
-                        break;
-                    }
-
+<<<<<<< HEAD
+                if (commandAsString[0] == exitCommand)
+=======
                     //this.ProcessCommand(commandAsString);
                 }
                 catch (Exception ex)
+>>>>>>> c3ad384403484f64fe5a36bead71fe329e457cf4
                 {
-                    Console.WriteLine(ex.Message);
-                   
-                }
+                    break;
+                }]
+
+                this.ProcessCommand(commandAsString);
             }
+        }
+
+        private void ProcessCommand(string[] commandAsString)
+        {
+            throw new NotImplementedException();
         }
 
         public void Start()
@@ -58,3 +61,4 @@ namespace TeamWork.Core
         }
     }
 }
+
