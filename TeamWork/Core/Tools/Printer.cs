@@ -1,11 +1,10 @@
-﻿using System;
+﻿using ElectronicsShop.Models.AbstractClasses;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products.Electronics.Phones;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using TeamWork.Models.AbstractClasses;
-using TeamWork.Models.Electronics.AbstractClasses;
-using TeamWork.Models.Interfaces;
-using TeamWork.Models.Products;
-using TeamWork.Models.Products.Electronics.Phones;
 
 namespace TeamWork.Core.Tools
 {
