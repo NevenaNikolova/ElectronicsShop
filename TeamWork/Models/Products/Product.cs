@@ -14,7 +14,7 @@ namespace TeamWork.Models.Products
             this.Price = price;
         }
 
-        public string Name
+        public virtual string Name
         {
             get { return this.name; }
             set {
@@ -24,7 +24,7 @@ namespace TeamWork.Models.Products
                 } else this.name = value; }
         }
 
-        public decimal Price
+        public virtual decimal Price
         {
             get { return this.price; }
             set
