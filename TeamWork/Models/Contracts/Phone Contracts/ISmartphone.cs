@@ -8,6 +8,7 @@ namespace TeamWork.Models.Products.Electronics.Phones
     public interface ISmartphone : IProduct
     {
         string Processor { get; set; }
+
         int Ram { get; set; }
     }
 }

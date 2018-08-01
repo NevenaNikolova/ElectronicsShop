@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TeamWork.Models;
 using TeamWork.Models.Interfaces;
+using TeamWork.Models.Products;
+using TeamWork.Models.Products.Common;
 using TeamWork.Models.Products.Electronics.Common;
 
-namespace TeamWork.Models.Electronics.AbstractClasses
+namespace TeamWork.Models.AbstractClasses
 {
     public abstract class Phone : Product, IPhone
     {
         private string brand;
         private string model;
-        private Colours colour;
+        private Colour colour;
         private BatteryType battery;
         private int displaySize;
         private double height;
@@ -23,7 +22,7 @@ namespace TeamWork.Models.Electronics.AbstractClasses
 
         }
 
-        public Phone(string productName, decimal price, string brand, string model, Colours colour, BatteryType battery, int displaySize, double height, double width, double thickness)
+        public Phone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, double height, double width, double thickness)
             : this(productName, price)
         {
             this.Brand = brand;
@@ -67,7 +66,7 @@ namespace TeamWork.Models.Electronics.AbstractClasses
                 this.brand = model;
             }
         }
-        public Colours Colour { get; set; }
+        public Colour Colour { get; set; }
 
         public BatteryType Battery { get; set; }
 
@@ -122,7 +121,7 @@ namespace TeamWork.Models.Electronics.AbstractClasses
         public override string Print()
         {
             return string.Format("Phone: {0}, price: {1}, brand: {2}, model: {3}, colour: {4}, battery: {5}, display size: {6}, height: {7}, width: {8}, thickness: {9}",
-                this.ProductName, this.Price, this.Brand, this.Model, this.Colour, this.Battery, this.DisplaySize, this.Height, this.Width, this.Thickness);
+                this.Name, this.Price, this.Brand, this.Model, this.Colour, this.Battery, this.DisplaySize, this.Height, this.Width, this.Thickness);
         }       
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using TeamWork.Models.Electronics.Phones;
+using TeamWork.Models.Products.Common;
 using TeamWork.Models.Products.Electronics.Common;
 using TeamWork.Models.Products.Electronics.Phones;
 
@@ -24,14 +25,14 @@ namespace TeamWork.Core.Factories
             }
         }
 
-        public ILandlinePhone CreateLandlinePhone(string productName, decimal price, string brand, string model, Colours colour, BatteryType battery, int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting)
+        public ILandlinePhone CreateLandlinePhone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting)
         {
-            return new LandlinePhone(productName, price, brand, model, colour, battery, displaySize, height, width, thickness, analogueLines, wallMounting);
+            return new LandlinePhone(name, price, brand, model, colour, battery, displaySize, height, width, thickness, analogueLines, wallMounting);
         }
 
-        public ISmartphone CreateSmartphone(string productName, decimal price, string brand, string model, Colours colour, BatteryType battery, int displaySize, double height, double width, double thickness, string processor, int ram)
+        public ISmartphone CreateSmartphone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, double height, double width, double thickness, string processor, int ram)
         {
-            return new Smartphone(productName, price, brand, model, colour, battery, displaySize, height, width, thickness, processor, ram);
+            return new Smartphone(name, price, brand, model, colour, battery, displaySize, height, width, thickness, processor, ram);
         }
     }
 }

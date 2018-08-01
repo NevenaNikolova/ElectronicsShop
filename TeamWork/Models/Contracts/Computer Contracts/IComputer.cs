@@ -4,7 +4,8 @@ using System.Text;
 
 namespace TeamWork.Models.Interfaces
 {
-    public interface ISmart
+    public interface IComputer : IProduct
     {
+
     }
 }

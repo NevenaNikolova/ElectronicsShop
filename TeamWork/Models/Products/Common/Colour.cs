@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TeamWork.Models.Products.Electronics.Common
+namespace TeamWork.Models.Products.Common
 {
-    public enum Colours
+    public enum Colour
     {
         Black,
         White,
