@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using ElectronicsShop.Models.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,23 @@ using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Interfaces;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Electronics.Phones;
+=======
+<<<<<<< HEAD
+﻿using ElectronicsShop.Models.AbstractClasses;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products.Electronics.Phones;
+using System;
+using System.Collections.Generic;
+using System.Text;
+=======
+﻿using System;
+using ElectronicsShop.Models.AbstractClasses;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products.Electronics.Phones;
+>>>>>>> e969eaba3cd32c92beff9a6a5649415b107ac992
+>>>>>>> c16b73be29b2baaa95cd8c9ca738c787d964ce1c
 
 namespace ElectronicsShop.Core.Tools
 {
@@ -21,6 +39,7 @@ namespace ElectronicsShop.Core.Tools
         {
             return ProductInfoShortString(pc);
         }
+
         public static string DesktopComputerInfoToLongSting(PC pc)
         {
             return $"{pc.Name}" + $"\nBrand: {pc.Brand}" + $"\nModel: {pc.Model}" + $"Processor: {pc.Processor}"

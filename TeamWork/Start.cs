@@ -1,16 +1,24 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Collections.Generic;
 using System.Text;
+<<<<<<< HEAD
 <<<<<<< HEAD
 using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Products;
 =======
+using TeamWork.Core.Tools;
+using ElectronicsShop.Models;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+>>>>>>> c16b73be29b2baaa95cd8c9ca738c787d964ce1c
+=======
+using TeamWork.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Products;
->>>>>>> b664ffc50c38c229d941edde162ca4da720dc095
+>>>>>>> e969eaba3cd32c92beff9a6a5649415b107ac992
 
 namespace ElectronicsShop
 {
