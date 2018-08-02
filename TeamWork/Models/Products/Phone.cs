@@ -13,18 +13,23 @@ namespace ElectronicsShop.Models.AbstractClasses
         private Colour colour;
         private BatteryType battery;
         private int displaySize;
+<<<<<<< HEAD
         private double height;
         private double width;
         private double thickness;
         private string processor;
 
 
+=======
+        private PhoneSize size;
+        
+>>>>>>> 9f8fea30c9abe4d74d86a4855317421269cf6458
         public Phone(string productName, decimal price) : base(productName, price)
         {
 
         }
 
-        public Phone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, double height, double width, double thickness)
+        public Phone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size)
             : this(productName, price)
         {
             this.Brand = brand;
@@ -32,9 +37,7 @@ namespace ElectronicsShop.Models.AbstractClasses
             this.Colour = colour;
             this.Battery = battery;
             this.DisplaySize = displaySize;
-            this.Height = height;
-            this.Width = width;
-            this.Thickness = thickness;
+            this.Size = size;
         }
 
         public string Brand
@@ -88,6 +91,7 @@ namespace ElectronicsShop.Models.AbstractClasses
                 this.displaySize = value;
             }
         }
+<<<<<<< HEAD
         public double Height
         {
             get { return this.height; }
@@ -125,5 +129,10 @@ namespace ElectronicsShop.Models.AbstractClasses
             }
         }
 
+=======
+
+        public PhoneSize Size { get; set; }
+              
+>>>>>>> 9f8fea30c9abe4d74d86a4855317421269cf6458
     }
 }

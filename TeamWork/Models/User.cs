@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ElectronicsShop.Models.Users
 {
-    public abstract class Users
+    public abstract class User
     {
         private string name;
         private string email;
