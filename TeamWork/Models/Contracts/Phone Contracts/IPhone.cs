@@ -1,4 +1,5 @@
-﻿using ElectronicsShop.Models.Products.Common;
+﻿using ElectronicsShop.Models.Products;
+using ElectronicsShop.Models.Products.Common;
 using ElectronicsShop.Models.Products.Electronics.Common;
 
 namespace ElectronicsShop.Models.Interfaces
@@ -11,8 +12,6 @@ namespace ElectronicsShop.Models.Interfaces
         Colour Colour { get; set; }
         BatteryType Battery { get; set; }
         int DisplaySize { get; set; }
-        double Height { get; set; }
-        double Width { get; set; }
-        double Thickness { get; set; }
+        PhoneSize Size { get; set; }
     }
 }

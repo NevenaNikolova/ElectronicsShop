@@ -13,16 +13,14 @@ namespace ElectronicsShop.Models.AbstractClasses
         private Colour colour;
         private BatteryType battery;
         private int displaySize;
-        private double height;
-        private double width;
-        private double thickness;
-
+        private PhoneSize size;
+        
         public Phone(string productName, decimal price) : base(productName, price)
         {
 
         }
 
-        public Phone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, double height, double width, double thickness)
+        public Phone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size)
             : this(productName, price)
         {
             this.Brand = brand;
@@ -30,9 +28,7 @@ namespace ElectronicsShop.Models.AbstractClasses
             this.Colour = colour;
             this.Battery = battery;
             this.DisplaySize = displaySize;
-            this.Height = height;
-            this.Width = width;
-            this.Thickness = thickness;
+            this.Size = size;
         }
 
         public string Brand
@@ -82,42 +78,8 @@ namespace ElectronicsShop.Models.AbstractClasses
                 this.displaySize = value;
             }
         }
-        public double Height
-        {
-            get { return this.height; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                this.height = value;
-            }
-        }
-        public double Width
-        {
-            get { return this.width; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                this.width = value;
-            }
-        }
-        public double Thickness
-        {
-            get { return this.thickness; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                this.thickness = value;
-            }
-        }
-         
+
+        public PhoneSize Size { get; set; }
+              
     }
 }

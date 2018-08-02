@@ -6,15 +6,16 @@ using ElectronicsShop.Core.Contracts;
 
 namespace ElectronicsShop.Core.Tools
 {
-    public class Logger : ILogger
+    public class FileLogger : ILogger
     {
-        public Logger()
+
+        public FileLogger()
         {
 
         }
         public void Log(string message)
         {
-            File.AppendAllText("LogFile.txt", message);
+            File.AppendAllText(@"C:\LogFile.txt", message);
         }
     }
 }

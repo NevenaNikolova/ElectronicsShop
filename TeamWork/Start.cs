@@ -17,6 +17,7 @@ namespace ElectronicsShop
             Console.WriteLine(Printer.LaptopInfoToShortString(laptop));
             Console.WriteLine("---------------------------------------");
             Console.WriteLine(Printer.LaptopInfoLongString(laptop));
+
         }
     }
 }
