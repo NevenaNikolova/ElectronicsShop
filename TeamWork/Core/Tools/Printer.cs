@@ -41,8 +41,9 @@ namespace ElectronicsShop.Core.Tools
         }
         public static string SmartphoneInfoToLongString(ISmartphone phone)
         {
-            return $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}"+$"\nColor: {phone.Colour}"
-                + $"\nDisplay size: {phone.DisplaySize}'" +$"\nProcessor: {phone.Processor}"+$"\nRam: {phone.Ram}GB" + $"\nHeight: {phone.Height}'" + $"\nWidth: {phone.Width}'" + $"\nTickness: {phone.Thickness}'"
+            return $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}"
+                + $"\nDisplay size: {phone.DisplaySize}'" + $"\nProcessor: {phone.Processor}" + $"\nRam: {phone.Ram}GB" + 
+                $"\nHeight: {phone.Size.Height}'" + $"\nWidth: {phone.Size.Width}'" + $"\nTickness: {phone.Size.Thickness}'"
                 + $"\nBattery: {phone.Battery}" + $"\nPrice: {phone.Price}$";
         }
 
@@ -52,9 +53,10 @@ namespace ElectronicsShop.Core.Tools
         }
         public static string LandlinephoneInfoToLongString(ILandlinePhone phone)
         {
-            return $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}"
-                + $"\nDisplay size: {phone.DisplaySize}'" + $"\nHeight: {phone.Height}'" + $"\nTickness: {phone.Thickness}'"
-                + $"\nBattery: {phone.Battery}" + $"\nWallmounting: {phone.WallMounting}" + $"\nAnalogueLines: {phone.AnalogueLines}";
+            return $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}" +
+                $"\nDisplay size: {phone.DisplaySize}'" + $"\nHeight: {phone.Size.Height}'" + $"\nWidth: {phone.Size.Width}" +
+                $"\nTickness: {phone.Size.Thickness}'" + $"\nBattery: {phone.Battery}" + $"\nWallmounting: {phone.WallMounting}" +
+                $"\nAnalogueLines: {phone.AnalogueLines}";
         }
     }
 }

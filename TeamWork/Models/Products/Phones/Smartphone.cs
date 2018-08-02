@@ -2,6 +2,7 @@
 using ElectronicsShop.Models.AbstractClasses;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 using ElectronicsShop.Models.Products.Electronics.Common;
 using ElectronicsShop.Models.Products.Electronics.Phones;
@@ -18,8 +19,8 @@ namespace ElectronicsShop.Models.Electronics.Phones
         }
 
         public Smartphone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery,
-            int displaySize, double height, double width, double thickness, string processor, int ram) 
-            : base(productName, price, brand, model, colour, battery, displaySize, height, width, thickness)
+            int displaySize, PhoneSize size, string processor, int ram) 
+            : base(productName, price, brand, model, colour, battery, displaySize, size)
         {
             this.Processor = processor;
             this.Ram = ram;

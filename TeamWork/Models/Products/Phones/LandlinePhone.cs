@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ElectronicsShop.Models.AbstractClasses;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 using ElectronicsShop.Models.Products.Electronics.Common;
 using ElectronicsShop.Models.Products.Electronics.Phones;
@@ -20,8 +21,8 @@ namespace ElectronicsShop.Models.Electronics.Phones
         }
 
         public LandlinePhone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
-            int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting)
-            : base(name, price, brand, model, colour, battery, displaySize, height, width, thickness)
+            int displaySize, PhoneSize size, int analogueLines, bool wallMounting)
+            : base(name, price, brand, model, colour, battery, displaySize, size)
         {
             this.AnalogueLines = analogueLines;
             this.WallMounting = wallMounting;

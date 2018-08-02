@@ -5,6 +5,7 @@ using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Electronics.Phones;
 using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 using ElectronicsShop.Models.Products.Electronics.Common;
 using ElectronicsShop.Models.Products.Electronics.Phones;
@@ -32,10 +33,11 @@ namespace ElectronicsShop.Core.Factories
             /*string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
              * int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting*/)
         {
+            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));
+
             var landlinePhone = new LandlinePhone(parameters[0], decimal.Parse(parameters[1]), parameters[2],
                 parameters[3], (Colour)Enum.Parse(typeof(Colour), parameters[4]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[5]),
-                int.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]),
-                int.Parse(parameters[10]), bool.Parse(parameters[11]));
+                int.Parse(parameters[6]), phoneSize, int.Parse(parameters[10]), bool.Parse(parameters[11]));
 
             // this could not be here !
             Console.WriteLine(Printer.LandlinephoneInfoToLongString(landlinePhone));
@@ -57,11 +59,11 @@ namespace ElectronicsShop.Core.Factories
             //9.tickness
             //10.processor
             //11.ram
+            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));
 
             var phone = new Smartphone(parameters[0], decimal.Parse(parameters[1]), parameters[2],
                 parameters[3], (Colour)Enum.Parse(typeof(Colour), parameters[4]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[5]),
-                int.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]),
-                parameters[10], int.Parse(parameters[11]));
+                int.Parse(parameters[6]), phoneSize, parameters[10], int.Parse(parameters[11]));
 
             //this could not be here!
             Console.WriteLine(Printer.SmartphoneInfoToLongString(phone));

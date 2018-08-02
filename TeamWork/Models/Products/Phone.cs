@@ -13,17 +13,11 @@ namespace ElectronicsShop.Models.AbstractClasses
         private Colour colour;
         private BatteryType battery;
         private int displaySize;
-<<<<<<< HEAD
-        private double height;
-        private double width;
-        private double thickness;
+
         private string processor;
 
-
-=======
         private PhoneSize size;
         
->>>>>>> 9f8fea30c9abe4d74d86a4855317421269cf6458
         public Phone(string productName, decimal price) : base(productName, price)
         {
 
@@ -91,48 +85,6 @@ namespace ElectronicsShop.Models.AbstractClasses
                 this.displaySize = value;
             }
         }
-<<<<<<< HEAD
-        public double Height
-        {
-            get { return this.height; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                this.height = value;
-            }
-        }
-        public double Width
-        {
-            get { return this.width; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                this.width = value;
-            }
-        }
-        public double Thickness
-        {
-            get { return this.thickness; }
-            set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                this.thickness = value;
-            }
-        }
-
-=======
-
         public PhoneSize Size { get; set; }
-              
->>>>>>> 9f8fea30c9abe4d74d86a4855317421269cf6458
     }
 }
