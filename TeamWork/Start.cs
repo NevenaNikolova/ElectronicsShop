@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using ElectronicsShop.Core;
+using ElectronicsShop.Core.Commands;
+using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
+using System.Linq;
 
 namespace ElectronicsShop
 {
@@ -20,8 +24,9 @@ namespace ElectronicsShop
             ////Console.WriteLine("---------------------------------------");
             ////Console.WriteLine(Printer.LaptopInfoLongString(laptop));
             //category.addProduct(laptop);
-
-            var engine = Engine.Instance;
+            CommandHandler commandHandler = new CommandHandler();
+            ProductFactory factory = new ProductFactory();
+            var engine = Engine.Instance(factory, commandHandler);
             engine.Start();
         }
     }

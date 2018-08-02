@@ -24,6 +24,7 @@ namespace ElectronicsShop.Core.Commands
             {
                 case "smartphone":
                     factory.CreateSmartphone(commandParameters);
+                    
                     break;
                 case "landlinephone":
                     factory.CreateLandlinePhone(commandParameters);

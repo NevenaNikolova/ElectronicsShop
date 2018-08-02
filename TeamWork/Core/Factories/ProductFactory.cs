@@ -40,7 +40,7 @@ namespace ElectronicsShop.Core.Factories
                 int.Parse(parameters[6]), phoneSize, int.Parse(parameters[10]), bool.Parse(parameters[11]));
 
             // this could not be here !
-            Console.WriteLine(Printer.LandlinephoneInfoToLongString(landlinePhone));
+            Console.WriteLine("Landline phone created!");
 
             return landlinePhone;
         }
@@ -66,7 +66,7 @@ namespace ElectronicsShop.Core.Factories
                 int.Parse(parameters[6]), phoneSize, parameters[10], int.Parse(parameters[11]));
 
             //this could not be here!
-            Console.WriteLine(Printer.SmartphoneInfoToLongString(phone));
+            Console.WriteLine("Smartphone created!");
 
             return phone;
         }
@@ -88,7 +88,7 @@ namespace ElectronicsShop.Core.Factories
             var laptop = new Laptop(parameters[0],parameters[1],parameters[2],int.Parse(parameters[3]),int.Parse(parameters[4]),
                 parameters[5],int.Parse(parameters[6]), int.Parse(parameters[7]),int.Parse(parameters[8]),int.Parse(parameters[9]));
 
-            Console.WriteLine(Printer.LaptopInfoLongString(laptop));
+            Console.WriteLine("Laptop created!");
 
             return laptop;
         }

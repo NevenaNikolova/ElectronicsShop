@@ -22,26 +22,26 @@ namespace ElectronicsShop.Core
         CommandHandler commandHandler;
         private IProductFactory factory;
 
-        public static IEngine Instance
+        public static IEngine Instance(IProductFactory factory, CommandHandler commandHandler)
         {
-            get
-            {
-                if (instanceHolder == null)
-                {
-                    instanceHolder = new Engine();
-                }
 
-                return instanceHolder;
+            if (instanceHolder == null)
+            {
+
+                instanceHolder = new Engine(factory, commandHandler);
             }
+
+            return instanceHolder;
+
         }
 
-        private Engine()
+        private Engine(IProductFactory factory, CommandHandler commandHandler)
         {
             this.computers = new List<IComputer>();
             this.phones = new List<IPhone>();
             this.products = new List<IProduct>();
-            this.factory = new ProductFactory();
-            this.commandHandler = new CommandHandler();
+            this.factory = factory;
+            this.commandHandler = commandHandler;
         }
 
         public void Start()
@@ -58,7 +58,7 @@ namespace ElectronicsShop.Core
                     }
                     //this.ProcessCommand(commandAsString);
                     //ProductFactory factory = new ProductFactory();
-                   
+
                     string firstCommand = commands[0];
                     commands.RemoveAt(0);
 
@@ -68,13 +68,14 @@ namespace ElectronicsShop.Core
                             commandHandler.CreateCommand(commands);
                             break;
                         case "add":
-                            
+
                             break;
                         case "remove":
                             break;
                         case "logout":
                             break;
-
+                        case "show":
+                            break;
                         default:
                             break;
                     }
