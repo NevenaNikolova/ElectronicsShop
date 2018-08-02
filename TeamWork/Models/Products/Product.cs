@@ -5,8 +5,12 @@ namespace ElectronicsShop.Models.Products
 {
     public abstract class Product : IProduct
     {
+
         private string name;
         private decimal price;
+<<<<<<< HEAD
+        private int id;
+=======
         private int realId;
         public static int staticID;
 
@@ -21,6 +25,7 @@ namespace ElectronicsShop.Models.Products
             get { return this.realId; }
             set { this.realId = staticID; }
         }
+>>>>>>> 71771582ccaacec5af08636bf8ab8f90723fddce
 
         public Product(string name, decimal price)
         {
@@ -33,11 +38,14 @@ namespace ElectronicsShop.Models.Products
         public virtual string Name
         {
             get { return this.name; }
-            set {
-                if (value.Length<=0)
+            set
+            {
+                if (value.Length <= 0)
                 {
                     throw new ArgumentOutOfRangeException();
-                } else this.name = value; }
+                }
+                else this.name = value;
+            }
         }
 
         public virtual decimal Price
@@ -52,6 +60,11 @@ namespace ElectronicsShop.Models.Products
                 else this.price = value;
             }
         }
-        
+
+        public int ID
+        {
+            get;
+        }
+
     }
 }
