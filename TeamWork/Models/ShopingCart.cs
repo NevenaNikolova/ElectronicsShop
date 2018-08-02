@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Models
@@ -38,9 +39,10 @@ namespace ElectronicsShop.Models
             else return false;
         }
 
-        public double TotalPrice()
+        public decimal TotalPrice()
         {
-            return 0;
+            decimal price = productList.Sum(x => x.Price);
+            return price;
         }
 
     }

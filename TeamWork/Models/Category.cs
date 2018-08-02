@@ -48,7 +48,7 @@ namespace ElectronicsShop.Models
                 case "Laptop":
                     this.Laptops.Add((Laptop)product);
                     break;
-                case "Desktop Computer":
+                case "DesktopPC":
                     this.DesktopPCs.Add((DesktopPC)product);
                     break;
                 case "Smartphone":
@@ -74,7 +74,7 @@ namespace ElectronicsShop.Models
                         }
                     }
                     break;
-                case "Desktop Computer":
+                case "DesktopPC":
                     {
                         if (desktopPCs.Contains((DesktopPC)product))
                         {

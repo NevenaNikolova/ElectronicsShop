@@ -24,10 +24,15 @@ namespace ElectronicsShop
             ////Console.WriteLine("---------------------------------------");
             ////Console.WriteLine(Printer.LaptopInfoLongString(laptop));
             //category.addProduct(laptop);
-            CommandHandler commandHandler = new CommandHandler();
-            ProductFactory factory = new ProductFactory();
-            var engine = Engine.Instance(factory, commandHandler);
-            engine.Start();
+            //CommandHandler commandHandler = new CommandHandler();
+            //ProductFactory factory = new ProductFactory();
+            //var engine = Engine.Instance(factory, commandHandler);
+            //engine.Start();
+            ShopingCart sh = new ShopingCart();
+            sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 2));
+            sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 4));
+            sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 1));
+            Console.WriteLine(sh.TotalPrice()); 
         }
     }
 }

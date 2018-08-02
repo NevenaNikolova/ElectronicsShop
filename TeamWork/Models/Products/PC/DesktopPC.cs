@@ -17,7 +17,7 @@ namespace ElectronicsShop.Models.Electronics.AbstractClasses
             int hdd, int videoCard, string name, int price)
             : base(procesor, ram, hdd, videoCard, name, price,brand,model)
         {
-            this.name = "Desktop Computer";
+
             //this.brand = brand;
             //this.model = model;
         }
