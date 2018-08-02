@@ -23,8 +23,8 @@ namespace ElectronicsShop.Core.Commands
             switch (firstParam)
             {
                 case "smartphone":
-                    factory.CreateSmartphone(commandParameters);
-                    
+                   factory.CreateSmartphone(commandParameters);
+                    //category.AddProduct(factory.CreateSmartphone(commandParameters))
                     break;
                 case "landlinephone":
                     factory.CreateLandlinePhone(commandParameters);
