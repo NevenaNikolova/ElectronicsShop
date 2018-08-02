@@ -8,10 +8,14 @@ namespace ElectronicsShop.Models.Products
 
         private string name;
         private decimal price;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5dfe5797a7aaa3841c4446089a3c3c67bf37db62
         private int realId;
         public static int staticID;
 
-        public int StaticId
+        private int StaticId
         {
             get { return staticID; }
             set { staticID++; }
