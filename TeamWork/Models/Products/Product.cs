@@ -55,7 +55,6 @@ namespace ElectronicsShop.Models.Products
                 else this.price = value;
             }
         }
-
         public int ID
         {
             get;
