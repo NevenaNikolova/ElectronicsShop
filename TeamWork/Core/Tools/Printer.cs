@@ -35,15 +35,15 @@ namespace ElectronicsShop.Core.Tools
                 $"\nBattery capacity: {laptop.BatteryCapacity}mAh" + $"\nPrice: {laptop.Price}$";
         }
 
-        public static string SmartphoneInfoToShortString(Phone phone)
+        public static string SmartphoneInfoToShortString(ISmartphone phone)
         {
             return ProductInfoShortString(phone);
         }
-        public static string SmartphoneInfoToLongString(Phone phone)
+        public static string SmartphoneInfoToLongString(ISmartphone phone)
         {
-            return $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}"
-                + $"\nDisplay size: {phone.DisplaySize}" + $"\nHeight{phone.Height}" + $"\nTickness: {phone.Thickness}"
-                + $"\n{phone.Battery}";
+            return $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}"+$"\nColor: {phone.Colour}"
+                + $"\nDisplay size: {phone.DisplaySize}'" +$"\nProcessor: {phone.Processor}"+$"\nRam: {phone.Ram}GB" + $"\nHeight: {phone.Height}'" + $"\nWidth: {phone.Width}'" + $"\nTickness: {phone.Thickness}'"
+                + $"\nBattery: {phone.Battery}" + $"\nPrice: {phone.Price}$";
         }
 
         public static string LandlinephoneInfoToShortString(ILandlinePhone phone)
@@ -53,8 +53,8 @@ namespace ElectronicsShop.Core.Tools
         public static string LandlinephoneInfoToLongString(ILandlinePhone phone)
         {
             return $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}"
-                + $"\nDisplay size: {phone.DisplaySize}" + $"\nHeight{phone.Height}" + $"\nTickness: {phone.Thickness}"
-                + $"\n{phone.Battery}" + $"\nWallmounting: {phone.WallMounting}" + $"\nAnalogueLines{phone.AnalogueLines}";
+                + $"\nDisplay size: {phone.DisplaySize}'" + $"\nHeight: {phone.Height}'" + $"\nTickness: {phone.Thickness}'"
+                + $"\nBattery: {phone.Battery}" + $"\nWallmounting: {phone.WallMounting}" + $"\nAnalogueLines: {phone.AnalogueLines}";
         }
     }
 }

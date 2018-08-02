@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Core.Commands;
+using ElectronicsShop.Core.Contracts;
+using ElectronicsShop.Core.Factories;
+using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Core
 {
-    class Engine : IEngine
+    public class Engine : IEngine
     {
         private static IEngine instanceHolder;
         private string exitCommand = "exit";
@@ -15,6 +18,9 @@ namespace ElectronicsShop.Core
         IList<IProduct> products { get; }
 
         IList<IPhone> phones { get; }
+
+        CommandHandler commandHandler;
+        private IProductFactory factory;
 
         public static IEngine Instance
         {
@@ -31,30 +37,54 @@ namespace ElectronicsShop.Core
 
         private Engine()
         {
-            while (true)
-            {
-                try
-                {
-                    var commandAsString = Console.ReadLine().Split(" ");
-
-                    if (commandAsString[0] == exitCommand)
-                    {
-                        break;
-                    }
-
-                    //this.ProcessCommand(commandAsString);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                   
-                }
-            }
+            this.computers = new List<IComputer>();
+            this.phones = new List<IPhone>();
+            this.products = new List<IProduct>();
+            this.factory = new ProductFactory();
+            this.commandHandler = new CommandHandler();
         }
 
         public void Start()
         {
-            throw new System.NotImplementedException();
+            while (true)
+            {
+                try
+                {
+                    List<string> commands = new List<string>(Console.ReadLine().Split(" "));
+
+                    if (commands[0] == exitCommand)
+                    {
+                        break;
+                    }
+                    //this.ProcessCommand(commandAsString);
+                    //ProductFactory factory = new ProductFactory();
+                   
+                    string firstCommand = commands[0];
+                    commands.RemoveAt(0);
+
+                    switch (firstCommand)
+                    {
+                        case "create":
+                            commandHandler.CreateCommand(commands);
+                            break;
+                        case "add":
+                            
+                            break;
+                        case "remove":
+                            break;
+                        case "logout":
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
     }
 }

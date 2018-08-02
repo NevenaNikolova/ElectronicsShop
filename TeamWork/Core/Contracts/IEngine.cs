@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ElectronicsShop.Core.Contracts
 {
-    interface IEngine
+    public interface IEngine
     {
         void Start();
     }

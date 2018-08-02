@@ -16,6 +16,8 @@ namespace ElectronicsShop.Models.AbstractClasses
         private double height;
         private double width;
         private double thickness;
+        private string processor;
+
 
         public Phone(string productName, decimal price) : base(productName, price)
         {
@@ -63,10 +65,14 @@ namespace ElectronicsShop.Models.AbstractClasses
                 {
                     throw new ArgumentNullException();
                 }
-                this.brand = model;
+                this.model = value;
             }
         }
-        public Colour Colour { get; set; }
+        public Colour Colour
+        {
+            get;
+            set;
+        }
 
         public BatteryType Battery { get; set; }
 
@@ -118,6 +124,6 @@ namespace ElectronicsShop.Models.AbstractClasses
                 this.thickness = value;
             }
         }
-         
+
     }
 }

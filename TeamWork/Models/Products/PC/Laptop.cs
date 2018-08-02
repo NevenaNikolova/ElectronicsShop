@@ -8,14 +8,13 @@ namespace ElectronicsShop.Models.Electronics.AbstractClasses
 
     public class Laptop : PC, IComputer
     {
-        private const string name ="Laptop";
         //private string _brand;
         //private string _model;
         private int displaySize;
         private int batteryCapacity;
 
 
-        public Laptop(string brand, string model, int displaySize, int batteryCapacity,
+        public Laptop(string name,string brand, string model, int displaySize, int batteryCapacity,
             string procesor, int ram, int hdd, int videoCard, int price)
             : base(procesor, ram, hdd, videoCard, name, price, brand, model)
         {
@@ -30,7 +29,7 @@ namespace ElectronicsShop.Models.Electronics.AbstractClasses
         {
             get
             {
-                return name;
+                return base.Name;
             }
         }
 

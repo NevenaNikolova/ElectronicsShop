@@ -1,4 +1,5 @@
 ﻿using System;
+using ElectronicsShop.Core;
 using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
@@ -9,14 +10,18 @@ namespace ElectronicsShop
     {
         public static void Main()
         {
-            Category category = new Category("Electronics");
-            Laptop laptop = new Laptop("ASUS","ZenBook",16,2500,"Intel i7-UXJS",4,512,2,1000);
+            //Category category = new Category("Electronics");
+            ////Laptop laptop = new Laptop("ASUS","ZenBook",16,2500,"Intel i7-UXJS",4,512,2,1000);
             //ShopingCart shopingCart = new ShopingCart();
             //shopingCart.AddProduct(laptop);
-            //Console.WriteLine(string.Join(" ", shopingCart));
-            Console.WriteLine(Printer.LaptopInfoToShortString(laptop));
-            Console.WriteLine("---------------------------------------");
-            Console.WriteLine(Printer.LaptopInfoLongString(laptop));
+            //////Console.WriteLine(string.Join(" ", shopingCart));
+            ////Console.WriteLine(Printer.LaptopInfoToShortString(laptop));
+            ////Console.WriteLine("---------------------------------------");
+            ////Console.WriteLine(Printer.LaptopInfoLongString(laptop));
+            //category.addProduct(laptop);
+
+            var engine = Engine.Instance;
+            engine.Start();
         }
     }
 }
