@@ -14,6 +14,17 @@ namespace ElectronicsShop.Core.Factories
 {
     public class ProductFactory : IProductFactory
     {
+
+
+        //smartphone command
+        //create smartphone gosho 900 Asus ZenPhone Black LiIon 16 3 3 3 Atom 4
+
+        //lanlinePhone command
+        //create landlinephone gosho 9 VIVACOM Home White LiIon 16 3 3 3 10 true
+
+        //laptop command
+        //create laptop MyLaptop Lenovo ThinkPad 14 4500 i5 8 500 4 1200
+
         private static IProductFactory instanceHolder = new ProductFactory();
 
         public ProductFactory()
@@ -30,8 +41,8 @@ namespace ElectronicsShop.Core.Factories
         }
 
         public ILandlinePhone CreateLandlinePhone(IList<string> parameters
-            /*string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
-             * int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting*/)
+             /*string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
+              * int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting*/)
         {
             PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));
 
@@ -85,8 +96,8 @@ namespace ElectronicsShop.Core.Factories
         //11.ram
         public PC CreateLaptop(IList<string> parameters)
         {
-            var laptop = new Laptop(parameters[0],parameters[1],parameters[2],int.Parse(parameters[3]),int.Parse(parameters[4]),
-                parameters[5],int.Parse(parameters[6]), int.Parse(parameters[7]),int.Parse(parameters[8]),int.Parse(parameters[9]));
+            var laptop = new Laptop(parameters[0], parameters[1], parameters[2], int.Parse(parameters[3]), int.Parse(parameters[4]),
+                parameters[5], int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]), int.Parse(parameters[9]));
 
             Console.WriteLine("Laptop created!");
 

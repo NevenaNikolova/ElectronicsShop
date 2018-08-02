@@ -8,13 +8,11 @@ namespace ElectronicsShop.Models.Products
 
         private string name;
         private decimal price;
-<<<<<<< HEAD
-        private int id;
-=======
+
         private int realId;
         public static int staticID;
 
-        public int StaticId
+        private int StaticId
         {
             get { return staticID; }
             set { staticID++; }
@@ -25,8 +23,6 @@ namespace ElectronicsShop.Models.Products
             get { return this.realId; }
             set { this.realId = staticID; }
         }
->>>>>>> 71771582ccaacec5af08636bf8ab8f90723fddce
-
         public Product(string name, decimal price)
         {
             this.Name = name;
