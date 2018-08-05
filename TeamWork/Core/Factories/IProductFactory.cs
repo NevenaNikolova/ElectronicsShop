@@ -19,6 +19,7 @@ namespace ElectronicsShop.Core.Factories
         //ILaptop CreateLaptop
         //IDesctopPC CreateDesctopPC
         PC CreateLaptop(IList<string> parameters);
+        PC CreateDesktopComputer(IList<string> parameters);
 
     }
 }

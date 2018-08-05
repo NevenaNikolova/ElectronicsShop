@@ -14,7 +14,7 @@ namespace ElectronicsShop.Models.Electronics.AbstractClasses
         private int videoCard;
         private string brand;
         private string model;
-        protected PC(string processor, int ram, int hdd, int videoCard, string productName, int price, string brand, string model)
+        protected PC(string processor, int ram, int hdd, int videoCard, string productName, decimal price, string brand, string model)
             : base(productName, price)
         {
             this.Processor = processor;
@@ -56,7 +56,7 @@ namespace ElectronicsShop.Models.Electronics.AbstractClasses
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Ram memory value cannot be negative!");
+                    throw new ArgumentOutOfRangeException("Hdd memory value cannot be negative!");
                 }
                 else this.hdd = value;
             }
@@ -66,9 +66,9 @@ namespace ElectronicsShop.Models.Electronics.AbstractClasses
             get { return this.videoCard; }
             set
             {
-                if (value < 1)
+                if (value < 0)
                 {
-                    throw new ArgumentException();
+                    throw new ArgumentException("Videocard capacity cannot be negative!");
                 }
                 else this.videoCard = value;
             }

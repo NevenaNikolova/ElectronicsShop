@@ -56,30 +56,8 @@ namespace ElectronicsShop.Core
                     {
                         break;
                     }
-                    //this.ProcessCommand(commandAsString);
-                    //ProductFactory factory = new ProductFactory();
 
-                    string firstCommand = commands[0];
-                    commands.RemoveAt(0);
-
-                    switch (firstCommand)
-                    {
-                        case "create":
-                            commandHandler.CreateCommand(commands);
-                            break;
-                        case "add":
-
-                            break;
-                        case "remove":
-                            break;
-                        case "logout":
-                            break;
-                        case "show":
-                            break;
-                        default:
-                            break;
-                    }
-
+                    this.commandHandler.Proccess(commands);
                 }
                 catch (Exception ex)
                 {

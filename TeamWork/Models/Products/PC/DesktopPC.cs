@@ -13,8 +13,8 @@ namespace ElectronicsShop.Models.Electronics.AbstractClasses
         //private string model;
 
 
-        public DesktopPC(string brand, string model, string procesor, int ram,
-            int hdd, int videoCard, string name, int price)
+        public DesktopPC(string name, string brand, string model, string procesor, int ram,
+            int hdd, int videoCard, decimal price)
             : base(procesor, ram, hdd, videoCard, name, price,brand,model)
         {
 

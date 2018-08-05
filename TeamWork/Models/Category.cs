@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using ElectronicsShop.Core.Exceptions;
+using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Electronics.Phones;
 using ElectronicsShop.Models.Interfaces;
@@ -36,26 +40,40 @@ namespace ElectronicsShop.Models
             }
         }
 
-        public List<Laptop> Laptops { get => new List<Laptop>(this.laptops); }
-        public List<DesktopPC> DesktopPCs { get => new List<DesktopPC>(this.desktopPCs); }
-        public List<Smartphone> Smartphones { get => new List<Smartphone>(this.smartphones); }
-        public List<LandlinePhone> LandlinePhones { get => new List<LandlinePhone>(this.landlinePhones); }
+        public List<Laptop> Laptops
+        {
+            get => new List<Laptop>(this.laptops);
+
+        }
+        public List<DesktopPC> DesktopPCs
+        {
+            get => this.desktopPCs;
+
+        }
+        public List<Smartphone> Smartphones
+        {
+            get => new List<Smartphone>(this.smartphones);
+        }
+        public List<LandlinePhone> LandlinePhones
+        {
+            get => new List<LandlinePhone>(this.landlinePhones);
+        }
 
         public void addProduct(IProduct product)
         {
             switch (product.GetType().Name)
             {
                 case "Laptop":
-                    this.Laptops.Add((Laptop)product);
+                    this.laptops.Add((Laptop)product);
                     break;
                 case "DesktopPC":
-                    this.DesktopPCs.Add((DesktopPC)product);
+                    this.desktopPCs.Add((DesktopPC)product);
                     break;
                 case "Smartphone":
-                    this.Smartphones.Add((Smartphone)product);
+                    this.smartphones.Add((Smartphone)product);
                     break;
                 case "LandlinePhone":
-                    this.LandlinePhones.Add((LandlinePhone)product);
+                    this.landlinePhones.Add((LandlinePhone)product);
                     break;
                 default:
                     throw new ArgumentException("There is no such type!");
@@ -101,6 +119,53 @@ namespace ElectronicsShop.Models
                 default:
                     throw new ArgumentException("Product not found!");
 
+            }
+        }
+
+        public string ShowList(string type)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            switch (type)
+            {
+                case "laptops":
+                    this.Laptops.ForEach(x => sb.Append(Printer.LaptopInfoLongString(x)));
+                    return sb.ToString();
+                case "desktops":
+                    this.DesktopPCs.ForEach(x => sb.Append(Printer.DesktopComputerInfoToLongSting(x)));
+                    return sb.ToString();
+                case "smartphones":
+                    this.Smartphones.ForEach(x => sb.Append(Printer.SmartphoneInfoToLongString(x)));
+                    return sb.ToString();
+                case "landlinephones":
+                    this.LandlinePhones.ForEach(x => sb.Append(Printer.LandlinephoneInfoToLongString(x)));
+                    return sb.ToString();
+                default:
+                    throw new ArgumentException("There is no such type!");
+            }
+        }
+        
+        public IProduct GetProduct(int id)
+        {
+            if (this.desktopPCs.Any(x => x.ID == id))
+            {
+                return desktopPCs.First(x => x.ID == id);
+            }
+            else if (this.LandlinePhones.Any(x => x.ID == id))
+            {
+                return landlinePhones.First(x => x.ID == id);
+            }
+            else if (this.laptops.Any(x => x.ID == id))
+            {
+                return laptops.First(x => x.ID == id);
+            }
+            else if (this.smartphones.Any(x => x.ID == id))
+            {
+                return smartphones.First(x => x.ID == id);
+            }
+            else
+            {
+                throw new ItemNotFoundException($"Product with ID:{id} dont exist!");
             }
         }
 

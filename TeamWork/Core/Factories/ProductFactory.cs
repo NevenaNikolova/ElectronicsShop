@@ -41,8 +41,8 @@ namespace ElectronicsShop.Core.Factories
         }
 
         public ILandlinePhone CreateLandlinePhone(IList<string> parameters
-             /*string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
-              * int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting*/)
+              /*string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
+               * int displaySize, double height, double width, double thickness, int analogueLines, bool wallMounting*/)
         {
             PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));
 
@@ -100,8 +100,21 @@ namespace ElectronicsShop.Core.Factories
                 parameters[5], int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]), int.Parse(parameters[9]));
 
             Console.WriteLine("Laptop created!");
+            Console.WriteLine(Printer.LaptopInfoLongString(laptop));
 
             return laptop;
         }
+
+        public PC CreateDesktopComputer(IList<string> parameters)
+        {
+            var desktopPC = new DesktopPC(parameters[0], parameters[1], parameters[2],
+                parameters[3], int.Parse(parameters[4]), int.Parse(parameters[5]),
+                int.Parse(parameters[6]), decimal.Parse(parameters[7]));
+
+            Console.WriteLine(Printer.DesktopComputerInfoToLongSting(desktopPC));
+
+            return desktopPC;
+        }
     }
+
 }
