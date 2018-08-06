@@ -4,7 +4,7 @@ using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Models
 {
-    class ShopingCart
+   internal class ShopingCart
     {
         private readonly List<IProduct> productList;
 
@@ -20,13 +20,12 @@ namespace ElectronicsShop.Models
 
         public void AddProduct(IProduct product)
         {
-
             this.productList.Add(product);
         }
 
-        public void RemoveProduct(IProduct product)
+        public void RemoveProduct(int id)
         {
-
+            IProduct product = this.productList.First(x => x.RealID == id);
             this.productList.Remove(product);
         }
 

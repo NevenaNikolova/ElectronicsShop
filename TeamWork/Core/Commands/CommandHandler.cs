@@ -1,5 +1,6 @@
 ﻿using ElectronicsShop.Core.Exceptions;
 using ElectronicsShop.Core.Factories;
+using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Interfaces;
 using System;
@@ -18,7 +19,7 @@ namespace ElectronicsShop.Core.Commands
         public CommandHandler()
         {
             this.factory = new ProductFactory();
-            
+
             this.shoppintCart = new ShopingCart();
         }
 
@@ -44,7 +45,7 @@ namespace ElectronicsShop.Core.Commands
                 case "desktoppc":
                     var desktopPc = factory.CreateDesktopComputer(commandParameters);
                     this.category.addProduct(desktopPc);
-                    
+
                     break;
                 default:
                     throw new ProductTypeNotExistException("Cannot create product of this type!");
@@ -52,11 +53,13 @@ namespace ElectronicsShop.Core.Commands
             }
         }
 
-        public void Add(int id)
+        public void AddToShopingCart(int id)
         {
             var prod = FindProduct(id);
 
             this.shoppintCart.AddProduct(prod);
+
+            Console.WriteLine($"{prod.GetType().Name} with ID:{id} added to shopping cart!");
         }
 
         public IProduct FindProduct(int id)
@@ -79,7 +82,7 @@ namespace ElectronicsShop.Core.Commands
             }
             else
             {
-                throw new ItemNotFoundException("This ID dont exist!");
+                throw new ItemNotFoundException($"Product with ID:{id} doesnt exist!");
             }
         }
 
@@ -94,18 +97,30 @@ namespace ElectronicsShop.Core.Commands
                     this.CreateCommand(commands);
                     break;
                 case "addToCart":
-                    this.Add(int.Parse(commands[0]));
+                    this.AddToShopingCart(int.Parse(commands[0]));
                     break;
                 case "remove":
-                    break;
-                case "logout":
+                    this.RemoveFromShopingCart(int.Parse(commands[0]));
                     break;
                 case "show":
-                    Console.WriteLine(category.ShowList(commands[0]));
+                    if (commands[0] == "cart")
+                    {
+                        Console.WriteLine(ConsoleLogger.ShopingCartToString(this.shoppintCart));
+                        break;
+                    }
+                    Console.WriteLine(category.GetListOf(commands[0]));
                     break;
                 default:
                     break;
             }
+        }
+
+
+
+        private void RemoveFromShopingCart(int id)
+        {
+            this.shoppintCart.RemoveProduct(id);
+            Console.WriteLine($"Product with ID:{id} removed from shopping cart!");
         }
     }
 }
