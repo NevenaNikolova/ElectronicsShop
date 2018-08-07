@@ -1,4 +1,5 @@
-﻿using ElectronicsShop.Core.Exceptions;
+﻿using ElectronicsShop.Core.Contracts;
+using ElectronicsShop.Core.Exceptions;
 using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
@@ -10,17 +11,18 @@ using System.Text;
 
 namespace ElectronicsShop.Core.Commands
 {
-    public class CommandHandler : ICommandHandler
+    internal class CommandHandler : ICommandHandler
     {
         private IProductFactory factory;
         private readonly Category category = new Category("Products");
-        private ShopingCart shoppintCart;
+        private ShoppingCart shoppintCart;
+        private ILogger logger;
 
-        public CommandHandler()
+        public CommandHandler(IProductFactory factory,ILogger logger)
         {
-            this.factory = new ProductFactory();
-
-            this.shoppintCart = new ShopingCart();
+            this.factory = factory;
+            this.logger = logger;
+            this.shoppintCart = new ShoppingCart();
         }
 
         public void CreateCommand(IList<string> commandParameters)
@@ -32,21 +34,39 @@ namespace ElectronicsShop.Core.Commands
             {
                 case "smartphone":
                     var smartphone = factory.CreateSmartphone(commandParameters);
+                    
                     this.category.addProduct(smartphone);
+
+                    this.logger.Log($"Smartphone with ID:{smartphone.RealID} created!");
+
                     break;
+
                 case "landlinephone":
                     var landlinePhone = factory.CreateLandlinePhone(commandParameters);
+
                     this.category.addProduct(landlinePhone);
+
+                    this.logger.Log($"Landline phone with ID:{landlinePhone.RealID} created!");
+
                     break;
+
                 case "laptop":
                     var laptop = factory.CreateLaptop(commandParameters);
-                    this.category.addProduct(laptop);
+
+                    this.category.addProduct(laptop);  
+
+                    this.logger.Log($"Laptop with ID:{laptop.RealID} created!");
+
                     break;
                 case "desktoppc":
                     var desktopPc = factory.CreateDesktopComputer(commandParameters);
+
                     this.category.addProduct(desktopPc);
 
+                    this.logger.Log($"Desktop computer with ID:{desktopPc.RealID} created!");
+
                     break;
+
                 default:
                     throw new ProductTypeNotExistException("Cannot create product of this type!");
 
@@ -59,7 +79,7 @@ namespace ElectronicsShop.Core.Commands
 
             this.shoppintCart.AddProduct(prod);
 
-            Console.WriteLine($"{prod.GetType().Name} with ID:{id} added to shopping cart!");
+            this.logger.Log($"{prod.GetType().Name} with ID:{id} added to shopping cart!");
         }
 
         public IProduct FindProduct(int id)
@@ -105,10 +125,10 @@ namespace ElectronicsShop.Core.Commands
                 case "show":
                     if (commands[0] == "cart")
                     {
-                        Console.WriteLine(ConsoleLogger.ShopingCartToString(this.shoppintCart));
+                        this.logger.Log(Decorator.DecorateShoppingCartProducts(shoppintCart));
                         break;
                     }
-                    Console.WriteLine(category.GetListOf(commands[0]));
+                    this.logger.Log(category.GetListOf(commands[0]));
                     break;
                 default:
                     break;

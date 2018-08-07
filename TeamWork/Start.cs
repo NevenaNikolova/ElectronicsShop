@@ -7,6 +7,7 @@ using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using System.Linq;
+using ElectronicsShop.Core.Contracts;
 
 namespace ElectronicsShop
 {
@@ -24,9 +25,10 @@ namespace ElectronicsShop
             ////Console.WriteLine("---------------------------------------");
             ////Console.WriteLine(Printer.LaptopInfoLongString(laptop));
             //category.addProduct(laptop);
-            CommandHandler commandHandler = new CommandHandler();
             ProductFactory factory = new ProductFactory();
-            var engine = Engine.Instance(factory, commandHandler);
+            ConsoleLogger logger = new ConsoleLogger();
+            CommandHandler commandHandler = new CommandHandler(factory,logger);
+            var engine = Engine.Instance(factory, commandHandler,logger);
             engine.Start();
             //ShopingCart sh = new ShopingCart();
             //sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 2));

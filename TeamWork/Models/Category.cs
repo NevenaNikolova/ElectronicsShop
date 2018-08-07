@@ -129,42 +129,40 @@ namespace ElectronicsShop.Models
             switch (type)
             {
                 case "laptops":
-                    this.Laptops.ForEach(x => sb.Append(ConsoleLogger.LaptopInfoLongString(x)));
+                    this.Laptops.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
                     }
                     return sb.ToString();
                 case "desktops":
-                    this.DesktopPCs.ForEach(x => sb.Append(ConsoleLogger.DesktopComputerInfoToLongSting(x)));
+                    this.DesktopPCs.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
                     }
                     return sb.ToString();
                 case "smartphones":
-                    this.Smartphones.ForEach(x => sb.Append(ConsoleLogger.SmartphoneInfoToLongString(x)));
+                    this.Smartphones.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
                     }
                     return sb.ToString();
                 case "landlinephones":
-                    this.LandlinePhones.ForEach(x => sb.Append(ConsoleLogger.LandlinephoneInfoToLongString(x)));
+                    this.LandlinePhones.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
                     }
                     return sb.ToString();
                 case "cart":
-                    
-                    
+
+
                 default:
                     throw new ArgumentException("There is no such type!");
             }
         }
-
-       
 
         public IProduct GetProduct(int id)
         {

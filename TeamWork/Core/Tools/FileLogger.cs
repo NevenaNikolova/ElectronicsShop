@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using ElectronicsShop.Core.Contracts;
+using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Electronics.Phones;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products.Electronics.Phones;
 
 namespace ElectronicsShop.Core.Tools
 {
     public class FileLogger : ILogger
     {
-
-        public FileLogger()
+        private FileLogger()
         {
 
         }
@@ -17,5 +20,32 @@ namespace ElectronicsShop.Core.Tools
         {
             File.AppendAllText(@"C:\LogFile.txt", message);
         }
+
+        public void Log(IProduct product)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            switch (product.GetType().Name)
+            {
+                case "Laptop":
+                    sb.Append(Decorator.DecorateProduct((Laptop)product));
+                    break;
+                case "DesktopPC":
+                    sb.Append(Decorator.DecorateProduct((DesktopPC)product));
+                    break;
+                case "Smartphone":
+                    sb.Append(Decorator.DecorateProduct((Smartphone)product));
+                    break;
+                case "LandlinePhone":
+                    sb.Append(Decorator.DecorateProduct((ILandlinePhone)product));
+                    break;
+                default:
+                    throw new System.Exception("There is no such type!");
+
+            }
+
+            this.Log(sb.ToString());
+        }
+
     }
 }

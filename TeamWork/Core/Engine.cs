@@ -8,9 +8,10 @@ using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Core
 {
-    public class Engine : IEngine
+    internal class Engine : IEngine
     {
         private static IEngine instanceHolder;
+        private ILogger logger;
         private string exitCommand = "exit";
 
         IList<IComputer> computers { get; }
@@ -20,27 +21,29 @@ namespace ElectronicsShop.Core
         IList<IPhone> phones { get; }
 
         CommandHandler commandHandler;
+
         private IProductFactory factory;
 
-        public static IEngine Instance(IProductFactory factory, CommandHandler commandHandler)
+        public static IEngine Instance(IProductFactory factory, CommandHandler commandHandler,ILogger logger)
         {
 
             if (instanceHolder == null)
             {
 
-                instanceHolder = new Engine(factory, commandHandler);
+                instanceHolder = new Engine(factory, commandHandler,logger);
             }
 
             return instanceHolder;
 
         }
 
-        private Engine(IProductFactory factory, CommandHandler commandHandler)
+        private Engine(IProductFactory factory, CommandHandler commandHandler,ILogger logger)
         {
             this.computers = new List<IComputer>();
             this.phones = new List<IPhone>();
             this.products = new List<IProduct>();
             this.factory = factory;
+            this.logger = logger;
             this.commandHandler = commandHandler;
         }
 
@@ -61,7 +64,7 @@ namespace ElectronicsShop.Core
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    this.logger.Log(ex.Message);
                 }
             }
         }

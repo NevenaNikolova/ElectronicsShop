@@ -12,7 +12,7 @@ using ElectronicsShop.Models.Products.Electronics.Phones;
 
 namespace ElectronicsShop.Core.Factories
 {
-    public class ProductFactory : IProductFactory
+    internal class ProductFactory : IProductFactory
     {
 
 
@@ -47,10 +47,7 @@ namespace ElectronicsShop.Core.Factories
             var landlinePhone = new LandlinePhone(parameters[0], decimal.Parse(parameters[1]), parameters[2],
                 parameters[3], (Colour)Enum.Parse(typeof(Colour), parameters[4]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[5]),
                 int.Parse(parameters[6]), phoneSize, int.Parse(parameters[10]), bool.Parse(parameters[11]));
-
-            // this should not be here !
-            Console.WriteLine($"Landline phone with ID:{landlinePhone.RealID} created!");
-
+            
             return landlinePhone;
         }
 
@@ -63,9 +60,6 @@ namespace ElectronicsShop.Core.Factories
                 parameters[3], (Colour)Enum.Parse(typeof(Colour), parameters[4]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[5]),
                 int.Parse(parameters[6]), phoneSize, parameters[10], int.Parse(parameters[11]));
 
-            //this should not be here!
-            Console.WriteLine($"Smartphone with ID:{phone.RealID} created!");
-
             return phone;
         }
 
@@ -73,9 +67,6 @@ namespace ElectronicsShop.Core.Factories
         {
             var laptop = new Laptop(parameters[0], parameters[1], parameters[2], int.Parse(parameters[3]), int.Parse(parameters[4]),
                 parameters[5], int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]), int.Parse(parameters[9]));
-
-            Console.WriteLine($"Laptop with ID:{laptop.RealID} created!");
-            //Console.WriteLine(Printer.LaptopInfoLongString(laptop));
 
             return laptop;
         }
@@ -85,10 +76,7 @@ namespace ElectronicsShop.Core.Factories
             var desktopPC = new DesktopPC(parameters[0], parameters[1], parameters[2],
                 parameters[3], int.Parse(parameters[4]), int.Parse(parameters[5]),
                 int.Parse(parameters[6]), decimal.Parse(parameters[7]));
-
-            Console.WriteLine($"Desktop computer with ID:{desktopPC.RealID} created!");
-            //Console.WriteLine(Printer.DesktopComputerInfoToLongSting(desktopPC));
-
+            
             return desktopPC;
         }
     }
