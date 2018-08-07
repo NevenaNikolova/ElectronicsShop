@@ -40,7 +40,7 @@ namespace ElectronicsShop.Core.Tools
                     sb.Append(Decorator.DecorateProduct((ILandlinePhone)product));
                     break;
                 default:
-                    throw new System.Exception("There is no such type!");
+                    throw new Exception("There is no such type!");
 
             }
 

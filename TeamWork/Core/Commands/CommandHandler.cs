@@ -15,14 +15,14 @@ namespace ElectronicsShop.Core.Commands
     {
         private IProductFactory factory;
         private readonly Category category = new Category("Products");
-        private ShoppingCart shoppintCart;
+        private ShoppingCart shoppingCart;
         private ILogger logger;
 
         public CommandHandler(IProductFactory factory,ILogger logger)
         {
             this.factory = factory;
             this.logger = logger;
-            this.shoppintCart = new ShoppingCart();
+            this.shoppingCart = new ShoppingCart();
         }
 
         public void CreateCommand(IList<string> commandParameters)
@@ -77,7 +77,7 @@ namespace ElectronicsShop.Core.Commands
         {
             var prod = FindProduct(id);
 
-            this.shoppintCart.AddProduct(prod);
+            this.shoppingCart.AddProduct(prod);
 
             this.logger.Log($"{prod.GetType().Name} with ID:{id} added to shopping cart!");
         }
@@ -125,7 +125,7 @@ namespace ElectronicsShop.Core.Commands
                 case "show":
                     if (commands[0] == "cart")
                     {
-                        this.logger.Log(Decorator.DecorateShoppingCartProducts(shoppintCart));
+                        this.logger.Log(Decorator.DecorateShoppingCartProducts(shoppingCart));
                         break;
                     }
                     this.logger.Log(category.GetListOf(commands[0]));
@@ -135,11 +135,9 @@ namespace ElectronicsShop.Core.Commands
             }
         }
 
-
-
         private void RemoveFromShopingCart(int id)
         {
-            this.shoppintCart.RemoveProduct(id);
+            this.shoppingCart.RemoveProduct(id);
             Console.WriteLine($"Product with ID:{id} removed from shopping cart!");
         }
     }

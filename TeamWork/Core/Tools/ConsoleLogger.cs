@@ -1,3 +1,4 @@
+using System;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.AbstractClasses;
@@ -36,7 +37,7 @@ namespace ElectronicsShop.Core.Tools
                     sb.Append(Decorator.DecorateProduct((ILandlinePhone)product));
                     break;
                 default:
-                    throw new System.Exception("There is no such type!");
+                    throw new Exception("There is no such type!");
 
             }
 

@@ -16,19 +16,19 @@ namespace ElectronicsShop
         public static void Main()
         {
             //Category category = new Category("Electronics");
-            ////Laptop laptop = new Laptop("ASUS","ZenBook",16,2500,"Intel i7-UXJS",4,512,2,1000);
-            //ShopingCart shopingCart = new ShopingCart();
+            //Laptop laptop = new Laptop("ASUS", " ", "af", 16, 2500, "Intel i7-UXJS", 4, 512, 2, 1000);
+            //ShoppingCart shopingCart = new ShoppingCart();
             //shopingCart.AddProduct(laptop);
 
-            //////Console.WriteLine(string.Join(" ", shopingCart));
-            ////Console.WriteLine(Printer.LaptopInfoToShortString(laptop));
-            ////Console.WriteLine("---------------------------------------");
-            ////Console.WriteLine(Printer.LaptopInfoLongString(laptop));
+            //Console.WriteLine(string.Join(" ", shopingCart));
+            //Console.WriteLine(Decorator.DecorateProduct(laptop));
+            //Console.WriteLine("---------------------------------------");
+            //Console.WriteLine(Printer.LaptopInfoLongString(laptop));
             //category.addProduct(laptop);
             ProductFactory factory = new ProductFactory();
             ConsoleLogger logger = new ConsoleLogger();
-            CommandHandler commandHandler = new CommandHandler(factory,logger);
-            var engine = Engine.Instance(factory, commandHandler,logger);
+            CommandHandler commandHandler = new CommandHandler(factory, logger);
+            var engine = Engine.Instance(factory, commandHandler, logger);
             engine.Start();
             //ShopingCart sh = new ShopingCart();
             //sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 2));

@@ -10,7 +10,7 @@ namespace ElectronicsShop.Core.Exceptions
         {
 
         }
-        public UserException(String message)
+        public UserException(string message)
         {
             Console.WriteLine(message);
         }

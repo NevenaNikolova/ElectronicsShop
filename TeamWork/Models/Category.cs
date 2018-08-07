@@ -184,7 +184,7 @@ namespace ElectronicsShop.Models
             }
             else
             {
-                throw new ItemNotFoundException($"Product with ID:{id} dont exist!");
+                throw new ItemNotFoundException($"Product with ID:{id} does not exist!");
             }
         }
 

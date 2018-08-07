@@ -21,7 +21,7 @@ namespace ElectronicsShop.Core.Tools
                     sb.Append(Decorator.LaptopInfoLongString((Laptop)product));
                     break;
                 case "DesktopPC":
-                    sb.Append(Decorator.DesktopComputerInfoToLongSting((DesktopPC)product));
+                    sb.Append(Decorator.DesktopComputerInfoToLongString((DesktopPC)product));
                     break;
                 case "Smartphone":
                     sb.Append(Decorator.SmartphoneInfoToLongString((Smartphone)product));
@@ -30,13 +30,13 @@ namespace ElectronicsShop.Core.Tools
                     sb.Append(Decorator.LandlinephoneInfoToLongString((ILandlinePhone)product));
                     break;
                 default:
-                    throw new System.Exception("There is no such type!");
+                    throw new Exception("There is no such type!");
 
             }
             return sb.ToString();
         }
 
-        private static string DesktopComputerInfoToLongSting(PC pc)
+        private static string DesktopComputerInfoToLongString(PC pc)
         {
             return "\n-----------------------" + $"\nID: {pc.RealID}" + $"\nName: {pc.Name}" + $"\nBrand: {pc.Brand}" + $"\nModel: {pc.Model}" +
                 $"\nProcessor: {pc.Processor}" + $"\nRAM capacity: {pc.Ram}" + $"\nHDD capacity: {pc.Hdd}" + $"\nVideo card: {pc.VideoCard}" + $"\nPrice: " +
