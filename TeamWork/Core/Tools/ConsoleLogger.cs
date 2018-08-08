@@ -11,7 +11,7 @@ namespace ElectronicsShop.Core.Tools
     {
         public void Log(string message)
         {
-            System.Console.WriteLine(message);
+           Console.WriteLine(message);
         }
 
         public void Log(IProduct product)

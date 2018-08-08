@@ -16,16 +16,16 @@ namespace ElectronicsShop.Core.Tools
             switch (product.GetType().Name)
             {
                 case "Laptop":
-                    sb.Append(Decorator.LaptopInfoLongString((Laptop)product));
+                    sb.Append(LaptopInfoLongString((Laptop)product));
                     break;
                 case "DesktopPC":
-                    sb.Append(Decorator.DesktopComputerInfoToLongString((DesktopPC)product));
+                    sb.Append(DesktopComputerInfoToLongString((DesktopPC)product));
                     break;
                 case "Smartphone":
-                    sb.Append(Decorator.SmartphoneInfoToLongString((Smartphone)product));
+                    sb.Append(SmartphoneInfoToLongString((Smartphone)product));
                     break;
                 case "LandlinePhone":
-                    sb.Append(Decorator.LandlinephoneInfoToLongString((LandlinePhone)product));
+                    sb.Append(LandlinephoneInfoToLongString((LandlinePhone)product));
                     break;
                 default:
                     throw new Exception("There is no such type!");
@@ -70,7 +70,7 @@ namespace ElectronicsShop.Core.Tools
 
             foreach (var prod in collection.ProductList)
             {
-                sb.Append(Decorator.DecorateProduct(prod));
+                sb.Append(DecorateProduct(prod));
             }
 
             sb.Append(" Total price:     " + collection.TotalPrice() + "$");

@@ -66,7 +66,7 @@ namespace ElectronicsShop.Core.Factories
         }
 
         public PC CreateDesktopComputer(IList<string> parameters)
-        {
+        {          
             var desktopPC = new DesktopPC(parameters[0], parameters[1], parameters[2],
                 parameters[3], int.Parse(parameters[4]), int.Parse(parameters[5]),
                 int.Parse(parameters[6]), decimal.Parse(parameters[7]));

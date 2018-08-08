@@ -35,7 +35,7 @@ namespace ElectronicsShop.Models
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException("The name cannot be empty!");
                 }
                 this.name = value;
             }
@@ -118,7 +118,7 @@ namespace ElectronicsShop.Models
                     }
                     break;
                 default:
-                    throw new ArgumentException("Product not found!");
+                    throw new ArgumentException("This product was not found!");
 
             }
         }

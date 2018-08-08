@@ -37,7 +37,7 @@ namespace ElectronicsShop.Core.Commands
                     
                     this.category.addProduct(smartphone);
 
-                    this.logger.Log($"Smartphone with ID:{smartphone.RealID} created!");
+                    this.logger.Log($"Smartphone with ID:{smartphone.RealID} was created!");
 
                     break;
 
@@ -46,7 +46,7 @@ namespace ElectronicsShop.Core.Commands
 
                     this.category.addProduct(landlinePhone);
 
-                    this.logger.Log($"Landline phone with ID:{landlinePhone.RealID} created!");
+                    this.logger.Log($"Landline phone with ID:{landlinePhone.RealID} was created!");
 
                     break;
 
@@ -55,7 +55,7 @@ namespace ElectronicsShop.Core.Commands
 
                     this.category.addProduct(laptop);  
 
-                    this.logger.Log($"Laptop with ID:{laptop.RealID} created!");
+                    this.logger.Log($"Laptop with ID:{laptop.RealID} was created!");
 
                     break;
                 case "desktoppc":
@@ -63,7 +63,7 @@ namespace ElectronicsShop.Core.Commands
 
                     this.category.addProduct(desktopPc);
 
-                    this.logger.Log($"Desktop computer with ID:{desktopPc.RealID} created!");
+                    this.logger.Log($"Desktop computer with ID:{desktopPc.RealID} was created!");
 
                     break;
 
@@ -79,7 +79,7 @@ namespace ElectronicsShop.Core.Commands
 
             this.shoppingCart.AddProduct(prod);
 
-            this.logger.Log($"{prod.GetType().Name} with ID:{id} added to shopping cart!");
+            this.logger.Log($"{prod.GetType().Name} with ID:{id} was added to shopping cart!");
         }
 
         public IProduct FindProduct(int id)
@@ -102,7 +102,7 @@ namespace ElectronicsShop.Core.Commands
             }
             else
             {
-                throw new ItemNotFoundException($"Product with ID:{id} doesnt exist!");
+                throw new ItemNotFoundException($"Product with ID:{id} does not exist!");
             }
         }
 
@@ -138,7 +138,7 @@ namespace ElectronicsShop.Core.Commands
         private void RemoveFromShopingCart(int id)
         {
             this.shoppingCart.RemoveProduct(id);
-            Console.WriteLine($"Product with ID:{id} removed from shopping cart!");
+            Console.WriteLine($"Product with ID:{id} was removed from shopping cart!");
         }
     }
 }

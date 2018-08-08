@@ -1,4 +1,5 @@
-﻿using ElectronicsShop.Models.Products;
+﻿using System;
+using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 
 namespace ElectronicsShop.Models.Products.Phones
@@ -19,9 +20,34 @@ namespace ElectronicsShop.Models.Products.Phones
             this.Processor = processor;
             this.Ram = ram;
         }
-        public int Ram { get; set; }
+        public int Ram
+        {
+            get
+            {
+                return this.ram;
+            }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException("The value must be positive!");
+                }
+                this.ram = value;
+            }
+        }
 
-        public string Processor { get; set; }
+        public string Processor
+        {
+            get { return this.processor; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentNullException("The processor should be specified!");
+                }
+                this.processor = value;
+            }
+        }
     }
 }
 

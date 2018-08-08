@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Models.Products
 {
 
-    public class Laptop : PC, IComputer
-    {
-        //private string _brand;
-        //private string _model;
+    public class Laptop : PC
+    {       
         private int displaySize;
         private int batteryCapacity;
 
@@ -17,14 +12,11 @@ namespace ElectronicsShop.Models.Products
         public Laptop(string name,string brand, string model, int displaySize, int batteryCapacity,
             string procesor, int ram, int hdd, int videoCard, int price)
             : base(procesor, ram, hdd, videoCard, name, price, brand, model)
-        {
-           
-            //Brand = brand;
-            //Model = model;
-            DisplaySize = displaySize;
-            BatteryCapacity = batteryCapacity;
+        {          
+            this.DisplaySize = displaySize;
+            this.BatteryCapacity = batteryCapacity;
         }
-
+   
         public override string Name
         {
             get
@@ -32,33 +24,7 @@ namespace ElectronicsShop.Models.Products
                 return base.Name;
             }
         }
-
-        //public string Brand
-        //{
-        //    get => _brand;
-        //    set
-        //    {
-        //        if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-        //        {
-        //            throw new ArgumentException("Invalid brand value!");
-        //        }
-        //        this._brand = value;
-        //    }
-        //}
-
-        //public string Model
-        //{
-        //    get => _model;
-        //    set
-        //    {
-        //        if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-        //        {
-        //            throw new ArgumentException("Invalid model value!");
-        //        }
-        //        this._model = value;
-        //    }
-        //}
-
+       
         public int DisplaySize
         {
             get => displaySize;

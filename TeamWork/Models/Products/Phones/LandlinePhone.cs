@@ -28,7 +28,7 @@ namespace ElectronicsShop.Models.Products.Phones
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("The number of analogue lines should be positive!");
                 }
                 this.analogueLines = value;
             }

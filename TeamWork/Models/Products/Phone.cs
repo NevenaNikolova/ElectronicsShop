@@ -1,6 +1,5 @@
 ﻿using System;
 using ElectronicsShop.Models.Interfaces;
-using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 
 namespace ElectronicsShop.Models.Products
@@ -12,9 +11,6 @@ namespace ElectronicsShop.Models.Products
         private Colour colour;
         private BatteryType battery;
         private int displaySize;
-
-        private string processor;
-
         private PhoneSize size;
         
         public Phone(string name, decimal price) : base(name, price)

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ElectronicsShop.Models;
+﻿using ElectronicsShop.Models.Interfaces;
+using System;
+
 
 
 namespace ElectronicsShop.Models.Products
 {
-    public abstract class PC : Product
+    public abstract class PC : Product, IComputer
     {
         private string processor;
         private int ram;
@@ -14,8 +13,8 @@ namespace ElectronicsShop.Models.Products
         private int videoCard;
         private string brand;
         private string model;
-        protected PC(string processor, int ram, int hdd, int videoCard, string productName, decimal price, string brand, string model)
-            : base(productName, price)
+        protected PC(string processor, int ram, int hdd, int videoCard, string name, decimal price, string brand, string model)
+            : base(name, price)
         {
             this.Processor = processor;
             this.Ram = ram;
@@ -32,7 +31,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (string.IsNullOrEmpty(value)||string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("The processor should be specified!");
                 }
                 else this.processor = value;
             }
@@ -44,7 +43,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Ram memory value cannot be negative!");
+                    throw new ArgumentOutOfRangeException("The Ram memory value cannot be negative!");
                 }
                 else this.ram = value;
             }
@@ -56,7 +55,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException("Hdd memory value cannot be negative!");
+                    throw new ArgumentOutOfRangeException("The Hdd memory value cannot be negative!");
                 }
                 else this.hdd = value;
             }
@@ -68,7 +67,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Videocard capacity cannot be negative!");
+                    throw new ArgumentException("The videocard capacity cannot be negative!");
                 }
                 else this.videoCard = value;
             }

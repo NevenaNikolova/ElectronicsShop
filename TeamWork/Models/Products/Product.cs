@@ -37,7 +37,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value.Length <= 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("Invalid name!");
                 }
                 else this.name = value;
             }
@@ -50,7 +50,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException("too low price!");
+                    throw new ArgumentException("Too low price!");
                 }
                 else this.price = value;
             }
