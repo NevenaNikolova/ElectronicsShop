@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using ElectronicsShop.Core.Exceptions;
 using ElectronicsShop.Core.Tools;
-using ElectronicsShop.Models.Electronics.AbstractClasses;
-using ElectronicsShop.Models.Electronics.Phones;
 using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Products;
+using ElectronicsShop.Models.Products.Phones;
+
 
 namespace ElectronicsShop.Models
 {

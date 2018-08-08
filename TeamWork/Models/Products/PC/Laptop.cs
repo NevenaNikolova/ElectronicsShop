@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ElectronicsShop.Models.Interfaces;
 
-namespace ElectronicsShop.Models.Electronics.AbstractClasses
+namespace ElectronicsShop.Models.Products
 {
 
     public class Laptop : PC, IComputer

@@ -1,6 +1,6 @@
 ﻿using ElectronicsShop.Models;
-using ElectronicsShop.Models.Electronics.AbstractClasses;
-using ElectronicsShop.Models.Electronics.Phones;
+using ElectronicsShop.Models.Products;
+using ElectronicsShop.Models.Products.Phones;
 using ElectronicsShop.Models.Interfaces;
 using System;
 using System.Text;

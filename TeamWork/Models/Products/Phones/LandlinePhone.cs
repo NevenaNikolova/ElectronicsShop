@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ElectronicsShop.Models.AbstractClasses;
-using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
-using ElectronicsShop.Models.Products.Electronics.Common;
-using ElectronicsShop.Models.Products.Electronics.Phones;
 
-namespace ElectronicsShop.Models.Electronics.Phones
+namespace ElectronicsShop.Models.Products.Phones
 {
     public class LandlinePhone : Phone
     {

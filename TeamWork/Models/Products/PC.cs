@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using ElectronicsShop.Models;
-using ElectronicsShop.Models.Products;
 
-namespace ElectronicsShop.Models.Electronics.AbstractClasses
+
+namespace ElectronicsShop.Models.Products
 {
     public abstract class PC : Product
     {

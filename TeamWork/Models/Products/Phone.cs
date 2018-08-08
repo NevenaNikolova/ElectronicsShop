@@ -2,9 +2,8 @@
 using ElectronicsShop.Models.Interfaces;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
-using ElectronicsShop.Models.Products.Electronics.Common;
 
-namespace ElectronicsShop.Models.AbstractClasses
+namespace ElectronicsShop.Models.Products
 {
     public abstract class Phone : Product, IPhone
     {

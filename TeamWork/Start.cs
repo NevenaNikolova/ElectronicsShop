@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using ElectronicsShop.Core;
+﻿using ElectronicsShop.Core;
 using ElectronicsShop.Core.Commands;
 using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Tools;
-using ElectronicsShop.Models;
-using ElectronicsShop.Models.Electronics.AbstractClasses;
-using System.Linq;
-using ElectronicsShop.Core.Contracts;
 
 namespace ElectronicsShop
 {

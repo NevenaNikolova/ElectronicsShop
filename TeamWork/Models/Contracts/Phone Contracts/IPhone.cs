@@ -1,6 +1,5 @@
 ﻿using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
-using ElectronicsShop.Models.Products.Electronics.Common;
 
 namespace ElectronicsShop.Models.Interfaces
 {

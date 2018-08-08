@@ -1,12 +1,8 @@
 using System;
 using ElectronicsShop.Core.Contracts;
-using ElectronicsShop.Models;
-using ElectronicsShop.Models.AbstractClasses;
-using ElectronicsShop.Models.Electronics.AbstractClasses;
-using ElectronicsShop.Models.Electronics.Phones;
 using ElectronicsShop.Models.Interfaces;
-using ElectronicsShop.Models.Products.Electronics.Phones;
-using System.Collections;
+using ElectronicsShop.Models.Products;
+using ElectronicsShop.Models.Products.Phones;
 using System.Text;
 
 namespace ElectronicsShop.Core.Tools
@@ -34,7 +30,7 @@ namespace ElectronicsShop.Core.Tools
                     sb.Append(Decorator.DecorateProduct((Smartphone)product));
                     break;
                 case "LandlinePhone":
-                    sb.Append(Decorator.DecorateProduct((ILandlinePhone)product));
+                    sb.Append(Decorator.DecorateProduct((LandlinePhone)product));
                     break;
                 default:
                     throw new Exception("There is no such type!");

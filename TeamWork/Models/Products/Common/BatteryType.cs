@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ElectronicsShop.Models.Products.Electronics.Common
+namespace ElectronicsShop.Models.Products.Common
 {
     public enum BatteryType
     {

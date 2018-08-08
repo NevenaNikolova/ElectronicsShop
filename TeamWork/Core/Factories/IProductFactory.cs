@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using ElectronicsShop.Models.AbstractClasses;
-using ElectronicsShop.Models.Electronics.AbstractClasses;
+using ElectronicsShop.Models.Products;
 
 namespace ElectronicsShop.Core.Factories
 {

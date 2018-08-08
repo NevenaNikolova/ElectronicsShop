@@ -2,8 +2,8 @@
 using System.IO;
 using System.Text;
 using ElectronicsShop.Core.Contracts;
-using ElectronicsShop.Models.Electronics.AbstractClasses;
-using ElectronicsShop.Models.Electronics.Phones;
+using ElectronicsShop.Models.Products;
+using ElectronicsShop.Models.Products.Phones;
 using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Core.Tools
