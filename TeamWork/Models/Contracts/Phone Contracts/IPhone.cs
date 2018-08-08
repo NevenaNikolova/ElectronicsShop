@@ -7,11 +7,11 @@ namespace ElectronicsShop.Models.Interfaces
     public interface IPhone : IProduct
 
     {
-        string Brand { get; set; }
-        string Model { get; set; }
-        Colour Colour { get; set; }
-        BatteryType Battery { get; set; }
-        int DisplaySize { get; set; }
-        PhoneSize Size { get; set; }
+        string Brand { get;}
+        string Model { get;}
+        Colour Colour { get;}
+        BatteryType Battery { get;}
+        int DisplaySize { get;}
+        PhoneSize Size { get;}
     }
 }

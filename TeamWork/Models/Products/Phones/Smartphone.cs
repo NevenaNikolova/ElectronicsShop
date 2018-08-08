@@ -9,7 +9,7 @@ using ElectronicsShop.Models.Products.Electronics.Phones;
 
 namespace ElectronicsShop.Models.Electronics.Phones
 {
-    public class Smartphone : Phone, ISmartphone
+    public class Smartphone : Phone
     {
         private string processor;
         private int ram;
@@ -18,20 +18,16 @@ namespace ElectronicsShop.Models.Electronics.Phones
         {
         }
 
-        public Smartphone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery,
-            int displaySize, PhoneSize size, string processor, int ram) 
-            : base(productName, price, brand, model, colour, battery, displaySize, size)
+        public Smartphone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, string processor,
+       int ram) :
+            base(productName, price, brand, model, colour, battery, displaySize, size)
         {
             this.Processor = processor;
             this.Ram = ram;
         }
-
         public int Ram { get; set; }
 
         public string Processor { get; set; }
-        
-
-       
-
     }
 }
+

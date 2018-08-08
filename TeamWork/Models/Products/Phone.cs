@@ -18,13 +18,13 @@ namespace ElectronicsShop.Models.AbstractClasses
 
         private PhoneSize size;
         
-        public Phone(string productName, decimal price) : base(productName, price)
+        public Phone(string name, decimal price) : base(name, price)
         {
 
         }
 
-        public Phone(string productName, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size)
-            : this(productName, price)
+        public Phone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size)
+            : this(name, price)
         {
             this.Brand = brand;
             this.Model = model;

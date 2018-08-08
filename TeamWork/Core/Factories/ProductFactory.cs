@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using ElectronicsShop.Core.Tools;
+using ElectronicsShop.Models.AbstractClasses;
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Electronics.Phones;
-using ElectronicsShop.Models.Interfaces;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 using ElectronicsShop.Models.Products.Electronics.Common;
-using ElectronicsShop.Models.Products.Electronics.Phones;
 
 namespace ElectronicsShop.Core.Factories
 {
@@ -40,7 +37,7 @@ namespace ElectronicsShop.Core.Factories
             }
         }
 
-        public ILandlinePhone CreateLandlinePhone(IList<string> parameters)
+        public Phone CreateLandlinePhone(IList<string> parameters)
         {
             PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));
 
@@ -51,7 +48,7 @@ namespace ElectronicsShop.Core.Factories
             return landlinePhone;
         }
 
-        public ISmartphone CreateSmartphone(IList<string> parameters)
+        public Phone CreateSmartphone(IList<string> parameters)
         {
 
             PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));

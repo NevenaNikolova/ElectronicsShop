@@ -10,7 +10,7 @@ using ElectronicsShop.Models.Products.Electronics.Phones;
 
 namespace ElectronicsShop.Models.Electronics.Phones
 {
-    public class LandlinePhone : Phone, ILandlinePhone
+    public class LandlinePhone : Phone
     {
         private int analogueLines;
 
@@ -20,8 +20,7 @@ namespace ElectronicsShop.Models.Electronics.Phones
         {
         }
 
-        public LandlinePhone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery,
-            int displaySize, PhoneSize size, int analogueLines, bool wallMounting)
+        public LandlinePhone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines, bool wallMounting) 
             : base(name, price, brand, model, colour, battery, displaySize, size)
         {
             this.AnalogueLines = analogueLines;
@@ -42,9 +41,14 @@ namespace ElectronicsShop.Models.Electronics.Phones
         }
         public bool WallMounting
         {
-            get { return this.wallMounting; }
-            set { this.wallMounting = value; }
+            get
+            {
+                return this.wallMounting;
+            }
+            set
+            {           
+                this.wallMounting = value;
+            }
         }
-       
     }
 }

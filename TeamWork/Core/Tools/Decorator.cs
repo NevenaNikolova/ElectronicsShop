@@ -2,9 +2,7 @@
 using ElectronicsShop.Models.Electronics.AbstractClasses;
 using ElectronicsShop.Models.Electronics.Phones;
 using ElectronicsShop.Models.Interfaces;
-using ElectronicsShop.Models.Products.Electronics.Phones;
 using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace ElectronicsShop.Core.Tools
@@ -27,7 +25,7 @@ namespace ElectronicsShop.Core.Tools
                     sb.Append(Decorator.SmartphoneInfoToLongString((Smartphone)product));
                     break;
                 case "LandlinePhone":
-                    sb.Append(Decorator.LandlinephoneInfoToLongString((ILandlinePhone)product));
+                    sb.Append(Decorator.LandlinephoneInfoToLongString((LandlinePhone)product));
                     break;
                 default:
                     throw new Exception("There is no such type!");
@@ -50,7 +48,7 @@ namespace ElectronicsShop.Core.Tools
                 $"\nBattery capacity: {laptop.BatteryCapacity}mAh" + $"\nPrice: {laptop.Price}$" + "\n-----------------------";
         }
 
-        private static string SmartphoneInfoToLongString(ISmartphone phone)
+        private static string SmartphoneInfoToLongString(Smartphone phone)
         {
             return "\n-----------------------" + $"\nID: {phone.RealID}" + $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}"
                 + $"\nDisplay size: {phone.DisplaySize}'" + $"\nProcessor: {phone.Processor}" + $"\nRam: {phone.Ram}GB" +
@@ -58,7 +56,7 @@ namespace ElectronicsShop.Core.Tools
                 + $"\nBattery: {phone.Battery}" + $"\nPrice: {phone.Price}$" + "\n-----------------------";
         }
 
-        private static string LandlinephoneInfoToLongString(ILandlinePhone phone)
+        private static string LandlinephoneInfoToLongString(LandlinePhone phone)
         {
             return "\n-----------------------" + $"\nID: {phone.RealID}" + $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}" +
                 $"\nDisplay size: {phone.DisplaySize}'" + $"\nHeight: {phone.Size.Height}'" + $"\nWidth: {phone.Size.Width}" +
