@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ElectronicsShop.Properties.Resources" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Properties\Resources.Designer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Core.Commands.CommandHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABCACgAAACAAAEAAAQAAAAAAIAAAAIAAAAAAA=</HashCode>
+      <FileName>Core\Commands\CommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ElectronicsShop.Core.Exceptions.ItemNotFoundException" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Exceptions\ItemNotFoundException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Core.Exceptions.ProductTypeNotExistException" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Exceptions\ProductTypeNotExistException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Core.Exceptions.UserException" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Exceptions\UserException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Core.Factories.ProductFactory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAABAAAAAAgAAAAAAAAAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>Core\Factories\ProductFactory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ElectronicsShop.Core.Tools.ConsoleLogger" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Tools\ConsoleLogger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ElectronicsShop.Core.Tools.Decorator" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABAAAAAAAEAAAAAAAAAAAAAACAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Core\Tools\Decorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Core.Tools.FileLogger" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Tools\FileLogger.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ElectronicsShop.Core.Engine" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACAgAEACAAAAAAAAEAAAAAAgQAAABAAAAAA=</HashCode>
+      <FileName>Core\Engine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ElectronicsShop.Models.Products.DesktopPC" Collapsed="true">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\PC\DesktopPC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Models.Products.Laptop" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAQAAAAAAQAAAAUAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\PC\Laptop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Models.Products.PC" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUEAAAIAAAACAAAAAAAAAAQAAAAEAAAAAgAAAANBAA=</HashCode>
+      <FileName>Models\Products\PC.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ElectronicsShop.Models.Products.Phone" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAAAAAgAAAAYAAAAEAAgAAAAIAAAgAABAJAAA=</HashCode>
+      <FileName>Models\Products\Phone.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ElectronicsShop.Models.Products.Product" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAgQAAggAAAAAAAAQAAAAEAAAAAAEAAAABAAA=</HashCode>
+      <FileName>Models\Products\Product.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ElectronicsShop.Models.Products.Phones.LandlinePhone" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEACAABAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\Phones\LandlinePhone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Models.Products.Phones.Smartphone" Collapsed="true">
+    <Position X="9" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Models\Products\Phones\Smartphone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Models.Category" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAIAAIACIAAQAAEAEAAAgAAEAKAAAACA=</HashCode>
+      <FileName>Models\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Models.ShoppingCart" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIQAAAAAEAQAABAAAAgAAAAAA=</HashCode>
+      <FileName>Models\ShoppingCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ElectronicsShop.Start" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Start.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="ElectronicsShop.Models.Products.PhoneSize" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEABAABAAQAQAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Products\PhoneSize.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="ElectronicsShop.Core.Commands.ICommandHandler" Collapsed="true">
+    <Position X="11.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Commands\ICommandHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ElectronicsShop.Core.Contracts.IEngine" Collapsed="true">
+    <Position X="13.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Contracts\IEngine.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ElectronicsShop.Core.Contracts.ILogger" Collapsed="true">
+    <Position X="15" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Core\Contracts\ILogger.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ElectronicsShop.Core.Factories.IProductFactory" Collapsed="true">
+    <Position X="16.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAABAAAAAAgAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Core\Factories\IProductFactory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ElectronicsShop.Models.Interfaces.IComputer" Collapsed="true">
+    <Position X="2" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAACAAAAAAAAAAAAAAAEAAAAAgAAAAFAAA=</HashCode>
+      <FileName>Models\Contracts\Computer Contracts\IComputer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ElectronicsShop.Models.Interfaces.IPhone" Collapsed="true">
+    <Position X="4.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAQAAAAAAAgAAAAAAAAgAABABAAA=</HashCode>
+      <FileName>Models\Contracts\Phone Contracts\IPhone.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ElectronicsShop.Models.Interfaces.IProduct" Collapsed="true">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\Contracts\IProduct.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ElectronicsShop.Models.Products.Common.BatteryType" Collapsed="true">
+    <Position X="11.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAAABAAAAAAA=</HashCode>
+      <FileName>Models\Products\Common\BatteryType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ElectronicsShop.Models.Products.Common.Colour" Collapsed="true">
+    <Position X="13.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAABAAAAAAgAAAAAAAAAABAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\Products\Common\Colour.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
