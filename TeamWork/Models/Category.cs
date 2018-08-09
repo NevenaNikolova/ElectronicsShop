@@ -60,7 +60,7 @@ namespace ElectronicsShop.Models
             get => new List<LandlinePhone>(this.landlinePhones);
         }
 
-        public void addProduct(IProduct product)
+        public void AddProduct(IProduct product)
         {
             switch (product.GetType().Name)
             {

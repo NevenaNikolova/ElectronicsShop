@@ -8,10 +8,10 @@ namespace ElectronicsShop.Models.Products
     {
         private string brand;
         private string model;
-        private Colour colour;
-        private BatteryType battery;
+        //private Colour colour;
+        //private BatteryType battery;
         private int displaySize;
-        private PhoneSize size;
+       // private PhoneSize size;
         
         public Phone(string name, decimal price) : base(name, price)
         {
@@ -63,10 +63,9 @@ namespace ElectronicsShop.Models.Products
         public Colour Colour
         {
             get;
-            set;
         }
 
-        public BatteryType Battery { get; set; }
+        public BatteryType Battery { get;}
 
         public int DisplaySize
         {
@@ -80,6 +79,6 @@ namespace ElectronicsShop.Models.Products
                 this.displaySize = value;
             }
         }
-        public PhoneSize Size { get; set; }
+        public PhoneSize Size { get;}
     }
 }

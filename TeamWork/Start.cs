@@ -19,6 +19,7 @@ namespace ElectronicsShop
             //Console.WriteLine("---------------------------------------");
             //Console.WriteLine(Printer.LaptopInfoLongString(laptop));
             //category.addProduct(laptop);
+            
             ProductFactory factory = new ProductFactory();
             ConsoleLogger logger = new ConsoleLogger();
             CommandHandler commandHandler = new CommandHandler(factory, logger);

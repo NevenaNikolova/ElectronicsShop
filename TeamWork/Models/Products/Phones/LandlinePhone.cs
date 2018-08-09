@@ -40,7 +40,7 @@ namespace ElectronicsShop.Models.Products.Phones
                 return this.wallMounting;
             }
             set
-            {           
+            {
                 this.wallMounting = value;
             }
         }
