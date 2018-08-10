@@ -36,11 +36,11 @@ namespace ElectronicsShop.Core.Factories
 
         public Phone CreateLandlinePhone(IList<string> parameters)
         {
-            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));
+            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]));
 
-            var landlinePhone = new LandlinePhone(parameters[0], decimal.Parse(parameters[1]), parameters[2],
-                parameters[3], (Colour)Enum.Parse(typeof(Colour), parameters[4]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[5]),
-                int.Parse(parameters[6]), phoneSize, int.Parse(parameters[10]));
+            var landlinePhone = new LandlinePhone(decimal.Parse(parameters[0]), parameters[1],
+                parameters[2], (Colour)Enum.Parse(typeof(Colour), parameters[3]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[4]),
+                int.Parse(parameters[5]), phoneSize, int.Parse(parameters[9]));
             
             return landlinePhone;
         }
@@ -48,28 +48,28 @@ namespace ElectronicsShop.Core.Factories
         public Phone CreateSmartphone(IList<string> parameters)
         {
 
-            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[7]), double.Parse(parameters[8]), double.Parse(parameters[9]));
+            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]));
 
-            var phone = new Smartphone(parameters[0], decimal.Parse(parameters[1]), parameters[2],
-                parameters[3], (Colour)Enum.Parse(typeof(Colour), parameters[4]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[5]),
-                int.Parse(parameters[6]), phoneSize, parameters[10], int.Parse(parameters[11]));
+            var phone = new Smartphone(decimal.Parse(parameters[0]), parameters[1],
+                parameters[2], (Colour)Enum.Parse(typeof(Colour), parameters[3]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[4]),
+                int.Parse(parameters[5]), phoneSize, parameters[9], int.Parse(parameters[10]));
 
             return phone;
         }
 
         public PC CreateLaptop(IList<string> parameters)
         {
-            var laptop = new Laptop(parameters[0], parameters[1], parameters[2], int.Parse(parameters[3]), int.Parse(parameters[4]),
-                parameters[5], int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]), int.Parse(parameters[9]));
+            var laptop = new Laptop(parameters[0], parameters[1], int.Parse(parameters[2]), int.Parse(parameters[3]),
+                parameters[4], int.Parse(parameters[5]), int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]));
 
             return laptop;
         }
 
         public PC CreateDesktopComputer(IList<string> parameters)
         {          
-            var desktopPC = new DesktopPC(parameters[0], parameters[1], parameters[2],
-                parameters[3], int.Parse(parameters[4]), int.Parse(parameters[5]),
-                int.Parse(parameters[6]), decimal.Parse(parameters[7]));
+            var desktopPC = new DesktopPC(parameters[0], parameters[1],
+                parameters[2], int.Parse(parameters[3]), int.Parse(parameters[4]),
+                int.Parse(parameters[5]), decimal.Parse(parameters[6]));
             
             return desktopPC;
         }

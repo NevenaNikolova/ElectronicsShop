@@ -4,14 +4,15 @@ namespace ElectronicsShop.Models.Products
 {
 
     public class Laptop : PC
-    {       
+    {
+        private const string ProductName = "Laptop";
         private int displaySize;
         private int batteryCapacity;
 
 
-        public Laptop(string name,string brand, string model, int displaySize, int batteryCapacity,
+        public Laptop(string brand, string model, int displaySize, int batteryCapacity,
             string procesor, int ram, int hdd, int videoCard, int price)
-            : base(procesor, ram, hdd, videoCard, name, price, brand, model)
+            : base(procesor, ram, hdd, videoCard, ProductName, price, brand, model)
         {          
             this.DisplaySize = displaySize;
             this.BatteryCapacity = batteryCapacity;

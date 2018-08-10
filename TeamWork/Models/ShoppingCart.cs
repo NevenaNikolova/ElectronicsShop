@@ -44,5 +44,10 @@ namespace ElectronicsShop.Models
             return price;
         }
 
+        public int Count()
+        {
+            return productList.Count();
+        }
+
     }
 }

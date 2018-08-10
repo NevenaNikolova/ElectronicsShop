@@ -19,7 +19,7 @@ namespace ElectronicsShop.Core.Commands
         private ShoppingCart shoppingCart;
         private ILogger logger;
 
-        public CommandHandler(IProductFactory factory,ILogger logger)
+        public CommandHandler(IProductFactory factory, ILogger logger)
         {
             this.factory = factory;
             this.logger = logger;
@@ -34,15 +34,22 @@ namespace ElectronicsShop.Core.Commands
             switch (firstParam)
             {
                 case "smartphone":
+                    if (commandParameters.Count != 11)
+                    {
+                        throw new Exception("For creating smartphone you need to enter exacly 11 parameters!");
+                    }
                     var smartphone = factory.CreateSmartphone(commandParameters);
-                    
+
                     this.category.AddProduct(smartphone);
 
                     this.logger.Log($"Smartphone with ID:{smartphone.RealID} was created!");
 
                     break;
-
                 case "landlinephone":
+                    if (commandParameters.Count != 10)
+                    {
+                        throw new Exception("For creating landline phone you need to enter exacly 10 parameters!");
+                    }
                     var landlinePhone = factory.CreateLandlinePhone(commandParameters);
 
                     this.category.AddProduct(landlinePhone);
@@ -52,14 +59,22 @@ namespace ElectronicsShop.Core.Commands
                     break;
 
                 case "laptop":
+                    if (commandParameters.Count != 9)
+                    {
+                        throw new Exception("For creating laptop you need to enter exacly 9 parameters!");
+                    }
                     var laptop = factory.CreateLaptop(commandParameters);
 
-                    this.category.AddProduct(laptop);  
+                    this.category.AddProduct(laptop);
 
                     this.logger.Log($"Laptop with ID:{laptop.RealID} was created!");
 
                     break;
                 case "desktoppc":
+                    if (commandParameters.Count != 9)
+                    {
+                        throw new Exception("For desktop pc you need to enter exacly 9 parameters!");
+                    }
                     var desktopPc = factory.CreateDesktopComputer(commandParameters);
 
                     this.category.AddProduct(desktopPc);
@@ -80,7 +95,7 @@ namespace ElectronicsShop.Core.Commands
 
             this.shoppingCart.AddProduct(prod);
 
-            this.logger.Log($"{prod.GetType().Name} with ID:{id} was added to shopping cart!");
+            this.logger.Log($"{prod.Name} with ID:{id} was added to shopping cart!");
         }
 
         public IProduct FindProduct(int id)
@@ -118,28 +133,64 @@ namespace ElectronicsShop.Core.Commands
                     this.CreateCommand(commands);
                     break;
                 case "addToCart":
+                    if (commands.Count < 1)
+                    {
+                        throw new Exception("Must enter ID of the product you want to add into your shopping cart !");
+                    }
                     this.AddToShopingCart(int.Parse(commands[0]));
                     break;
                 case "remove":
+                    if (commands.Count < 1)
+                    {
+                        throw new Exception("Must enter ID of the product you want to remove from your shopping cart !");
+                    }
                     this.RemoveFromShopingCart(int.Parse(commands[0]));
                     break;
                 case "show":
                     if (commands[0] == "cart")
                     {
+                        if (shoppingCart.Count() == 0)
+                        {
+                            this.logger.Log("Shopping cart is empty !");
+                            break;
+                        }
                         this.logger.Log(Decorator.DecorateShoppingCartProducts(shoppingCart));
+                        ConsoleKeyInfo orderInput;
+                        this.logger.Log($"Order Y/N ?");
+                        orderInput = Console.ReadKey();
+
+                        if (orderInput.Key == ConsoleKey.Y)
+                        {
+                            Random rnd = new Random();
+                            decimal deliverCost = shoppingCart.TotalPrice() / 10m;
+                            this.logger.Log($"\n\n             ORDER N:{rnd.Next(234234, 988877)}" + $"\n" + $"\nFirst name: Gosho" +
+                                $"\nLast name : Goshov" + $"\nTel. number: (+359)870000442" +
+                                $"\nAdress: Bulgaria ,Sofia Studentski grad, purviq blok ot lqvo na PLAZZA . A vhod !" +
+                                $"\nProducts: " + $"\n{Decorator.DecorateShoppingCartProducts(shoppingCart)}" + $"     + {deliverCost}$ (delivery)" +
+                                $"\n\n     T O T A L : {shoppingCart.TotalPrice() + deliverCost}$" + $"\n\nThe order will arrive within three days !" +
+                                $"\n\n  <<< Have a nice day and continue shopping ! >>>\n");
+                        }
+                        else if (orderInput.Key == ConsoleKey.N)
+                        {
+                            this.logger.Log("\n");
+                            break;
+                        }
                         break;
                     }
                     this.logger.Log(category.GetListOf(commands[0]));
                     break;
                 default:
-                    break;
+                    throw new InvalidOperationException("Invalid command! \nPossinble commands are :" +
+                        "\n create [type] [args1] [arg2]... [argN]\n addToCart [id]\n remove [id]\n show [collection]");
+
             }
         }
 
         private void RemoveFromShopingCart(int id)
         {
+            var prod = FindProduct(id);
             this.shoppingCart.RemoveProduct(id);
-            Console.WriteLine($"Product with ID:{id} was removed from shopping cart!");
+            Console.WriteLine($"{prod.Name} with ID:{id} was removed from shopping cart!");
         }
     }
 }
