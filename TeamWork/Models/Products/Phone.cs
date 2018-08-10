@@ -7,12 +7,9 @@ namespace ElectronicsShop.Models.Products
     public abstract class Phone : Product, IPhone
     {
         private string brand;
-        private string model;
-        //private Colour colour;
-        //private BatteryType battery;
+        private string model;       
         private int displaySize;
-       // private PhoneSize size;
-        
+      
         public Phone(string name, decimal price) : base(name, price)
         {
 
@@ -35,7 +32,7 @@ namespace ElectronicsShop.Models.Products
             {
                 return this.brand;
             }
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -51,7 +48,7 @@ namespace ElectronicsShop.Models.Products
             {
                 return this.model;
             }
-            set
+            private set
             {
                 if (string.IsNullOrEmpty(value))
                 {
@@ -70,7 +67,7 @@ namespace ElectronicsShop.Models.Products
         public int DisplaySize
         {
             get { return this.displaySize; }
-            set
+            private set
             {
                 if (value < 0)
                 {

@@ -16,7 +16,7 @@ namespace ElectronicsShop.Core.Tools
         }
         public void Log(string message)
         {
-            File.AppendAllText(@"C:\LogFile.txt", message);
+            File.AppendAllText(@"../../LogFile.txt", message);
         }
 
         public void Log(IProduct product)

@@ -14,7 +14,7 @@ namespace ElectronicsShop.Core.Factories
         //create smartphone gosho 900 Asus ZenPhone Black LiIon 16 3 3 3 Atom 4
 
         //lanlinePhone command
-        //create landlinephone gosho 9 VIVACOM Home White LiIon 16 3 3 3 10 true
+        //create landlinephone gosho 9 VIVACOM Home White LiIon 16 3 3 3 10
 
         //laptop command
         //create laptop MyLaptop Lenovo ThinkPad 14 4500 i5 8 500 4 1200
@@ -40,7 +40,7 @@ namespace ElectronicsShop.Core.Factories
 
             var landlinePhone = new LandlinePhone(parameters[0], decimal.Parse(parameters[1]), parameters[2],
                 parameters[3], (Colour)Enum.Parse(typeof(Colour), parameters[4]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[5]),
-                int.Parse(parameters[6]), phoneSize, int.Parse(parameters[10]), bool.Parse(parameters[11]));
+                int.Parse(parameters[6]), phoneSize, int.Parse(parameters[10]));
             
             return landlinePhone;
         }

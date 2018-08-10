@@ -26,7 +26,7 @@ namespace ElectronicsShop.Models.Products.Phones
             {
                 return this.ram;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -39,7 +39,7 @@ namespace ElectronicsShop.Models.Products.Phones
         public string Processor
         {
             get { return this.processor; }
-            set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {

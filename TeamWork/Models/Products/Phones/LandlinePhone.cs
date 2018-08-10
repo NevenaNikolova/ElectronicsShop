@@ -8,17 +8,17 @@ namespace ElectronicsShop.Models.Products.Phones
     {
         private int analogueLines;
 
-        private bool wallMounting;
+        //private bool wallMounting;
 
         public LandlinePhone(string name, decimal price) : base(name, price)
         {
         }
 
-        public LandlinePhone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines, bool wallMounting) 
+        public LandlinePhone(string name, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines) //bool wallMounting) 
             : base(name, price, brand, model, colour, battery, displaySize, size)
         {
             this.AnalogueLines = analogueLines;
-            this.WallMounting = wallMounting;
+            //this.WallMounting = wallMounting;
         }
 
         public int AnalogueLines
@@ -33,16 +33,16 @@ namespace ElectronicsShop.Models.Products.Phones
                 this.analogueLines = value;
             }
         }
-        public bool WallMounting
-        {
-            get
-            {
-                return this.wallMounting;
-            }
-            set
-            {
-                this.wallMounting = value;
-            }
-        }
+        //public bool WallMounting
+        //{
+        //    get
+        //    {
+        //        return this.wallMounting;
+        //    }
+        //    set
+        //    {
+        //        this.wallMounting = value;
+        //    }
+        //}
     }
 }

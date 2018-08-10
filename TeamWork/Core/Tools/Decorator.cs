@@ -60,8 +60,8 @@ namespace ElectronicsShop.Core.Tools
         {
             return "\n-----------------------" + $"\nID: {phone.RealID}" + $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}" +
                 $"\nDisplay size: {phone.DisplaySize}'" + $"\nHeight: {phone.Size.Height}'" + $"\nWidth: {phone.Size.Width}" +
-                $"\nTickness: {phone.Size.Thickness}'" + $"\nBattery: {phone.Battery}" + $"\nWallmounting: {phone.WallMounting}" +
-                $"\nAnalogueLines: {phone.AnalogueLines}" + $"\nPrice: {phone.Price}" + "\n-----------------------";
+                $"\nTickness: {phone.Size.Thickness}'" + $"\nBattery: {phone.Battery}" + $"\nAnalogueLines: {phone.AnalogueLines}" + $"\nPrice: {phone.Price}" 
+                + "\n-----------------------";
         }
 
         public static string DecorateShoppingCartProducts(ShoppingCart collection)

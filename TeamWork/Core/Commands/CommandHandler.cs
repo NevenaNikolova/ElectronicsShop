@@ -7,7 +7,8 @@ using ElectronicsShop.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+
+
 
 namespace ElectronicsShop.Core.Commands
 {
@@ -35,7 +36,7 @@ namespace ElectronicsShop.Core.Commands
                 case "smartphone":
                     var smartphone = factory.CreateSmartphone(commandParameters);
                     
-                    this.category.addProduct(smartphone);
+                    this.category.AddProduct(smartphone);
 
                     this.logger.Log($"Smartphone with ID:{smartphone.RealID} was created!");
 
@@ -44,7 +45,7 @@ namespace ElectronicsShop.Core.Commands
                 case "landlinephone":
                     var landlinePhone = factory.CreateLandlinePhone(commandParameters);
 
-                    this.category.addProduct(landlinePhone);
+                    this.category.AddProduct(landlinePhone);
 
                     this.logger.Log($"Landline phone with ID:{landlinePhone.RealID} was created!");
 
@@ -53,7 +54,7 @@ namespace ElectronicsShop.Core.Commands
                 case "laptop":
                     var laptop = factory.CreateLaptop(commandParameters);
 
-                    this.category.addProduct(laptop);  
+                    this.category.AddProduct(laptop);  
 
                     this.logger.Log($"Laptop with ID:{laptop.RealID} was created!");
 
@@ -61,7 +62,7 @@ namespace ElectronicsShop.Core.Commands
                 case "desktoppc":
                     var desktopPc = factory.CreateDesktopComputer(commandParameters);
 
-                    this.category.addProduct(desktopPc);
+                    this.category.AddProduct(desktopPc);
 
                     this.logger.Log($"Desktop computer with ID:{desktopPc.RealID} was created!");
 
