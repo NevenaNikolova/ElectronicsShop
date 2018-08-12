@@ -22,7 +22,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("The height should be a possitive number!");
                 }
                 this.height = value;
             }
@@ -34,7 +34,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("The width should be a possitive number!");
                 }
                 this.width = value;
             }
@@ -46,7 +46,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("The thickness should be a possitive number!");
                 }
                 this.thickness = value;
             }

@@ -22,10 +22,8 @@ namespace ElectronicsShop
             //category.addProduct(laptop);
             
             ProductFactory factory = new ProductFactory();
-            //ConsoleLogger logger = new ConsoleLogger();
-
-            ILogger logger = new FileLogger();
-
+            ConsoleLogger logger = new ConsoleLogger();
+           // ILogger logger = new FileLogger();
             CommandHandler commandHandler = new CommandHandler(factory, logger);
             var engine = Engine.Instance(factory, commandHandler, logger);
             engine.Start();

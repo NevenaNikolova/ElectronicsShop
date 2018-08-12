@@ -1,5 +1,4 @@
 ﻿using System;
-using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 
 namespace ElectronicsShop.Models.Products.Phones

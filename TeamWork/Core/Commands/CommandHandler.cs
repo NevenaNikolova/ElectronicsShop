@@ -172,7 +172,7 @@ namespace ElectronicsShop.Core.Commands
                         }
                         else if (orderInput.Key == ConsoleKey.N)
                         {
-                            this.logger.Log("\n");
+                            this.logger.Log("\nNo purchase was made!");
                             break;
                         }
                         break;

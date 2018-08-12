@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using ElectronicsShop.Models.Products;
-using ElectronicsShop.Models.Interfaces;
-
-namespace ElectronicsShop.Models.Products
+﻿namespace ElectronicsShop.Models.Products
 {
     public class DesktopPC : PC
     {
