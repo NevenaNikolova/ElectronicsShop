@@ -1,5 +1,6 @@
 ﻿using ElectronicsShop.Core;
 using ElectronicsShop.Core.Commands;
+using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Tools;
 
@@ -21,7 +22,10 @@ namespace ElectronicsShop
             //category.addProduct(laptop);
             
             ProductFactory factory = new ProductFactory();
-            ConsoleLogger logger = new ConsoleLogger();
+            //ConsoleLogger logger = new ConsoleLogger();
+
+            ILogger logger = new FileLogger();
+
             CommandHandler commandHandler = new CommandHandler(factory, logger);
             var engine = Engine.Instance(factory, commandHandler, logger);
             engine.Start();

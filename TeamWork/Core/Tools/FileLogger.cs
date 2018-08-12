@@ -8,12 +8,8 @@ using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Core.Tools
 {
-    public class FileLogger : ILogger
-    {
-        private FileLogger()
-        {
-
-        }
+    internal class FileLogger : ILogger
+    {        
         public void Log(string message)
         {
             File.AppendAllText(@"../../LogFile.txt", message);
