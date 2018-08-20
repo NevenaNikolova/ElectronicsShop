@@ -6,5 +6,6 @@ namespace ElectronicsShop.Core.Commands
     {
         void CreateCommand(IList<string> commandParameters);
 
+        void Proccess(IList<string> commands);
     }
 }

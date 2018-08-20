@@ -16,14 +16,14 @@ namespace ElectronicsShop.Core.Commands
     {
         private IProductFactory factory;
         private readonly Category category = new Category("Products");
-        private ShoppingCart shoppingCart;
+        private IShoppingCart shoppingCart;
         private ILogger logger;
 
-        public CommandHandler(IProductFactory factory, ILogger logger)
+        public CommandHandler(IProductFactory factory, ILogger logger, IShoppingCart shoppingCart)
         {
             this.factory = factory;
             this.logger = logger;
-            this.shoppingCart = new ShoppingCart();
+            this.shoppingCart = shoppingCart;
         }
 
         public void CreateCommand(IList<string> commandParameters)
@@ -129,9 +129,12 @@ namespace ElectronicsShop.Core.Commands
 
             switch (firstCommand)
             {
+                // CreateProductCommand
                 case "create":
                     this.CreateCommand(commands);
                     break;
+                //
+                // AddProductToCartCommand
                 case "addToCart":
                     if (commands.Count < 1)
                     {
@@ -139,6 +142,8 @@ namespace ElectronicsShop.Core.Commands
                     }
                     this.AddToShopingCart(int.Parse(commands[0]));
                     break;
+                //
+                // RemoveProductFromShoppingCartCommand
                 case "remove":
                     if (commands.Count < 1)
                     {
@@ -146,6 +151,8 @@ namespace ElectronicsShop.Core.Commands
                     }
                     this.RemoveFromShopingCart(int.Parse(commands[0]));
                     break;
+                //
+                // ShowProductListCommand
                 case "show":
                     if (commands[0] == "cart")
                     {
@@ -154,7 +161,7 @@ namespace ElectronicsShop.Core.Commands
                             this.logger.Log("Shopping cart is empty !");
                             break;
                         }
-                        this.logger.Log(Decorator.DecorateShoppingCartProducts(shoppingCart));
+                        this.logger.Log(ProductInfoDecorator.DecorateShoppingCartProducts(shoppingCart));
                         ConsoleKeyInfo orderInput;
                         this.logger.Log($"Order Y/N ?");
                         orderInput = Console.ReadKey();
@@ -166,7 +173,7 @@ namespace ElectronicsShop.Core.Commands
                             this.logger.Log($"\n\n             ORDER N:{rnd.Next(234234, 988877)}" + $"\n" + $"\nFirst name: Gosho" +
                                 $"\nLast name : Goshov" + $"\nTel. number: (+359)870000442" +
                                 $"\nAdress: Bulgaria ,Sofia Studentski grad, purviq blok ot lqvo na PLAZZA . A vhod !" +
-                                $"\nProducts: " + $"\n{Decorator.DecorateShoppingCartProducts(shoppingCart)}" + $"     + {deliverCost}$ (delivery)" +
+                                $"\nProducts: " + $"\n{ProductInfoDecorator.DecorateShoppingCartProducts(shoppingCart)}" + $"     + {deliverCost}$ (delivery)" +
                                 $"\n\n     T O T A L : {shoppingCart.TotalPrice() + deliverCost}$" + $"\n\nThe order will arrive within three days !" +
                                 $"\n\n  <<< Have a nice day and continue shopping ! >>>\n");
                         }
@@ -179,6 +186,7 @@ namespace ElectronicsShop.Core.Commands
                     }
                     this.logger.Log(category.GetListOf(commands[0]));
                     break;
+                //
                 default:
                     throw new InvalidOperationException("Invalid command! \nPossinble commands are :" +
                         "\n create [type] [args1] [arg2]... [argN]\n addToCart [id]\n remove [id]\n show [collection]");

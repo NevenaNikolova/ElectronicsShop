@@ -5,6 +5,6 @@ namespace ElectronicsShop.Core.Contracts
     public interface ILogger
     {
         void Log(string message);
-        void Log(IProduct product);
+        void LogProductInfo(IProduct product);
     }
 }

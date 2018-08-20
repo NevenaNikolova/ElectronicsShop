@@ -5,7 +5,7 @@ namespace ElectronicsShop.Models.Products
 
     public class Laptop : PC
     {
-        private const string ProductName = "Laptop";
+        //private const string ProductName = "Laptop";
         private int displaySize;
         private int batteryCapacity;
 

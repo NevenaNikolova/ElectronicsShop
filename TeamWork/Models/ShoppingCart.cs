@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Models
 {
-   internal class ShoppingCart
+   internal class ShoppingCart : IShoppingCart
     {
         private readonly List<IProduct> productList;
 

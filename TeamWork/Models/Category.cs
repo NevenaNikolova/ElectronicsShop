@@ -130,28 +130,28 @@ namespace ElectronicsShop.Models
             switch (type)
             {
                 case "laptops":
-                    this.Laptops.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
+                    this.Laptops.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
                     }
                     return sb.ToString();
                 case "desktops":
-                    this.DesktopPCs.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
+                    this.DesktopPCs.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
                     }
                     return sb.ToString();
                 case "smartphones":
-                    this.Smartphones.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
+                    this.Smartphones.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
                     }
                     return sb.ToString();
                 case "landlinephones":
-                    this.LandlinePhones.ForEach(x => sb.Append(Decorator.DecorateProduct(x)));
+                    this.LandlinePhones.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
                     if (sb.Length == 0)
                     {
                         throw new Exception($"{type.ToUpper()} list is empty!");
