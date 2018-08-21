@@ -26,7 +26,7 @@ namespace ElectronicsShop.Models
 
         public void RemoveProduct(int id)
         {
-            IProduct product = this.productList.First(x => x.RealID == id);
+            IProduct product = this.productList.First(x => x.ID == id);
             this.productList.Remove(product);
         }
 
@@ -36,7 +36,10 @@ namespace ElectronicsShop.Models
             {
                 return true;
             }
-            else return false;
+            else
+            {
+                return false;
+            }
         }
 
         public decimal TotalPrice()

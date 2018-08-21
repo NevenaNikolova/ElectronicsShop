@@ -1,18 +1,18 @@
-﻿using System;
-using System.IO;
-using System.Text;
+using System;
 using ElectronicsShop.Core.Contracts;
+using ElectronicsShop.Models.Interfaces;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
-using ElectronicsShop.Models.Interfaces;
+using System.Text;
+using ElectronicsShop.Core.Tools;
 
-namespace ElectronicsShop.Core.Tools
+namespace ElectronicsShop.Core.Loggers
 {
-    internal class FileLogger : ILogger
+    internal class ConsoleLogger : ILogger
     {
         public void Log(string message)
         {
-            File.AppendAllText(@"../../LogFile.txt", message);
+            Console.WriteLine(message);
         }
 
         public void LogProductInfo(IProduct product)

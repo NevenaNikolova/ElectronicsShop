@@ -131,62 +131,43 @@ namespace ElectronicsShop.Models
             {
                 case "laptops":
                     this.Laptops.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
-                    if (sb.Length == 0)
-                    {
-                        throw new Exception($"{type.ToUpper()} list is empty!");
-                    }
-                    return sb.ToString();
+                    break;
                 case "desktops":
                     this.DesktopPCs.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
-                    if (sb.Length == 0)
-                    {
-                        throw new Exception($"{type.ToUpper()} list is empty!");
-                    }
-                    return sb.ToString();
+                    break;
                 case "smartphones":
                     this.Smartphones.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
-                    if (sb.Length == 0)
-                    {
-                        throw new Exception($"{type.ToUpper()} list is empty!");
-                    }
-                    return sb.ToString();
+                    break;
                 case "landlinephones":
                     this.LandlinePhones.ForEach(x => sb.Append(ProductInfoDecorator.DecorateProduct(x)));
-                    if (sb.Length == 0)
-                    {
-                        throw new Exception($"{type.ToUpper()} list is empty!");
-                    }
-                    return sb.ToString();
-                case "cart":
-
-
+                    break;
                 default:
                     throw new ArgumentException("There is no such type!");
             }
+
+            if (sb.Length == 0)
+            {
+                throw new Exception($"{type.ToUpper()} list is empty!");
+            }
+            return sb.ToString();
         }
 
         public IProduct GetProduct(int id)
         {
-            if (this.desktopPCs.Any(x => x.ID == id))
-            {
-                return desktopPCs.First(x => x.ID == id);
-            }
-            else if (this.LandlinePhones.Any(x => x.ID == id))
-            {
-                return landlinePhones.First(x => x.ID == id);
-            }
-            else if (this.laptops.Any(x => x.ID == id))
-            {
-                return laptops.First(x => x.ID == id);
-            }
-            else if (this.smartphones.Any(x => x.ID == id))
-            {
-                return smartphones.First(x => x.ID == id);
-            }
-            else
+            var aggregateList = new List<IProduct>();
+            aggregateList.Concat(this.desktopPCs);
+            aggregateList.Concat(this.LandlinePhones);
+            aggregateList.Concat(this.laptops);
+            aggregateList.Concat(this.smartphones);
+
+            var itemFound = aggregateList.FirstOrDefault(p => p.ID == id);
+
+            if (itemFound is null)
             {
                 throw new ItemNotFoundException($"Product with ID:{id} does not exist!");
             }
+
+            return itemFound;
         }
 
     }

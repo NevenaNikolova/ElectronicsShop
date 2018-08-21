@@ -17,7 +17,7 @@ namespace ElectronicsShop.Models.Products
             set { staticID++; }
         }
 
-        public int RealID
+        public int ID
         {
             get { return this.realId; }
             set { this.realId = staticID; }
@@ -27,7 +27,7 @@ namespace ElectronicsShop.Models.Products
             this.Name = name;
             this.Price = price;
             this.StaticId = staticID;
-            this.RealID = realId;
+            this.ID = realId;
         }
 
         public virtual string Name

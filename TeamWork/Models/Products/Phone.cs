@@ -4,7 +4,7 @@ using ElectronicsShop.Models.Products.Common;
 
 namespace ElectronicsShop.Models.Products
 {
-    public abstract class Phone : Product, IPhone
+    public abstract class Phone : Product, IPhone, IPrinable
     {
         private string brand;
         private string model;       

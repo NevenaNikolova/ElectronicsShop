@@ -6,6 +6,6 @@
 
         decimal Price { get; }
 
-        int RealID { get; set; }
+        int ID { get; set; }
     }
 }

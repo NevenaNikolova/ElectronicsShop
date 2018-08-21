@@ -39,21 +39,21 @@ namespace ElectronicsShop.Core.Tools
 
         private static string DesktopComputerInfoToLongString(PC pc)
         {
-            return "\n-----------------------" + $"\nProduct: {pc.GetType().Name}" + $"\nID: {pc.RealID}" + $"\nBrand: {pc.Brand}" + $"\nModel: {pc.Model}" +
+            return "\n-----------------------" + $"\nProduct: {pc.GetType().Name}" + $"\nID: {pc.ID}" + $"\nBrand: {pc.Brand}" + $"\nModel: {pc.Model}" +
                 $"\nProcessor: {pc.Processor}" + $"\nRAM capacity: {pc.Ram}GB" + $"\nHDD capacity: {pc.Hdd}GB" + $"\nVideo card: {pc.VideoCard}GB" +
                 $"\nPrice: {pc.Price}$" + "\n-----------------------";
         }
 
         private static string LaptopInfoLongString(Laptop laptop)
         {
-            return "\n-----------------------" + $"\nProduct: {laptop.GetType().Name}" + $"\nID: {laptop.RealID}" + $"\nBrand: {laptop.Brand}" + $"\nModel: {laptop.Model}" + $"\nProcessor: {laptop.Processor}" + $"\nRAM: {laptop.Ram}GB" +
+            return "\n-----------------------" + $"\nProduct: {laptop.GetType().Name}" + $"\nID: {laptop.ID}" + $"\nBrand: {laptop.Brand}" + $"\nModel: {laptop.Model}" + $"\nProcessor: {laptop.Processor}" + $"\nRAM: {laptop.Ram}GB" +
                 $"\nHDD: {laptop.Hdd}GB" + $"\nVideo card: {laptop.VideoCard}GB" + $"\nDisplay size: {laptop.DisplaySize}'" +
                 $"\nBattery capacity: {laptop.BatteryCapacity}mAh" + $"\nPrice: {laptop.Price}$" + "\n-----------------------";
         }
 
         private static string SmartphoneInfoToLongString(ISmartphone phone)
         {
-            return "\n-----------------------" + $"\nProduct: {phone.GetType().Name}" + $"\nID: {phone.RealID}" + $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}"
+            return "\n-----------------------" + $"\nProduct: {phone.GetType().Name}" + $"\nID: {phone.ID}" + $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}"
                 + $"\nDisplay size: {phone.DisplaySize}'" + $"\nProcessor: {phone.Processor}" + $"\nRam: {phone.Ram}GB" +
                 $"\nHeight: {phone.Size.Height}'" + $"\nWidth: {phone.Size.Width}'" + $"\nTickness: {phone.Size.Thickness}'"
                 + $"\nBattery: {phone.Battery}" + $"\nPrice: {phone.Price}$" + "\n-----------------------";
@@ -61,7 +61,7 @@ namespace ElectronicsShop.Core.Tools
 
         private static string LandlinephoneInfoToLongString(ILandlinePhone phone)
         {
-            return "\n-----------------------" + $"\nProduct: {phone.GetType().Name}" + $"\nID: {phone.RealID}" + $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}" +
+            return "\n-----------------------" + $"\nProduct: {phone.GetType().Name}" + $"\nID: {phone.ID}" + $"\nBrand: {phone.Brand}" + $"\nModel: {phone.Model}" + $"\nColor: {phone.Colour}" +
                 $"\nDisplay size: {phone.DisplaySize}'" + $"\nHeight: {phone.Size.Height}'" + $"\nWidth: {phone.Size.Width}" +
                 $"\nTickness: {phone.Size.Thickness}'" + $"\nBattery: {phone.Battery}" + $"\nAnalogueLines: {phone.AnalogueLines}" + $"\nPrice: {phone.Price}"
                 + "\n-----------------------";

@@ -42,7 +42,7 @@ namespace ElectronicsShop.Core.Commands
 
                     this.category.AddProduct(smartphone);
 
-                    this.logger.Log($"Smartphone with ID:{smartphone.RealID} was created!");
+                    this.logger.Log($"Smartphone with ID:{smartphone.ID} was created!");
 
                     break;
                 case "landlinephone":
@@ -54,7 +54,7 @@ namespace ElectronicsShop.Core.Commands
 
                     this.category.AddProduct(landlinePhone);
 
-                    this.logger.Log($"Landline phone with ID:{landlinePhone.RealID} was created!");
+                    this.logger.Log($"Landline phone with ID:{landlinePhone.ID} was created!");
 
                     break;
 
@@ -67,7 +67,7 @@ namespace ElectronicsShop.Core.Commands
 
                     this.category.AddProduct(laptop);
 
-                    this.logger.Log($"Laptop with ID:{laptop.RealID} was created!");
+                    this.logger.Log($"Laptop with ID:{laptop.ID} was created!");
 
                     break;
                 case "desktoppc":
@@ -79,7 +79,7 @@ namespace ElectronicsShop.Core.Commands
 
                     this.category.AddProduct(desktopPc);
 
-                    this.logger.Log($"Desktop computer with ID:{desktopPc.RealID} was created!");
+                    this.logger.Log($"Desktop computer with ID:{desktopPc.ID} was created!");
 
                     break;
 
@@ -100,21 +100,21 @@ namespace ElectronicsShop.Core.Commands
 
         public IProduct FindProduct(int id)
         {
-            if (this.category.DesktopPCs.Any(x => x.RealID == id))
+            if (this.category.DesktopPCs.Any(x => x.ID == id))
             {
-                return this.category.DesktopPCs.First(x => x.RealID == id);
+                return this.category.DesktopPCs.First(x => x.ID == id);
             }
-            else if (this.category.Laptops.Any(x => x.RealID == id))
+            else if (this.category.Laptops.Any(x => x.ID == id))
             {
-                return this.category.Laptops.First(x => x.RealID == id);
+                return this.category.Laptops.First(x => x.ID == id);
             }
-            else if (this.category.LandlinePhones.Any(x => x.RealID == id))
+            else if (this.category.LandlinePhones.Any(x => x.ID == id))
             {
-                return this.category.LandlinePhones.First(x => x.RealID == id);
+                return this.category.LandlinePhones.First(x => x.ID == id);
             }
-            else if (this.category.Smartphones.Any(x => x.RealID == id))
+            else if (this.category.Smartphones.Any(x => x.ID == id))
             {
-                return this.category.Smartphones.First(x => x.RealID == id);
+                return this.category.Smartphones.First(x => x.ID == id);
             }
             else
             {
