@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
 using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Contracts.Phone_Contracts;
 
 namespace ElectronicsShop.Core.Factories
 {
@@ -36,7 +38,7 @@ namespace ElectronicsShop.Core.Factories
         }
     
 
-        public Phone CreateLandlinePhone(IList<string> parameters)
+        public ILandlinePhone CreateLandlinePhone(IList<string> parameters)
         {
             PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]));
 
@@ -48,7 +50,7 @@ namespace ElectronicsShop.Core.Factories
             return landlinePhone;
         }
 
-        public Phone CreateSmartphone(IList<string> parameters)
+        public ISmartphone CreateSmartphone(IList<string> parameters)
         {
 
             PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]));
@@ -61,7 +63,7 @@ namespace ElectronicsShop.Core.Factories
             return phone;
         }
 
-        public PC CreateLaptop(IList<string> parameters)
+        public IComputer CreateLaptop(IList<string> parameters)
         {
             var laptop = new Laptop(parameters[0], parameters[1], int.Parse(parameters[2]), int.Parse(parameters[3]),
                 parameters[4], int.Parse(parameters[5]), int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]));
@@ -70,7 +72,7 @@ namespace ElectronicsShop.Core.Factories
             return laptop;
         }
 
-        public PC CreateDesktopComputer(IList<string> parameters)
+        public IComputer CreateDesktopComputer(IList<string> parameters)
         {          
             var desktopPC = new DesktopPC(parameters[0], parameters[1],
                 parameters[2], int.Parse(parameters[3]), int.Parse(parameters[4]),

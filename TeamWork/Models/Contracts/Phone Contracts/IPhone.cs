@@ -4,13 +4,12 @@ using ElectronicsShop.Models.Products.Common;
 namespace ElectronicsShop.Models.Interfaces
 {
     public interface IPhone : IProduct
-
     {
-        string Brand { get;}
-        string Model { get;}
-        Colour Colour { get;}
-        BatteryType Battery { get;}
-        int DisplaySize { get;}
-        PhoneSize Size { get;}
+        string Brand { get; }
+        string Model { get; }
+        Colour Colour { get; }
+        BatteryType Battery { get; }
+        int DisplaySize { get; }
+        PhoneSize Size { get; }
     }
 }

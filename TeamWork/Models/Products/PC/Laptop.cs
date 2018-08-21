@@ -1,35 +1,102 @@
-﻿using System;
+﻿using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Models.Interfaces;
+using System;
 
 namespace ElectronicsShop.Models.Products
 {
 
-    public class Laptop : PC
+    public class Laptop : IComputer, IPrintable
     {
         //private const string ProductName = "Laptop";
+        private string processor;
+        private int ram;
+        private int hdd;
+        private int videoCard;
+        private string brand;
+        private string model;
         private int displaySize;
         private int batteryCapacity;
+        private decimal price;
+        private int id;
+        private string name;
 
-
-        public Laptop(string brand, string model, int displaySize, int batteryCapacity,
-            string procesor, int ram, int hdd, int videoCard, int price)
-            : base(procesor, ram, hdd, videoCard, ProductName, price, brand, model)
-        {          
-            this.DisplaySize = displaySize;
-            this.BatteryCapacity = batteryCapacity;
-        }
-   
-        public override string Name
+        public string Processor
         {
-            get
+            get { return this.processor; }
+            private set
             {
-                return base.Name;
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentOutOfRangeException("The processor should be specified!");
+                }
+                else this.processor = value;
             }
         }
-       
+        public int Ram
+        {
+            get { return this.ram; }
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("The Ram memory value cannot be negative!");
+                }
+                else this.ram = value;
+            }
+        }
+        public int Hdd
+        {
+            get { return this.hdd; }
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("The Hdd memory value cannot be negative!");
+                }
+                else this.hdd = value;
+            }
+        }
+        public int VideoCard
+        {
+            get { return this.videoCard; }
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("The videocard capacity cannot be negative!");
+                }
+                else this.videoCard = value;
+            }
+        }
+        public string Brand
+        {
+            get => brand;
+            private set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Invalid brand value!");
+                }
+                this.brand = value;
+            }
+
+        }
+        public string Model
+        {
+            get => model;
+            private set
+            {
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Invalid model value!");
+                }
+                this.model = value;
+            }
+        }
         public int DisplaySize
         {
             get => displaySize;
-            set
+            private set
             {
                 if (value < 0)
                 {
@@ -38,11 +105,10 @@ namespace ElectronicsShop.Models.Products
                 this.displaySize = value;
             }
         }
-
         public int BatteryCapacity
         {
             get => batteryCapacity;
-            set
+            private set
             {
                 if (value < 0)
                 {
@@ -51,8 +117,60 @@ namespace ElectronicsShop.Models.Products
                 this.batteryCapacity = value;
             }
         }
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+        }
+        public virtual decimal Price
+        {
+            get { return this.price; }
+            private set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Too low price!");
+                }
+                else this.price = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return this.id;
+            }
+            private set
+            { this.id = value; }
+        }
 
+        public Laptop(string brand, string model, int displaySize, int batteryCapacity,
+            string procesor, int ram, int hdd, int videoCard, int price)
+        {
+            this.Brand = brand;
+            this.Model = model;
+            this.DisplaySize = displaySize;
+            this.BatteryCapacity = batteryCapacity;
+            this.Processor = procesor;
+            this.Ram = ram;
+            this.Hdd = hdd;
+            this.VideoCard = videoCard;
+            this.Price = price;
+        }
 
+        public Laptop()
+        {
+        }
+
+        public string Print()
+        {
+            return "\n-----------------------" + $"\nProduct: {this.GetType().Name}" + $"\nID: {this.ID}" + $"\nBrand: {this.Brand}" +
+                $"\nModel: {this.Model}" + $"\nProcessor: {this.Processor}" + $"\nRAM: {this.Ram}GB" +
+                $"\nHDD: {this.Hdd}GB" + $"\nVideo card: {this.VideoCard}GB" + $"\nDisplay size: {this.DisplaySize}'" +
+                $"\nBattery capacity: {this.BatteryCapacity}mAh" + $"\nPrice: {this.Price}$" + "\n-----------------------";
+        }
     }
 }
 

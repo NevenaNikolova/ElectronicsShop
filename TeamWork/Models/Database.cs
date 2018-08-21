@@ -38,7 +38,7 @@ namespace ElectronicsShop.Models
 
         public T GetProduct(int id)
         {
-            return this.products.First(p => p.ID == id);
+            return this.products.First(p => p.productID == id);
         }
     }
 }

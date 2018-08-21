@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using ElectronicsShop.Core.Contracts;
+using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop.Models
 {
-   internal class ShoppingCart : IShoppingCart
+    internal class ShoppingCart : IShoppingCart, IPrintable
     {
         private readonly List<IProduct> productList;
 
@@ -53,5 +55,20 @@ namespace ElectronicsShop.Models
             return productList.Count();
         }
 
+        public string Print()
+        {
+            StringBuilder sb = new StringBuilder();
+            decimal totalPrice = 0m;
+            foreach (var prod in productList)
+            {
+                sb.Append(prod.Print());
+                totalPrice += prod.Price;
+            }
+            // calculate total price TODO
+            sb.Append("\nTotal price:     " + $"{totalPrice}" + "$");
+
+            return sb.ToString();
+
+        }
     }
 }

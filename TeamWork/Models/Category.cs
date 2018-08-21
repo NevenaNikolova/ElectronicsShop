@@ -106,7 +106,7 @@ namespace ElectronicsShop.Models
                     {
                         if (smartphones.Contains((Smartphone)product))
                         {
-                            this.Smartphones.Remove((Smartphone)product);
+                            this.Smartphones.Remove(product as Smartphone);
                         }
                     }
                     break;
@@ -161,7 +161,7 @@ namespace ElectronicsShop.Models
             aggregateList.Concat(this.laptops);
             aggregateList.Concat(this.smartphones);
 
-            var itemFound = aggregateList.FirstOrDefault(p => p.ID == id);
+            var itemFound = aggregateList.FirstOrDefault(p => p.productID == id);
 
             if (itemFound is null)
             {

@@ -161,7 +161,7 @@ namespace ElectronicsShop.Core.Commands
                             this.logger.Log("Shopping cart is empty !");
                             break;
                         }
-                        this.logger.Log(ProductInfoDecorator.DecorateShoppingCartProducts(shoppingCart));
+                        this.logger.Log(this.shoppingCart);
                         ConsoleKeyInfo orderInput;
                         this.logger.Log($"Order Y/N ?");
                         orderInput = Console.ReadKey();
@@ -173,7 +173,7 @@ namespace ElectronicsShop.Core.Commands
                             this.logger.Log($"\n\n             ORDER N:{rnd.Next(234234, 988877)}" + $"\n" + $"\nFirst name: Gosho" +
                                 $"\nLast name : Goshov" + $"\nTel. number: (+359)870000442" +
                                 $"\nAdress: Bulgaria ,Sofia Studentski grad, purviq blok ot lqvo na PLAZZA . A vhod !" +
-                                $"\nProducts: " + $"\n{ProductInfoDecorator.DecorateShoppingCartProducts(shoppingCart)}" + $"     + {deliverCost}$ (delivery)" +
+                                $"\nProducts: " + $"\n{ProductInfoDecorator.DecorateShoppingCartProducts(shoppingCart.ProductList)}" + $"     + {deliverCost}$ (delivery)" +
                                 $"\n\n     T O T A L : {shoppingCart.TotalPrice() + deliverCost}$" + $"\n\nThe order will arrive within three days !" +
                                 $"\n\n  <<< Have a nice day and continue shopping ! >>>\n");
                         }
