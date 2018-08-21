@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ElectronicsShop.Core.Exceptions;
 using ElectronicsShop.Core.Tools;
+using ElectronicsShop.Models.Contracts.Phone_Contracts;
 using ElectronicsShop.Models.Interfaces;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
@@ -16,16 +17,16 @@ namespace ElectronicsShop.Models
         private string name;
         private List<Laptop> laptops;
         private List<DesktopPC> desktopPCs;
-        private List<Smartphone> smartphones;
-        private List<LandlinePhone> landlinePhones;
+        private List<ISmartphone> smartphones;
+        private List<ILandlinePhone> landlinePhones;
 
         public Category(string name)
         {
             this.Name = name;
             this.laptops = new List<Laptop>();
             this.desktopPCs = new List<DesktopPC>();
-            this.smartphones = new List<Smartphone>();
-            this.landlinePhones = new List<LandlinePhone>();
+            this.smartphones = new List<ISmartphone>();
+            this.landlinePhones = new List<ILandlinePhone>();
         }
 
         public string Name
@@ -51,13 +52,13 @@ namespace ElectronicsShop.Models
             get => this.desktopPCs;
 
         }
-        public List<Smartphone> Smartphones
+        public List<ISmartphone> Smartphones
         {
-            get => new List<Smartphone>(this.smartphones);
+            get => new List<ISmartphone>(this.smartphones);
         }
-        public List<LandlinePhone> LandlinePhones
+        public List<ILandlinePhone> LandlinePhones
         {
-            get => new List<LandlinePhone>(this.landlinePhones);
+            get => new List<ILandlinePhone>(this.landlinePhones);
         }
 
         public void AddProduct(IProduct product)
@@ -71,10 +72,10 @@ namespace ElectronicsShop.Models
                     this.desktopPCs.Add((DesktopPC)product);
                     break;
                 case "Smartphone":
-                    this.smartphones.Add((Smartphone)product);
+                    this.smartphones.Add((ISmartphone)product);
                     break;
                 case "LandlinePhone":
-                    this.landlinePhones.Add((LandlinePhone)product);
+                    this.landlinePhones.Add((ILandlinePhone)product);
                     break;
                 default:
                     throw new ArgumentException("There is no such type!");
