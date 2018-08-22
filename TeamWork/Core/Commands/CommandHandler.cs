@@ -3,6 +3,7 @@ using ElectronicsShop.Core.Exceptions;
 using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
+using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,15 +16,16 @@ namespace ElectronicsShop.Core.Commands
     internal class CommandHandler : ICommandHandler
     {
         private IProductFactory factory;
-        private readonly Category category = new Category("Products");
+        private readonly IDatabase database;
         private IShoppingCart shoppingCart;
         private ILogger logger;
 
-        public CommandHandler(IProductFactory factory, ILogger logger, IShoppingCart shoppingCart)
+        public CommandHandler(IProductFactory factory, ILogger logger, IShoppingCart shoppingCart, IDatabase database)
         {
             this.factory = factory;
             this.logger = logger;
             this.shoppingCart = shoppingCart;
+            this.database = database;
         }
 
         public void CreateCommand(IList<string> commandParameters)
@@ -40,7 +42,7 @@ namespace ElectronicsShop.Core.Commands
                     }
                     var smartphone = factory.CreateSmartphone(commandParameters);
 
-                    this.category.AddProduct(smartphone);
+                    this.database.AddProduct(smartphone);
 
                     this.logger.Log($"Smartphone with ID:{smartphone.ID} was created!");
 
@@ -52,7 +54,7 @@ namespace ElectronicsShop.Core.Commands
                     }
                     var landlinePhone = factory.CreateLandlinePhone(commandParameters);
 
-                    this.category.AddProduct(landlinePhone);
+                    this.database.AddProduct(landlinePhone);
 
                     this.logger.Log($"Landline phone with ID:{landlinePhone.ID} was created!");
 
@@ -65,7 +67,7 @@ namespace ElectronicsShop.Core.Commands
                     }
                     var laptop = factory.CreateLaptop(commandParameters);
 
-                    this.category.AddProduct(laptop);
+                    this.database.AddProduct(laptop);
 
                     this.logger.Log($"Laptop with ID:{laptop.ID} was created!");
 
@@ -77,7 +79,7 @@ namespace ElectronicsShop.Core.Commands
                     }
                     var desktopPc = factory.CreateDesktopComputer(commandParameters);
 
-                    this.category.AddProduct(desktopPc);
+                    this.database.AddProduct(desktopPc);
 
                     this.logger.Log($"Desktop computer with ID:{desktopPc.ID} was created!");
 
@@ -91,35 +93,21 @@ namespace ElectronicsShop.Core.Commands
 
         public void AddToShopingCart(int id)
         {
-            var prod = FindProduct(id);
+            var prod = GetProduct(id);
 
             this.shoppingCart.AddProduct(prod);
 
-            this.logger.Log($"{prod.Name} with ID:{id} was added to shopping cart!");
+            this.logger.Log($"{prod.GetType().Name} with ID:{id} was added to shopping cart!");
         }
 
-        public IProduct FindProduct(int id)
+        public IProduct GetProduct(int id)
         {
-            if (this.category.DesktopPCs.Any(x => x.ID == id))
-            {
-                return this.category.DesktopPCs.First(x => x.ID == id);
-            }
-            else if (this.category.Laptops.Any(x => x.ID == id))
-            {
-                return this.category.Laptops.First(x => x.ID == id);
-            }
-            else if (this.category.LandlinePhones.Any(x => x.ID == id))
-            {
-                return this.category.LandlinePhones.First(x => x.ID == id);
-            }
-            else if (this.category.Smartphones.Any(x => x.ID == id))
-            {
-                return this.category.Smartphones.First(x => x.ID == id);
-            }
-            else
+
+            if (!database.Contains(id))
             {
                 throw new ItemNotFoundException($"Product with ID:{id} does not exist!");
             }
+            return this.database.GetProduct(id);
         }
 
         public void Proccess(IList<string> commands)
@@ -161,19 +149,20 @@ namespace ElectronicsShop.Core.Commands
                             this.logger.Log("Shopping cart is empty !");
                             break;
                         }
-                        this.logger.Log(this.shoppingCart);
-                        ConsoleKeyInfo orderInput;
+                        this.logger.Log(this.shoppingCart.Print());
+
                         this.logger.Log($"Order Y/N ?");
-                        orderInput = Console.ReadKey();
+                        ConsoleKeyInfo orderInput = Console.ReadKey();
 
                         if (orderInput.Key == ConsoleKey.Y)
                         {
                             Random rnd = new Random();
                             decimal deliverCost = shoppingCart.TotalPrice() / 10m;
-                            this.logger.Log($"\n\n             ORDER N:{rnd.Next(234234, 988877)}" + $"\n" + $"\nFirst name: Gosho" +
+
+                            this.logger.Log($"\n\n             ORDER N:{rnd.Next(23234, 988877)}" + $"\n" + $"\nFirst name: Gosho" +
                                 $"\nLast name : Goshov" + $"\nTel. number: (+359)870000442" +
                                 $"\nAdress: Bulgaria ,Sofia Studentski grad, purviq blok ot lqvo na PLAZZA . A vhod !" +
-                                $"\nProducts: " + $"\n{ProductInfoDecorator.DecorateShoppingCartProducts(shoppingCart.ProductList)}" + $"     + {deliverCost}$ (delivery)" +
+                                $"\nProducts: " + $"\n{shoppingCart.Print()}" + $"     + {deliverCost}$ (delivery)" +
                                 $"\n\n     T O T A L : {shoppingCart.TotalPrice() + deliverCost}$" + $"\n\nThe order will arrive within three days !" +
                                 $"\n\n  <<< Have a nice day and continue shopping ! >>>\n");
                         }
@@ -184,7 +173,7 @@ namespace ElectronicsShop.Core.Commands
                         }
                         break;
                     }
-                    this.logger.Log(category.GetListOf(commands[0]));
+                    this.logger.Log(database.GetList(commands[0]));
                     break;
                 //
                 default:
@@ -196,7 +185,7 @@ namespace ElectronicsShop.Core.Commands
 
         private void RemoveFromShopingCart(int id)
         {
-            var prod = FindProduct(id);
+            var prod = GetProduct(id);
             this.shoppingCart.RemoveProduct(id);
             Console.WriteLine($"{prod.Name} with ID:{id} was removed from shopping cart!");
         }

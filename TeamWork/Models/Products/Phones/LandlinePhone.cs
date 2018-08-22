@@ -1,11 +1,12 @@
 ﻿using System;
 using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Models.Contracts.Phone_Contracts;
 using ElectronicsShop.Models.Interfaces;
 using ElectronicsShop.Models.Products.Common;
 
 namespace ElectronicsShop.Models.Products.Phones
 {
-    public class LandlinePhone : IPhone, IPrintable
+    public class LandlinePhone : ILandlinePhone, IPrintable
     {
         private int analogueLines;
         private string name;
@@ -108,8 +109,9 @@ namespace ElectronicsShop.Models.Products.Phones
             set => this.id = value;
         }
 
-        public LandlinePhone(decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines) //bool wallMounting) 
+        public LandlinePhone(int Id, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines) //bool wallMounting) 
         {
+            this.ID = Id;
             this.Price = price;
             this.Brand = brand;
             this.Model = model;
@@ -118,6 +120,7 @@ namespace ElectronicsShop.Models.Products.Phones
             this.DisplaySize = displaySize;
             this.Size = size;
             this.AnalogueLines = analogueLines;
+            
         }
 
         public int AnalogueLines

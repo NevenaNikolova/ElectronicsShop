@@ -2,7 +2,11 @@
 using ElectronicsShop.Core.Commands;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Core.Factories;
+using ElectronicsShop.Core.Loggers;
 using ElectronicsShop.Core.Tools;
+using ElectronicsShop.Models;
+using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Models.Interfaces;
 
 namespace ElectronicsShop
 {
@@ -20,11 +24,13 @@ namespace ElectronicsShop
             //Console.WriteLine("---------------------------------------");
             //Console.WriteLine(Printer.LaptopInfoLongString(laptop));
             //category.addProduct(laptop);
-            
+
             ProductFactory factory = new ProductFactory();
             ConsoleLogger logger = new ConsoleLogger();
-           // ILogger logger = new FileLogger();
-            CommandHandler commandHandler = new CommandHandler(factory, logger);
+            IDatabase database = new Database();
+            IShoppingCart shoppingCart = new ShoppingCart();
+            // ILogger logger = new FileLogger();
+            CommandHandler commandHandler = new CommandHandler(factory, logger,shoppingCart, database);
             var engine = Engine.Instance(factory, commandHandler, logger);
             engine.Start();
             //ShopingCart sh = new ShopingCart();

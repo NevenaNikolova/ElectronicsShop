@@ -109,7 +109,7 @@ namespace ElectronicsShop.Models.Products
             {
                 return this.id;
             }
-            private set
+            set
             { this.id = value; }
         }
         public string Name

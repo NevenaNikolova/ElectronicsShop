@@ -8,6 +8,6 @@ namespace ElectronicsShop.Models.Interfaces
 
         decimal Price { get; }
 
-        int ID { get; }
+        int ID { get; set; }
     }
 }

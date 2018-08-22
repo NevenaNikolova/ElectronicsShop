@@ -10,7 +10,7 @@ namespace ElectronicsShop.Core.Factories
         ISmartphone CreateSmartphone(IList<string> parameters);       
         ILandlinePhone CreateLandlinePhone(IList<string> parameters);
 
-        ILaptop CreateLaptop(IList<string> parameters);
+        IComputer CreateLaptop(IList<string> parameters);
         IComputer CreateDesktopComputer(IList<string> parameters);
 
     }

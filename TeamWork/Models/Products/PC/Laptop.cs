@@ -7,7 +7,7 @@ namespace ElectronicsShop.Models.Products
 
     public class Laptop : IComputer, IPrintable
     {
-        //private const string ProductName = "Laptop";
+
         private string processor;
         private int ram;
         private int hdd;
@@ -142,7 +142,7 @@ namespace ElectronicsShop.Models.Products
             {
                 return this.id;
             }
-            private set
+            set
             { this.id = value; }
         }
 

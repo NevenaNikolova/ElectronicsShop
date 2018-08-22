@@ -20,24 +20,7 @@ namespace ElectronicsShop.Core.Loggers
         {
             StringBuilder sb = new StringBuilder();
 
-            switch (product.GetType().Name)
-            {
-                case "Laptop":
-                    sb.Append(ProductInfoDecorator.DecorateProduct((Laptop)product));
-                    break;
-                case "DesktopPC":
-                    sb.Append(ProductInfoDecorator.DecorateProduct((DesktopPC)product));
-                    break;
-                case "Smartphone":
-                    sb.Append(ProductInfoDecorator.DecorateProduct((Smartphone)product));
-                    break;
-                case "LandlinePhone":
-                    sb.Append(ProductInfoDecorator.DecorateProduct((LandlinePhone)product));
-                    break;
-                default:
-                    throw new Exception("There is no such type!");
-
-            }
+            sb.Append(product.Print());
 
             this.Log(sb.ToString());
         }

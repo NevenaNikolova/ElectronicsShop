@@ -1,11 +1,12 @@
-﻿using ElectronicsShop.Models.Interfaces;
+﻿using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ElectronicsShop.Core.Contracts
 {
-    interface IShoppingCart
+    interface IShoppingCart : IPrintable
     {
         ICollection<IProduct> ProductList { get; }
 

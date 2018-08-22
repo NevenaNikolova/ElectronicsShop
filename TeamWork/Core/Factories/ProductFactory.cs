@@ -5,6 +5,7 @@ using ElectronicsShop.Models.Products.Phones;
 using ElectronicsShop.Models.Products.Common;
 using ElectronicsShop.Models.Interfaces;
 using ElectronicsShop.Models.Contracts.Phone_Contracts;
+using ElectronicsShop.Core.Tools;
 
 namespace ElectronicsShop.Core.Factories
 {
@@ -41,8 +42,9 @@ namespace ElectronicsShop.Core.Factories
         public ILandlinePhone CreateLandlinePhone(IList<string> parameters)
         {
             PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]));
-
-            var landlinePhone = new LandlinePhone(decimal.Parse(parameters[0]), parameters[1],
+            var id = 0;//IdProvider.Instance().GetID();
+            
+            var landlinePhone = new LandlinePhone(id,decimal.Parse(parameters[0]), parameters[1],
                 parameters[2], (Colour)Enum.Parse(typeof(Colour), parameters[3]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[4]),
                 int.Parse(parameters[5]), phoneSize, int.Parse(parameters[9]));
 
