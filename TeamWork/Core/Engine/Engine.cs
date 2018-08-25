@@ -13,7 +13,7 @@ namespace ElectronicsShop.Core
         private ILogger logger;
         private string exitCommand = "exit";
 
-        private IList<IComputer> Computers { get; }
+        private IList<IDesktopPc> Computers { get; }
 
         private IList<IProduct> Products { get; }
 
@@ -38,7 +38,7 @@ namespace ElectronicsShop.Core
 
         private Engine(IProductFactory factory, CommandHandler commandHandler,ILogger logger)
         {
-            this.Computers = new List<IComputer>();
+            this.Computers = new List<IDesktopPc>();
             this.Phones = new List<IPhone>();
             this.Products = new List<IProduct>();
             this.factory = factory;

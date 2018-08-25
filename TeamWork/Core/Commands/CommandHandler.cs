@@ -13,7 +13,7 @@ using System.Linq;
 
 namespace ElectronicsShop.Core.Commands
 {
-    internal class CommandHandler : ICommandHandler
+    internal class CommandHandler : ICommand
     {
         private IProductFactory factory;
         private readonly IDatabase database;

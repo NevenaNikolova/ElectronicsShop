@@ -4,7 +4,7 @@ using System;
 
 namespace ElectronicsShop.Models.Products
 {
-    public class DesktopPC : IComputer, IPrintable
+    public class DesktopPC : IDesktopPc, IPrintable
     {
         //private const string ProductName = "DesktopPC";
 

@@ -1,6 +1,6 @@
 ﻿namespace ElectronicsShop.Models.Interfaces
 {
-    public interface IComputer : IProduct
+    public interface IDesktopPc : IProduct
     {
         string Brand { get; }
 

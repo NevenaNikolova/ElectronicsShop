@@ -1,11 +1,12 @@
 ﻿using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Models.Contracts.Computer_Contracts;
 using ElectronicsShop.Models.Interfaces;
 using System;
 
 namespace ElectronicsShop.Models.Products
 {
 
-    public class Laptop : IComputer, IPrintable
+    public class Laptop : ILaptop, IPrintable
     {
 
         private string processor;
@@ -145,6 +146,8 @@ namespace ElectronicsShop.Models.Products
             set
             { this.id = value; }
         }
+
+        public int BatteryCaoacity => throw new NotImplementedException();
 
         public Laptop(string brand, string model, int displaySize, int batteryCapacity,
             string procesor, int ram, int hdd, int videoCard, int price)
