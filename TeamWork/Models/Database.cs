@@ -66,5 +66,10 @@ namespace ElectronicsShop.Models
                 return false;
             }
         }
+
+        List<IProduct> IDatabase.Products()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

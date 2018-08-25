@@ -45,7 +45,6 @@ namespace ElectronicsShop.Core.Commands
               colour, battery, displaySize, size, processor, ram, price);
             this.data.Products().Add(smartphone);
             return string.Format("Smartphone " + brand + " " + model + "was created.");
-
         }
     }
 }

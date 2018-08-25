@@ -18,7 +18,7 @@ namespace ElectronicsShop.Models.Products.Phones
         private decimal price;
         private int id;
         private string model;
-        private BatteryType battery;
+        private string battery;
         private string colour;
         private PhoneSize size;
 
@@ -90,7 +90,7 @@ namespace ElectronicsShop.Models.Products.Phones
                 this.colour = value;
             }
         }
-        public BatteryType Battery
+        public string Battery
         {
             get
             {
@@ -155,7 +155,7 @@ namespace ElectronicsShop.Models.Products.Phones
             set => this.id = IdProvider.Instance().GetID();
         }
 
-        public Smartphone(string brand, string model, string colour, BatteryType battery, int displaySize,
+        public Smartphone(string brand, string model, string colour, string battery, int displaySize,
             PhoneSize size, string processor, int ram, decimal price)
         {
             this.ID = id;

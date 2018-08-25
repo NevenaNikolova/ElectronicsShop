@@ -36,7 +36,7 @@ namespace ElectronicsShop.Core.Commands
         {
             var laptop = this.factory.CreateLaptop(brand, model,displaySize, batteryCapacity, processor, ram, hdd, videoCard, price);
             this.data.Products().Add(laptop);
-            return string.Format("Smartphone " + brand + " " + model + "was created.");
+            return string.Format("Laptop " + brand + " " + model + "was created.");
         }
     }
 }

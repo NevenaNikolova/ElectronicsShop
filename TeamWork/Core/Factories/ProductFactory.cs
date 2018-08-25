@@ -28,17 +28,17 @@ namespace ElectronicsShop.Core.Factories
         }
             //private int count;
 
-        public ILandlinePhone CreateLandlinePhone(int Id, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines)
+        public ILandlinePhone CreateLandlinePhone(int Id, decimal price, string brand, string model, string colour, string battery, int displaySize, PhoneSize size, int analogueLines)
         {
-            return new LandlinePhone(Id, price, brand, model, colour, battery, displaySize, size, analogueLines);
+            return new LandlinePhone(Id, price, brand, model, this.GetColour(colour).ToString(), this.getBatteryType(battery).ToString(), displaySize, size, analogueLines);
             //count++;
         }
 
-        public ISmartphone CreateSmartphone(decimal price, string brand, string model, string colour, BatteryType battery, int displaySize,
-            PhoneSize size, string processor, int ram)
+        public ISmartphone CreateSmartphone( string brand, string model, string colour, string battery, int displaySize,
+            PhoneSize size, string processor, int ram, decimal price)
         {
 
-            return new Smartphone( brand, model, this.GetColour(colour).ToString(), battery, displaySize, size, processor, ram, price);
+            return new Smartphone( brand, model, this.GetColour(colour).ToString(), this.getBatteryType(battery).ToString(), displaySize, size, processor, ram, price);
             //count++;
         }
 
@@ -73,7 +73,20 @@ namespace ElectronicsShop.Core.Factories
                 default: throw new ArgumentException("Colour not set correctly!");
             }
         }
-        
+
+        private BatteryType getBatteryType(string battery)
+        {
+            switch (battery)
+            { 
+                case "LiIon":
+                    return BatteryType.LiIon;
+                case "White":
+                    return BatteryType.NiMH;
+                case "Red":
+                    return BatteryType.NiCd;
+                default: throw new ArgumentException("Colour not set correctly!");
+            }
+        }
     }
 
 }
