@@ -8,19 +8,18 @@ using ElectronicsShop.Models.ComputerContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
-
+using ElectronicsShop.Core.Commands.Contracts;
 
 namespace ElectronicsShop.Core.Commands
 {
-    internal class CommandHandler : ICommandHandler
+    internal class CommandFactory : ICommandFactory
     {
         private IProductFactory factory;
         private readonly IDatabase database;
         private IShoppingCart shoppingCart;
         private ILogger logger;
 
-        public CommandHandler(IProductFactory factory, ILogger logger, IShoppingCart shoppingCart, IDatabase database)
+        public CommandFactory(IProductFactory factory, ILogger logger, IShoppingCart shoppingCart, IDatabase database)
         {
             this.factory = factory;
             this.logger = logger;
@@ -110,7 +109,7 @@ namespace ElectronicsShop.Core.Commands
             return this.database.GetProduct(id);
         }
 
-        public void Proccess(IList<string> commands)
+        public void Process(IList<string> commands)
         {
             string firstCommand = commands[0];
             commands.RemoveAt(0);

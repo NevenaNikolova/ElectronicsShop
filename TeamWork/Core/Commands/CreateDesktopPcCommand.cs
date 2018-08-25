@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ElectronicsShop.Core.Commands
 {
-    class CreateDesktopPcCommand
+    class CreateDesktopPcCommand : ICommand
     {
+        public string Execute(IList<string> parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ElectronicsShop.Models.Contracts.ComputerContracts
 {
-    public interface IDesktopComputer : IProduct, IComputer
+    public interface IDesktopComputer : IComputer
     {
     }
 }

@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
 using ElectronicsShop.Models.Products.Common;
-using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Models.Contracts.PhoneContracts;
-using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models.Contracts.ComputerContracts;
 
 namespace ElectronicsShop.Core.Factories
 {
-    internal class ProductFactory : IProductFactory
+    public class ProductFactory : IProductFactory
     {
 
 
@@ -22,67 +20,37 @@ namespace ElectronicsShop.Core.Factories
 
         //laptop command
         //create laptop MyLaptop Lenovo ThinkPad 14 4500 i5 8 500 4 1200
-
-        private static IProductFactory instanceHolder = new ProductFactory();
-        private int count;
-
         public ProductFactory()
         {
 
         }
+            //private int count;
 
-        public static IProductFactory Instance
+        public ILandlinePhone CreateLandlinePhone(int Id, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines)
         {
-            get
-            {
-                return instanceHolder;
-            }
-        }
-    
-
-        public ILandlinePhone CreateLandlinePhone(IList<string> parameters)
-        {
-            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]));
-            var id = 0;//IdProvider.Instance().GetID();
-            
-            var landlinePhone = new LandlinePhone(id,decimal.Parse(parameters[0]), parameters[1],
-                parameters[2], (Colour)Enum.Parse(typeof(Colour), parameters[3]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[4]),
-                int.Parse(parameters[5]), phoneSize, int.Parse(parameters[9]));
-
-            count++;
-            return landlinePhone;
+            return new LandlinePhone(Id, price, brand, model, colour, battery, displaySize, size, analogueLines);
+            //count++;
         }
 
-        public ISmartphone CreateSmartphone(IList<string> parameters)
+        public ISmartphone CreateSmartphone(decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize,
+            PhoneSize size, string processor, int ram)
         {
 
-            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[6]), double.Parse(parameters[7]), double.Parse(parameters[8]));
-
-            var phone = new Smartphone(decimal.Parse(parameters[0]), parameters[1],
-                parameters[2], (Colour)Enum.Parse(typeof(Colour), parameters[3]), (BatteryType)Enum.Parse(typeof(BatteryType), parameters[4]),
-                int.Parse(parameters[5]), phoneSize, parameters[9], int.Parse(parameters[10]));
-
-            count++;
-            return phone;
+            return new Smartphone(price, brand, model, colour, battery, displaySize, size, processor, ram);
+            //count++;
         }
 
-        public ILaptop CreateLaptop(IList<string> parameters)
+        public IDesktopComputer CreateDesktopComputer(string brand, string model, string processor, int ram, int hdd, int videoCard, decimal price)
         {
-            var laptop = new Laptop(parameters[0], parameters[1], int.Parse(parameters[2]), int.Parse(parameters[3]),
-                parameters[4], int.Parse(parameters[5]), int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]));
-
-            count++;
-            return laptop;
+            return new DesktopPC(brand, model, processor, ram, hdd, videoCard, price);
+            //count++;
         }
 
-        public IDesktopComputer CreateDesktopComputer(IList<string> parameters)
-        {          
-            var desktopPC = new DesktopPC(parameters[0], parameters[1],
-                parameters[2], int.Parse(parameters[3]), int.Parse(parameters[4]),
-                int.Parse(parameters[5]), decimal.Parse(parameters[6]));
-
-            count++;
-            return desktopPC;
+        public ILaptop CreateLaptop(string brand, string model, int displaySize, int batteryCapacity,
+            string procesor, int ram, int hdd, int videoCard, int price)
+        {
+            return new Laptop(brand, model, displaySize, batteryCapacity, procesor, ram, hdd, videoCard, price);
+            // count++;
         }
     }
 

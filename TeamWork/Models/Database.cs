@@ -13,6 +13,14 @@ namespace ElectronicsShop.Models
     {
         private readonly List<IProduct> products;
 
+        public List<IProduct> Products
+        {
+            get
+            {
+                return this.products;
+            }
+        }
+
         public Database()
         {
             this.products = new List<IProduct>();
@@ -40,7 +48,8 @@ namespace ElectronicsShop.Models
             collection.ForEach(x => sb.Append(x.Print()));
             return sb.ToString();
         }
-
+        
+        
         public IProduct GetProduct(int id)
         {
             return this.products.First(p => p.ID == id);

@@ -1,9 +1,14 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using ElectronicsShop.Core.Commands;
+using ElectronicsShop.Core.Commands.Contracts;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Models.ComputerContracts;
+using ElectronicsShop.Models.Contracts;
+using ElectronicsShop.Models.Contracts.ComputerContracts;
+using ElectronicsShop.Models.Contracts.PhoneContracts;
 
 namespace ElectronicsShop.Core
 {
@@ -13,37 +18,29 @@ namespace ElectronicsShop.Core
         private ILogger logger;
         private string exitCommand = "exit";
 
-        private IList<IDesktopPc> Computers { get; }
+        private IList<ILaptop> Laptops { get; }
 
         private IList<IProduct> Products { get; }
 
-        private IList<IPhone> Phones { get; }
+        private IList<ISmartphone> Smartphones { get; }
 
-        private CommandHandler commandHandler;
+        private IList<ILandlinePhone> Landlinephones { get; }
+
+        private ICommandFactory commandFactory;
 
         private IProductFactory factory;
 
-        public static IEngine Instance(IProductFactory factory, CommandHandler commandHandler,ILogger logger)
+        private IDatabase database;
+
+        private Engine(IProductFactory factory, ICommandFactory commandFactory, ILogger logger, IDatabase database)
         {
-
-            if (instanceHolder == null)
-            {
-
-                instanceHolder = new Engine(factory, commandHandler,logger);
-            }
-
-            return instanceHolder;
-
-        }
-
-        private Engine(IProductFactory factory, CommandHandler commandHandler,ILogger logger)
-        {
-            this.Computers = new List<IDesktopPc>();
-            this.Phones = new List<IPhone>();
-            this.Products = new List<IProduct>();
             this.factory = factory;
             this.logger = logger;
-            this.commandHandler = commandHandler;
+            this.commandFactory = commandFactory;
+            this.database = database;
+            this.Laptops = this.database.Products().Where(x=>x.GetType().Name.ToLower() == "laptop").Select(x=> x as ILaptop).ToList();
+            this.Smartphones = this.database.Products().Where(x => x.GetType().Name.ToLower() == "smartphone").Select(x => x as ISmartphone).ToList();
+            this.Landlinephones = this.database.Products().Where(x => x.GetType().Name.ToLower() == "landlinephone").Select(x => x as ILandlinePhone).ToList();
         }
 
         public void Start()
@@ -59,7 +56,7 @@ namespace ElectronicsShop.Core
                         break;
                     }
 
-                    this.commandHandler.Proccess(commands);
+                    this.commandFactory.Process(commands);
                 }
                 catch (Exception ex)
                 {

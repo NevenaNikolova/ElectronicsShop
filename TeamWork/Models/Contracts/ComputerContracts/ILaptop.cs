@@ -1,26 +1,14 @@
-﻿using ElectronicsShop.Models.Interfaces;
+﻿using ElectronicsShop.Models.ComputerContracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ElectronicsShop.Models.Contracts.Computer_Contracts
+namespace ElectronicsShop.Models.Contracts.ComputerContracts
 {
-    public interface ILaptop : IProduct
+    public interface ILaptop : IComputer
     {
-        string Brand { get; }
-
-        string Model { get; }
-
         int DisplaySize { get; }
 
         int BatteryCaoacity { get; }
-
-        string Processor { get; }
-
-        int Ram { get; }
-
-        int Hdd { get; }
-
-        int VideoCard { get; }
     }
 }

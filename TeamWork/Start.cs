@@ -5,13 +5,10 @@ using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Loggers;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Contracts;
-<<<<<<< HEAD
 using ElectronicsShop.Models.ComputerContracts;
-=======
 using Autofac;
 using System.Reflection;
 using System.Linq;
->>>>>>> 1a82d2e5934828427ceaac31a709ade90f5e5363
 
 namespace ElectronicsShop
 {

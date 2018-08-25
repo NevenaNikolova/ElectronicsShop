@@ -4,7 +4,11 @@ using System.Text;
 
 namespace ElectronicsShop.Core.Commands
 {
-    class CreateLandlinephoneCommand
+    class CreateLandlinephoneCommand : ICommand
     {
+        public string Execute(IList<string> parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

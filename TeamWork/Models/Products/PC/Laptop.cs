@@ -1,11 +1,5 @@
 ﻿using ElectronicsShop.Models.Contracts;
-<<<<<<< HEAD
 using ElectronicsShop.Models.Contracts.ComputerContracts;
-using ElectronicsShop.Models.ComputerContracts;
-=======
-using ElectronicsShop.Models.Contracts.Computer_Contracts;
-using ElectronicsShop.Models.Interfaces;
->>>>>>> 1a82d2e5934828427ceaac31a709ade90f5e5363
 using System;
 
 namespace ElectronicsShop.Models.Products
@@ -24,7 +18,7 @@ namespace ElectronicsShop.Models.Products
         private int batteryCapacity;
         private decimal price;
         private int id;
-        
+
 
         public string Processor
         {
