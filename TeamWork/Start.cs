@@ -3,10 +3,15 @@ using ElectronicsShop.Core.Commands;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Loggers;
-using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Contracts;
+<<<<<<< HEAD
 using ElectronicsShop.Models.ComputerContracts;
+=======
+using Autofac;
+using System.Reflection;
+using System.Linq;
+>>>>>>> 1a82d2e5934828427ceaac31a709ade90f5e5363
 
 namespace ElectronicsShop
 {
@@ -14,30 +19,34 @@ namespace ElectronicsShop
     {
         public static void Main()
         {
-            //Category category = new Category("Electronics");
-            //Laptop laptop = new Laptop("ASUS", " ", "af", 16, 2500, "Intel i7-UXJS", 4, 512, 2, 1000);
-            //ShoppingCart shopingCart = new ShoppingCart();
-            //shopingCart.AddProduct(laptop);
+            var containerBuilder = new ContainerBuilder();
 
-            //Console.WriteLine(string.Join(" ", shopingCart));
-            //Console.WriteLine(Decorator.DecorateProduct(laptop));
-            //Console.WriteLine("---------------------------------------");
-            //Console.WriteLine(Printer.LaptopInfoLongString(laptop));
-            //category.addProduct(laptop);
+            containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).AsImplementedInterfaces();
+            containerBuilder.RegisterType<Database>().As<IDatabase>().SingleInstance();
+            RegisterDynamicCommands(containerBuilder);
 
-            ProductFactory factory = new ProductFactory();
-            ConsoleLogger logger = new ConsoleLogger();
-            IDatabase database = new Database();
-            IShoppingCart shoppingCart = new ShoppingCart();
-            // ILogger logger = new FileLogger();
-            CommandHandler commandHandler = new CommandHandler(factory, logger,shoppingCart, database);
-            var engine = Engine.Instance(factory, commandHandler, logger);
+            var dependencyContainer = containerBuilder.Build();
+
+            var engine = dependencyContainer.Resolve<IEngine>();
             engine.Start();
-            //ShopingCart sh = new ShopingCart();
-            //sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 2));
-            //sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 4));
-            //sh.AddProduct(new Laptop("SDASD", "ujhs", "ksjdzfn", 52, 1521, "fas", 42, 54, 65, 1));
-            //Console.WriteLine(sh.TotalPrice()); 
+        }
+
+        private static void RegisterDynamicCommands(ContainerBuilder builder)
+        {
+            Assembly currentAssembly = Assembly.GetExecutingAssembly();
+            var commandTypes = currentAssembly.DefinedTypes
+                .Where(typeInfo =>
+                    typeInfo.ImplementedInterfaces.Contains(typeof(ICommand)))
+                .ToList();
+
+            // register in autofac
+            foreach (var commandType in commandTypes)
+            {
+
+                builder.RegisterType(commandType.AsType())
+                  .Named<ICommand>(
+                    commandType.Name.ToLower().Replace("command", ""));
+            }
         }
     }
 }
