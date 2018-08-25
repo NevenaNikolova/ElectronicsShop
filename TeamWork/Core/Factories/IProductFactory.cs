@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
-using ElectronicsShop.Models.Contracts.Phone_Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Contracts.PhoneContracts;
+using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Models.Products;
+using ElectronicsShop.Models.Contracts.ComputerContracts;
 
 namespace ElectronicsShop.Core.Factories
 {
@@ -10,8 +11,8 @@ namespace ElectronicsShop.Core.Factories
         ISmartphone CreateSmartphone(IList<string> parameters);       
         ILandlinePhone CreateLandlinePhone(IList<string> parameters);
 
-        IComputer CreateLaptop(IList<string> parameters);
-        IComputer CreateDesktopComputer(IList<string> parameters);
+        ILaptop CreateLaptop(IList<string> parameters);
+        IDesktopComputer CreateDesktopComputer(IList<string> parameters);
 
     }
 }

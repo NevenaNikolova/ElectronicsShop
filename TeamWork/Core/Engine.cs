@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using ElectronicsShop.Core.Commands;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Core.Factories;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.ComputerContracts;
 
 namespace ElectronicsShop.Core
 {

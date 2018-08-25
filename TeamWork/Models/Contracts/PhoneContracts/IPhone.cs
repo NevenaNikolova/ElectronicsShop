@@ -1,7 +1,7 @@
 ﻿using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Common;
 
-namespace ElectronicsShop.Models.Interfaces
+namespace ElectronicsShop.Models.ComputerContracts
 {
     public interface IPhone : IProduct
     {

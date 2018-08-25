@@ -1,7 +1,7 @@
 ﻿using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models.Contracts;
-using ElectronicsShop.Models.Contracts.Phone_Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Contracts.PhoneContracts;
+using ElectronicsShop.Models.ComputerContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,10 +34,10 @@ namespace ElectronicsShop.Models
 
         public string GetList(string typeOfProduct)
         {
-            throw new NotImplementedException("not implemented Database method GetList()");
+            //throw new NotImplementedException("not implemented Database method GetList()");
             StringBuilder sb = new StringBuilder();
-            this.products.Where(x => x.GetType() == typeof(ILandlinePhone)).Select(x => sb.Append(x.Print()));
-
+            var collection = this.products.Where(x => x.Name.ToLower().Contains(typeOfProduct)).ToList();
+            collection.ForEach(x => sb.Append(x.Print()));
             return sb.ToString();
         }
 

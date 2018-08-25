@@ -1,7 +1,7 @@
 ﻿using System;
 using ElectronicsShop.Models.Contracts;
-using ElectronicsShop.Models.Contracts.Phone_Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Contracts.PhoneContracts;
+using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Models.Products.Common;
 
 namespace ElectronicsShop.Models.Products.Phones

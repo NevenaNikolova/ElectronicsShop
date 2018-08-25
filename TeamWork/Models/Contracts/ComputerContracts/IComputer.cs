@@ -1,4 +1,4 @@
-﻿namespace ElectronicsShop.Models.Interfaces
+﻿namespace ElectronicsShop.Models.ComputerContracts
 {
     public interface IComputer : IProduct
     {

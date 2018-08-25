@@ -4,7 +4,7 @@ using System.Text;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Core.Tools;
 
 namespace ElectronicsShop.Core.Loggers

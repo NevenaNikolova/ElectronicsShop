@@ -1,10 +1,11 @@
 ﻿using ElectronicsShop.Models.Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Contracts.ComputerContracts;
+using ElectronicsShop.Models.ComputerContracts;
 using System;
 
 namespace ElectronicsShop.Models.Products
 {
-    public class DesktopPC : IComputer, IPrintable
+    public class DesktopPC : IDesktopComputer, IPrintable
     {
         //private const string ProductName = "DesktopPC";
 

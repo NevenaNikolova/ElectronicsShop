@@ -1,6 +1,6 @@
 using System;
 using ElectronicsShop.Core.Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
 using System.Text;

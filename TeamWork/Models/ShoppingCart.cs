@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Models.Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.ComputerContracts;
 
 namespace ElectronicsShop.Models
 {

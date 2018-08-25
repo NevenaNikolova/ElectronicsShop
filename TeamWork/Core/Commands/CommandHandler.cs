@@ -4,7 +4,7 @@ using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.ComputerContracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,9 +73,9 @@ namespace ElectronicsShop.Core.Commands
 
                     break;
                 case "desktoppc":
-                    if (commandParameters.Count != 9)
+                    if (commandParameters.Count != 7)
                     {
-                        throw new Exception("For desktop pc you need to enter exacly 9 parameters!");
+                        throw new Exception("For desktop pc you need to enter exacly 7 parameters!");
                     }
                     var desktopPc = factory.CreateDesktopComputer(commandParameters);
 
@@ -131,7 +131,7 @@ namespace ElectronicsShop.Core.Commands
                     this.AddToShopingCart(int.Parse(commands[0]));
                     break;
                 //
-                // RemoveProductFromShoppingCartCommand
+                // RemoveProductFromShoppingCartCommand.execute();
                 case "remove":
                     if (commands.Count < 1)
                     {
@@ -174,6 +174,11 @@ namespace ElectronicsShop.Core.Commands
                         break;
                     }
                     this.logger.Log(database.GetList(commands[0]));
+                    if (commands[0] == "laptops")
+                    {
+                        this.logger.Log(database.GetList(commands[0]));
+
+                    }
                     break;
                 //
                 default:

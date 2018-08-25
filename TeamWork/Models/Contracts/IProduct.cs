@@ -1,6 +1,6 @@
 ﻿using ElectronicsShop.Models.Contracts;
 
-namespace ElectronicsShop.Models.Interfaces
+namespace ElectronicsShop.Models.ComputerContracts
 {
     public interface IProduct : IPrintable
     {

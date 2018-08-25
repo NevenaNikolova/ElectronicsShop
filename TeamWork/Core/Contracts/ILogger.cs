@@ -1,4 +1,4 @@
-﻿using ElectronicsShop.Models.Interfaces;
+﻿using ElectronicsShop.Models.ComputerContracts;
 
 namespace ElectronicsShop.Core.Contracts
 {

@@ -6,7 +6,7 @@ using ElectronicsShop.Core.Loggers;
 using ElectronicsShop.Core.Tools;
 using ElectronicsShop.Models;
 using ElectronicsShop.Models.Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.ComputerContracts;
 
 namespace ElectronicsShop
 {

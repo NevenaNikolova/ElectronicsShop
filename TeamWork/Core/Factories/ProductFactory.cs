@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
 using ElectronicsShop.Models.Products.Common;
-using ElectronicsShop.Models.Interfaces;
-using ElectronicsShop.Models.Contracts.Phone_Contracts;
+using ElectronicsShop.Models.ComputerContracts;
+using ElectronicsShop.Models.Contracts.PhoneContracts;
 using ElectronicsShop.Core.Tools;
+using ElectronicsShop.Models.Contracts.ComputerContracts;
 
 namespace ElectronicsShop.Core.Factories
 {
@@ -65,7 +66,7 @@ namespace ElectronicsShop.Core.Factories
             return phone;
         }
 
-        public IComputer CreateLaptop(IList<string> parameters)
+        public ILaptop CreateLaptop(IList<string> parameters)
         {
             var laptop = new Laptop(parameters[0], parameters[1], int.Parse(parameters[2]), int.Parse(parameters[3]),
                 parameters[4], int.Parse(parameters[5]), int.Parse(parameters[6]), int.Parse(parameters[7]), int.Parse(parameters[8]));
@@ -74,7 +75,7 @@ namespace ElectronicsShop.Core.Factories
             return laptop;
         }
 
-        public IComputer CreateDesktopComputer(IList<string> parameters)
+        public IDesktopComputer CreateDesktopComputer(IList<string> parameters)
         {          
             var desktopPC = new DesktopPC(parameters[0], parameters[1],
                 parameters[2], int.Parse(parameters[3]), int.Parse(parameters[4]),

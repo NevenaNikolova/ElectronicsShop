@@ -1,11 +1,12 @@
 ﻿using ElectronicsShop.Models.Contracts;
-using ElectronicsShop.Models.Interfaces;
+using ElectronicsShop.Models.Contracts.ComputerContracts;
+using ElectronicsShop.Models.ComputerContracts;
 using System;
 
 namespace ElectronicsShop.Models.Products
 {
 
-    public class Laptop : IComputer, IPrintable
+    public class Laptop : ILaptop, IPrintable
     {
 
         private string processor;
@@ -18,7 +19,7 @@ namespace ElectronicsShop.Models.Products
         private int batteryCapacity;
         private decimal price;
         private int id;
-        private string name;
+        
 
         public string Processor
         {
@@ -121,7 +122,7 @@ namespace ElectronicsShop.Models.Products
         {
             get
             {
-                return this.name;
+                return this.GetType().Name;
             }
         }
         public virtual decimal Price
@@ -147,13 +148,13 @@ namespace ElectronicsShop.Models.Products
         }
 
         public Laptop(string brand, string model, int displaySize, int batteryCapacity,
-            string procesor, int ram, int hdd, int videoCard, int price)
+            string processor, int ram, int hdd, int videoCard, int price)
         {
             this.Brand = brand;
             this.Model = model;
             this.DisplaySize = displaySize;
             this.BatteryCapacity = batteryCapacity;
-            this.Processor = procesor;
+            this.Processor = processor;
             this.Ram = ram;
             this.Hdd = hdd;
             this.VideoCard = videoCard;
