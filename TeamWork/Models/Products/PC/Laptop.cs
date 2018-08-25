@@ -1,4 +1,5 @@
-﻿using ElectronicsShop.Models.Contracts;
+﻿using ElectronicsShop.Core.Tools;
+using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Contracts.ComputerContracts;
 using System;
 
@@ -142,8 +143,7 @@ namespace ElectronicsShop.Models.Products
             {
                 return this.id;
             }
-            set
-            { this.id = value; }
+            set => this.id = IdProvider.Instance().GetID();
         }
 
         public int BatteryCaoacity => throw new NotImplementedException();
@@ -151,6 +151,7 @@ namespace ElectronicsShop.Models.Products
         public Laptop(string brand, string model, int displaySize, int batteryCapacity,
             string processor, int ram, int hdd, int videoCard, int price)
         {
+            this.ID = id;
             this.Brand = brand;
             this.Model = model;
             this.DisplaySize = displaySize;

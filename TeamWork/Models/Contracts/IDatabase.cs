@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ElectronicsShop.Models.Contracts
 {
-    interface IDatabase
+    public interface IDatabase
     {
         void AddProduct(IProduct product);
         void RemoveProduct(IProduct product);

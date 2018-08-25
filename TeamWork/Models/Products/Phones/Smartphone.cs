@@ -3,6 +3,7 @@ using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Contracts.PhoneContracts;
 using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Core.Tools;
 
 namespace ElectronicsShop.Models.Products.Phones
 {
@@ -18,7 +19,7 @@ namespace ElectronicsShop.Models.Products.Phones
         private int id;
         private string model;
         private BatteryType battery;
-        private Colour colour;
+        private string colour;
         private PhoneSize size;
 
         public int Ram
@@ -78,7 +79,7 @@ namespace ElectronicsShop.Models.Products.Phones
                 this.model = value;
             }
         }
-        public Colour Colour
+        public string Colour
         {
             get
             {
@@ -151,13 +152,13 @@ namespace ElectronicsShop.Models.Products.Phones
         public int ID
         {
             get => this.id;
-            set => this.id = value;
+            set => this.id = IdProvider.Instance().GetID();
         }
 
-
-        public Smartphone(decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize,
-            PhoneSize size, string processor, int ram)
+        public Smartphone(string brand, string model, string colour, BatteryType battery, int displaySize,
+            PhoneSize size, string processor, int ram, decimal price)
         {
+            this.ID = id;
             this.Price = price;
             this.Brand = brand;
             this.Model = model;

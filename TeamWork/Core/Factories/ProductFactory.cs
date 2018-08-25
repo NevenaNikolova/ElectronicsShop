@@ -10,7 +10,7 @@ namespace ElectronicsShop.Core.Factories
 {
     public class ProductFactory : IProductFactory
     {
-
+        
 
         //smartphone command
         //create smartphone gosho 900 Asus ZenPhone Black LiIon 16 3 3 3 Atom 4
@@ -20,6 +20,8 @@ namespace ElectronicsShop.Core.Factories
 
         //laptop command
         //create laptop MyLaptop Lenovo ThinkPad 14 4500 i5 8 500 4 1200
+
+
         public ProductFactory()
         {
 
@@ -32,11 +34,11 @@ namespace ElectronicsShop.Core.Factories
             //count++;
         }
 
-        public ISmartphone CreateSmartphone(decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize,
+        public ISmartphone CreateSmartphone(decimal price, string brand, string model, string colour, BatteryType battery, int displaySize,
             PhoneSize size, string processor, int ram)
         {
 
-            return new Smartphone(price, brand, model, colour, battery, displaySize, size, processor, ram);
+            return new Smartphone( brand, model, this.GetColour(colour).ToString(), battery, displaySize, size, processor, ram, price);
             //count++;
         }
 
@@ -52,6 +54,26 @@ namespace ElectronicsShop.Core.Factories
             return new Laptop(brand, model, displaySize, batteryCapacity, procesor, ram, hdd, videoCard, price);
             // count++;
         }
+        private Colour GetColour(string colour)
+        {
+            switch (colour)
+            {
+                case "Black":
+                    return Colour.Black;
+                case "White":
+                    return Colour.White;
+                case "Red":
+                    return Colour.Red;
+                case "Grey":
+                    return Colour.Grey;
+                case "Blue":
+                    return Colour.Blue;
+                case "Gold":
+                    return Colour.Gold;
+                default: throw new ArgumentException("Colour not set correctly!");
+            }
+        }
+        
     }
 
 }

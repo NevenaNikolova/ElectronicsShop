@@ -3,6 +3,7 @@ using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Contracts.PhoneContracts;
 using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Core.Tools;
 
 namespace ElectronicsShop.Models.Products.Phones
 {
@@ -106,7 +107,7 @@ namespace ElectronicsShop.Models.Products.Phones
         public int ID
         {
             get => this.id;
-            set => this.id = value;
+            set => this.id = IdProvider.Instance().GetID();
         }
 
         public LandlinePhone(int Id, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines) //bool wallMounting) 
