@@ -24,6 +24,7 @@ namespace ElectronicsShop.Core.Commands
             this.autofacContext = autofacContext;
         }
 
+
         public ICommand GetCommand(string commandName)
         {
             return this.autofacContext.ResolveNamed<ICommand>(commandName);
