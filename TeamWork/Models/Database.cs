@@ -17,7 +17,7 @@ namespace ElectronicsShop.Models
         {
             get
             {
-                return this.products;
+                return new List<IProduct>(products);
             }
         }
 
@@ -28,12 +28,25 @@ namespace ElectronicsShop.Models
 
         public void AddProduct(IProduct product)
         {
+            if (product == null)
+            {
+                throw new ArgumentNullException("Product");
+            }
             this.products.Add(product);
             product.ID = products.IndexOf(product);
         }
 
         public void RemoveProduct(IProduct product)
         {
+            if (product == null)
+            {
+                throw new ArgumentNullException("Invalid product value!");
+            }
+            if (!products.Contains(product))
+            {
+                throw new ArgumentException("Trying to remove unexisting product!");
+            }
+
             if (this.products.Contains(product))
             {
                 this.products.Remove(product);
@@ -42,7 +55,10 @@ namespace ElectronicsShop.Models
 
         public string GetList(string typeOfProduct)
         {
-            //throw new NotImplementedException("not implemented Database method GetList()");
+            if (!products.Any(x => x.GetType().Name.Contains(typeOfProduct)))
+            {
+                throw new ArgumentException($"Unexisting type {typeOfProduct}!");
+            }
             StringBuilder sb = new StringBuilder();
             var collection = this.products.Where(x => x.Name.ToLower().Contains(typeOfProduct)).ToList();
             collection.ForEach(x => sb.Append(x.Print()));
