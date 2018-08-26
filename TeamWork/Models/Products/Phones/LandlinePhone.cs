@@ -3,6 +3,7 @@ using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Contracts.PhoneContracts;
 using ElectronicsShop.Models.ComputerContracts;
 using ElectronicsShop.Models.Products.Common;
+using ElectronicsShop.Core.Tools;
 
 namespace ElectronicsShop.Models.Products.Phones
 {
@@ -49,12 +50,12 @@ namespace ElectronicsShop.Models.Products.Phones
                 this.model = value;
             }
         }
-        public Colour Colour
+        public string Colour
         {
             get;
         }
 
-        public BatteryType Battery { get; }
+        public string Battery { get; }
 
         public int DisplaySize
         {
@@ -106,10 +107,10 @@ namespace ElectronicsShop.Models.Products.Phones
         public int ID
         {
             get => this.id;
-            set => this.id = value;
+            set => this.id = IdProvider.Instance().GetID();
         }
 
-        public LandlinePhone(int Id, decimal price, string brand, string model, Colour colour, BatteryType battery, int displaySize, PhoneSize size, int analogueLines) //bool wallMounting) 
+        public LandlinePhone(int Id, decimal price, string brand, string model, string colour, string battery, int displaySize, PhoneSize size, int analogueLines) //bool wallMounting) 
         {
             this.ID = Id;
             this.Price = price;

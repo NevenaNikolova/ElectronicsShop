@@ -2,6 +2,7 @@
 using ElectronicsShop.Models.Contracts.ComputerContracts;
 using ElectronicsShop.Models.ComputerContracts;
 using System;
+using ElectronicsShop.Core.Tools;
 
 namespace ElectronicsShop.Models.Products
 {
@@ -111,8 +112,7 @@ namespace ElectronicsShop.Models.Products
             {
                 return this.id;
             }
-            set
-            { this.id = value; }
+            set => this.id = IdProvider.Instance().GetID();
         }
         public string Name
         {
@@ -124,6 +124,7 @@ namespace ElectronicsShop.Models.Products
         
         public DesktopPC(string brand, string model, string processor, int ram, int hdd, int videoCard, decimal price)
         {
+            this.ID = id;
             this.Brand = brand;
             this.Model = model;
             this.Processor = processor;

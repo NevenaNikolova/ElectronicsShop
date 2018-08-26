@@ -7,8 +7,8 @@ namespace ElectronicsShop.Models.ComputerContracts
     {
         string Brand { get; }
         string Model { get; }
-        Colour Colour { get; }
-        BatteryType Battery { get; }
+        string Colour { get; }
+        string Battery { get; }
         int DisplaySize { get; }
         PhoneSize Size { get; }
     }
