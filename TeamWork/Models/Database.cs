@@ -54,15 +54,12 @@ namespace ElectronicsShop.Models
         }
 
         public string GetList(string typeOfProduct)
-<<<<<<< HEAD
         {
-            if (!products.Any(x => x.GetType().Name.Contains(typeOfProduct)))
+            if (!products.Any(x => x.Name.ToLower().Contains(typeOfProduct)))
             {
                 throw new ArgumentException($"Unexisting type {typeOfProduct}!");
             }
-=======
-        {           
->>>>>>> eb75d5fbc548df331ed32b96e927c27cdc699661
+             
             StringBuilder sb = new StringBuilder();
             var collection = this.products.Where(x => x.Name.ToLower().Contains(typeOfProduct)).ToList();
             collection.ForEach(x => sb.Append(x.Print()));
