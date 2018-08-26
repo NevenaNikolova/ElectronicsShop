@@ -48,8 +48,7 @@ namespace ElectronicsShop.Models
             collection.ForEach(x => sb.Append(x.Print()));
             return sb.ToString();
         }
-        
-        
+
         public IProduct GetProduct(int id)
         {
             return this.products.First(p => p.ID == id);

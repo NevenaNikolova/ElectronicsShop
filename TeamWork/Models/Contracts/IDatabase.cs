@@ -12,6 +12,6 @@ namespace ElectronicsShop.Models.Contracts
         string GetList(string typeOfProduct);
         IProduct GetProduct(int id);
         bool Contains(int id);
-        List<IProduct> Products();
+        List<IProduct> Products { get; }
     }
 }

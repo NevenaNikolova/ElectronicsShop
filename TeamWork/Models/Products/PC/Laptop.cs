@@ -75,7 +75,7 @@ namespace ElectronicsShop.Models.Products
             {
                 if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Invalid brand value!");
+                    throw new ArgumentNullException("Invalid brand value!");
                 }
                 this.brand = value;
             }
@@ -98,9 +98,9 @@ namespace ElectronicsShop.Models.Products
             get => displaySize;
             private set
             {
-                if (value < 0)
+                if (value < 11 || value > 20 )
                 {
-                    throw new ArgumentOutOfRangeException("Display size cannot be negative!");
+                    throw new ArgumentOutOfRangeException("Display size cannot be less than 11 and bigger than 20!");
                 }
                 this.displaySize = value;
             }
@@ -110,9 +110,9 @@ namespace ElectronicsShop.Models.Products
             get => batteryCapacity;
             private set
             {
-                if (value < 0)
+                if (value < 1500)
                 {
-                    throw new ArgumentOutOfRangeException("Battery capacity cannot be negative!");
+                    throw new ArgumentOutOfRangeException("Battery capacity cannot less than 1500mAh!");
                 }
                 this.batteryCapacity = value;
             }
@@ -146,10 +146,8 @@ namespace ElectronicsShop.Models.Products
             { this.id = value; }
         }
 
-        public int BatteryCaoacity => throw new NotImplementedException();
-
         public Laptop(string brand, string model, int displaySize, int batteryCapacity,
-            string processor, int ram, int hdd, int videoCard, int price)
+    string processor, int ram, int hdd, int videoCard, int price)
         {
             this.Brand = brand;
             this.Model = model;

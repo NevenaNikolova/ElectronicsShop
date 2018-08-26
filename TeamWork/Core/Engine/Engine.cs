@@ -38,9 +38,9 @@ namespace ElectronicsShop.Core
             this.logger = logger;
             this.commandFactory = commandFactory;
             this.database = database;
-            this.Laptops = this.database.Products().Where(x=>x.GetType().Name.ToLower() == "laptop").Select(x=> x as ILaptop).ToList();
-            this.Smartphones = this.database.Products().Where(x => x.GetType().Name.ToLower() == "smartphone").Select(x => x as ISmartphone).ToList();
-            this.Landlinephones = this.database.Products().Where(x => x.GetType().Name.ToLower() == "landlinephone").Select(x => x as ILandlinePhone).ToList();
+            this.Laptops = this.database.Products.Where(x=>x.GetType().Name.ToLower() == "laptop").Select(x=> x as ILaptop).ToList();
+            this.Smartphones = this.database.Products.Where(x => x.GetType().Name.ToLower() == "smartphone").Select(x => x as ISmartphone).ToList();
+            this.Landlinephones = this.database.Products.Where(x => x.GetType().Name.ToLower() == "landlinephone").Select(x => x as ILandlinePhone).ToList();
         }
 
         public void Start()

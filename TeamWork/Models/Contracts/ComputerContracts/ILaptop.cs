@@ -9,6 +9,6 @@ namespace ElectronicsShop.Models.Contracts.ComputerContracts
     {
         int DisplaySize { get; }
 
-        int BatteryCaoacity { get; }
+        int BatteryCapacity { get; }
     }
 }
