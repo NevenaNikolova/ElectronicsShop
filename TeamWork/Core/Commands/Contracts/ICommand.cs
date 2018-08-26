@@ -2,7 +2,7 @@
 
 namespace ElectronicsShop.Core.Commands
 {
-    interface ICommand
+    public interface ICommand
     {
         string Execute(IList<string> parameters);
     }

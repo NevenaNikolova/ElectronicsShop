@@ -66,9 +66,5 @@ namespace ElectronicsShop.Models
             }
         }
 
-        List<IProduct> IDatabase.Products()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -21,22 +21,17 @@ namespace ElectronicsShop.Core.Commands
         {
             var brand = parameters[0];
             var model = parameters[1];
-            var displaySize = parameters[2];
-            var batteryCapacity = parameters[3];
-            var processor = parameters[4];
-            var ram = parameters[5];
-            var hdd = parameters[6];
-            var videoCard = parameters[7];
-            var price = parameters[8];
+            var batteryCapacity = parameters[2];
+            var processor = parameters[3];
+            int ram = int.Parse(parameters[4]);
+            int hdd = int.Parse(parameters[5]);
+            int videoCard = int.Parse(parameters[6]);
+            decimal price = decimal.Parse(parameters[7]);
 
-            return this.CreateDesktopPC(brand, model, processor, int.Parse(ram), int.Parse(hdd), int.Parse(videoCard), decimal.Parse(price));
+            var desktopComputer = this.factory.CreateDesktopComputer(brand, model, processor, ram, hdd, videoCard, price);
+            this.data.Products.Add(desktopComputer);
+            return $"Desktop computer with ID:{desktopComputer.ID} created!";
         }
 
-        private string CreateDesktopPC(string brand, string model, string processor, int ram, int hdd, int videoCard, decimal price)
-        {
-            var laptop = this.factory.CreateDesktopComputer(brand, model, processor, ram, hdd, videoCard, price);
-            this.data.Products().Add(laptop);
-            return string.Format("Computer " + brand + " " + model + "was created.");
-        }
     }
 }

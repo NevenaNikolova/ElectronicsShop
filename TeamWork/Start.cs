@@ -21,7 +21,7 @@ namespace ElectronicsShop
             containerBuilder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly()).AsImplementedInterfaces();
             containerBuilder.RegisterType<Database>().As<IDatabase>().SingleInstance();
             RegisterDynamicCommands(containerBuilder);
-
+            containerBuilder.RegisterType<ConsoleLogger>().As<ILogger>().SingleInstance();
             var dependencyContainer = containerBuilder.Build();
 
             var engine = dependencyContainer.Resolve<IEngine>();

@@ -17,7 +17,6 @@ namespace ElectronicsShop.Models.Products.Phones
         private int displaySize;
         private string model;
         private string brand;
-        private const string ProductName = "LandlinePhone";
 
         public string Brand
         {
@@ -34,7 +33,6 @@ namespace ElectronicsShop.Models.Products.Phones
                 this.brand = value;
             }
         }
-
         public string Model
         {
             get
@@ -54,9 +52,6 @@ namespace ElectronicsShop.Models.Products.Phones
         {
             get;
         }
-
-        public string Battery { get; }
-
         public int DisplaySize
         {
             get { return this.displaySize; }
@@ -80,19 +75,11 @@ namespace ElectronicsShop.Models.Products.Phones
                 this.size = value;
             }
         }
-        public virtual string Name
+        public string Name
         {
-            get { return this.name; }
-            set
-            {
-                if (value.Length <= 0)
-                {
-                    throw new ArgumentOutOfRangeException("Invalid name!");
-                }
-                else this.name = value;
-            }
+            get { return this.GetType().Name; }
         }
-        public virtual decimal Price
+        public decimal Price
         {
             get { return this.price; }
             set
@@ -110,18 +97,17 @@ namespace ElectronicsShop.Models.Products.Phones
             set => this.id = IdProvider.Instance().GetID();
         }
 
-        public LandlinePhone(int Id, decimal price, string brand, string model, string colour, string battery, int displaySize, PhoneSize size, int analogueLines) //bool wallMounting) 
+        public LandlinePhone(int Id, decimal price, string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines)
         {
             this.ID = Id;
             this.Price = price;
             this.Brand = brand;
             this.Model = model;
             this.Colour = colour;
-            this.Battery = battery;
             this.DisplaySize = displaySize;
             this.Size = size;
             this.AnalogueLines = analogueLines;
-            
+
         }
 
         public int AnalogueLines
@@ -141,7 +127,7 @@ namespace ElectronicsShop.Models.Products.Phones
         {
             return "\n-----------------------" + $"\nProduct: {this.GetType().Name}" + $"\nID: {this.ID}" + $"\nBrand: {this.Brand}" + $"\nModel: {this.Model}" + $"\nColor: {this.Colour}" +
                 $"\nDisplay size: {this.DisplaySize}'" + $"\nHeight: {this.Size.Height}'" + $"\nWidth: {this.Size.Width}" +
-                $"\nTickness: {this.Size.Thickness}'" + $"\nBattery: {this.Battery}" + $"\nAnalogueLines: {this.AnalogueLines}" + $"\nPrice: {this.Price}"
+                $"\nTickness: {this.Size.Thickness}'" + $"\nAnalogueLines: {this.AnalogueLines}" + $"\nPrice: {this.Price}"
                 + "\n-----------------------";
         }
 

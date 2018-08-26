@@ -33,18 +33,12 @@ namespace ElectronicsShop.Core.Commands
             var ram = parameters[9];
             var price = parameters[10];
 
-            return this.CreateSmartphone(brand, model, colour, battery, int.Parse(displaySize), 
-                size, processor, int.Parse(ram), decimal.Parse(price));
+            var smartphone = this.factory.CreateSmartphone(brand, model, colour, battery, int.Parse(displaySize),
+                 size, processor, int.Parse(ram), decimal.Parse(price));
+            this.data.Products.Add(smartphone);
+            return $"Smartphone with ID:{smartphone.ID} created!";
         }
 
-        private string CreateSmartphone(string brand, string model,
-             string colour, string battery, int displaySize,
-            PhoneSize size, string processor, int ram, decimal price)
-        {
-            var smartphone = this.factory.CreateSmartphone(brand, model,
-              colour, battery, displaySize, size, processor, ram, price);
-            this.data.Products().Add(smartphone);
-            return string.Format("Smartphone " + brand + " " + model + "was created.");
-        }
+
     }
 }

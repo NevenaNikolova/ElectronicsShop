@@ -9,6 +9,7 @@ namespace ElectronicsShop.Models.Contracts.PhoneContracts
 {
     public interface ISmartphone : IPhone
     {
+        string Battery { get; }
         int Ram { get; }
     }
 }

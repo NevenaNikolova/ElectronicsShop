@@ -29,14 +29,11 @@ namespace ElectronicsShop.Core.Commands
             var videoCard = parameters[7];
             var price = parameters[8];
 
-            return this.CreateLaptop(brand, model, int.Parse(displaySize), int.Parse(batteryCapacity), processor, int.Parse(ram), int.Parse(hdd), int.Parse(videoCard), int.Parse(price));
+            var laptop = this.factory.CreateLaptop(brand, model, int.Parse(displaySize), int.Parse(batteryCapacity), processor, int.Parse(ram), int.Parse(hdd), int.Parse(videoCard), int.Parse(price));
+            this.data.Products.Add(laptop);
+            return $"Laptop with ID:{laptop.ID} created!";
         }
 
-        private string CreateLaptop(string brand, string model, int displaySize, int batteryCapacity, string processor, int ram, int hdd, int videoCard, int price)
-        {
-            var laptop = this.factory.CreateLaptop(brand, model,displaySize, batteryCapacity, processor, ram, hdd, videoCard, price);
-            this.data.Products().Add(laptop);
-            return string.Format("Laptop " + brand + " " + model + "was created.");
-        }
+
     }
 }

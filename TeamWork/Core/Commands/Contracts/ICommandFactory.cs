@@ -4,10 +4,12 @@ using System.Text;
 
 namespace ElectronicsShop.Core.Commands.Contracts
 {
-    interface ICommandFactory
+    public interface ICommandFactory
     {
-        void CreateCommand(IList<string> commandParameters);
+        //void CreateCommand(IList<string> commandParameters);
 
-        void Process(IList<string> commands);
+        //void Process(IList<string> commands);
+        ICommand GetCommand(string commandName);
+        
     }
 }

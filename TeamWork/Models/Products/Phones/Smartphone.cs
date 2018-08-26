@@ -9,7 +9,6 @@ namespace ElectronicsShop.Models.Products.Phones
 {
     public class Smartphone : ISmartphone, IPrintable
     {
-        private const string ProductName = "Smartphone";
         private int displaySize;
         private string processor;
         private int ram;
@@ -18,7 +17,7 @@ namespace ElectronicsShop.Models.Products.Phones
         private decimal price;
         private int id;
         private string model;
-        private string battery;
+        private BatteryType battery;
         private string colour;
         private PhoneSize size;
 
@@ -94,13 +93,8 @@ namespace ElectronicsShop.Models.Products.Phones
         {
             get
             {
-                return this.battery;
+                return this.battery.ToString();
             }
-            set
-            {
-                this.battery = value;
-            }
-
         }
         public int DisplaySize
         {
@@ -125,19 +119,12 @@ namespace ElectronicsShop.Models.Products.Phones
                 this.size = value;
             }
         }
-        public virtual string Name
+        public string Name
         {
-            get { return this.name; }
-            set
-            {
-                if (value.Length <= 0)
-                {
-                    throw new ArgumentOutOfRangeException("Invalid name!");
-                }
-                else this.name = value;
-            }
+            get { return this.GetType().Name; }
+
         }
-        public virtual decimal Price
+        public decimal Price
         {
             get { return this.price; }
             set
@@ -163,7 +150,7 @@ namespace ElectronicsShop.Models.Products.Phones
             this.Brand = brand;
             this.Model = model;
             this.Colour = colour;
-            this.Battery = battery;
+            this.battery = (BatteryType)Enum.Parse(typeof(BatteryType), battery);
             this.DisplaySize = displaySize;
             this.Size = size;
             this.Processor = processor;

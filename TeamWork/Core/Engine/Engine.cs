@@ -12,7 +12,7 @@ using ElectronicsShop.Models.Contracts.PhoneContracts;
 
 namespace ElectronicsShop.Core
 {
-    internal class Engine : IEngine
+    public class Engine : IEngine
     {
         private static IEngine instanceHolder;
         private ILogger logger;
@@ -32,13 +32,13 @@ namespace ElectronicsShop.Core
 
         private IDatabase database;
 
-        private Engine(IProductFactory factory, ICommandFactory commandFactory, ILogger logger, IDatabase database)
+        public Engine(IProductFactory factory, ICommandFactory commandFactory, ILogger logger, IDatabase database)
         {
             this.factory = factory;
             this.logger = logger;
             this.commandFactory = commandFactory;
             this.database = database;
-            this.Laptops = this.database.Products.Where(x=>x.GetType().Name.ToLower() == "laptop").Select(x=> x as ILaptop).ToList();
+            this.Laptops = this.database.Products.Where(x => x.GetType().Name.ToLower() == "laptop").Select(x => x as ILaptop).ToList();
             this.Smartphones = this.database.Products.Where(x => x.GetType().Name.ToLower() == "smartphone").Select(x => x as ISmartphone).ToList();
             this.Landlinephones = this.database.Products.Where(x => x.GetType().Name.ToLower() == "landlinephone").Select(x => x as ILandlinePhone).ToList();
         }
@@ -56,13 +56,24 @@ namespace ElectronicsShop.Core
                         break;
                     }
 
-                    this.commandFactory.Process(commands);
+                    this.ProcessCommand(commands);
+                    
                 }
                 catch (Exception ex)
                 {
                     this.logger.Log(ex.Message);
                 }
             }
+        }
+        public void ProcessCommand(IList<string> commands)
+        {
+            var commandName = commands[0];
+            commands.RemoveAt(0);
+            var commandParams = commands;
+            var command = this.commandFactory.GetCommand(commandName);
+
+            var commandResult = command.Execute(commandParams);
+            this.logger.Log(commandResult);
         }
     }
 }
