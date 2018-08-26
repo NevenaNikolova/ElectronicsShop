@@ -1,8 +1,7 @@
 ﻿using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.ComputerContracts;
-using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace ElectronicsShop.Core.Contracts
 {

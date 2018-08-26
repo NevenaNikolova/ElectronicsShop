@@ -1,10 +1,8 @@
 ﻿using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Products;
-using ElectronicsShop.Models.Products.Common;
-using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace ElectronicsShop.Core.Commands
 {
@@ -32,13 +30,11 @@ namespace ElectronicsShop.Core.Commands
             var processor = parameters[8];
             var ram = parameters[9];
             var price = parameters[10];
-
+            
             var smartphone = this.factory.CreateSmartphone(brand, model, colour, battery, int.Parse(displaySize),
                  size, processor, int.Parse(ram), decimal.Parse(price));
             this.data.Products.Add(smartphone);
             return $"Smartphone with ID:{smartphone.ID} created!";
         }
-
-
     }
 }

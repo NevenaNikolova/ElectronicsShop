@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ElectoronicsShop.Tests.LaptopTests
+namespace ElectronicsShop.Tests.LaptopTests
 {
     [TestClass]
     public class Constructor_Should
@@ -16,7 +16,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -36,7 +36,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -56,7 +56,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -76,7 +76,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2500;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -96,7 +96,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -116,7 +116,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -136,7 +136,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -156,7 +156,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;
@@ -176,7 +176,7 @@ namespace ElectoronicsShop.Tests.LaptopTests
             string brand = "valid brand";
             string model = "valid model";
             int displaySize = 13;
-            int batteryCapacity = 1000;
+            int batteryCapacity = 2000;
             string processor = "Valid";
             int ram = 4;
             int hdd = 200;

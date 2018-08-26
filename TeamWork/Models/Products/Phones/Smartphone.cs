@@ -55,8 +55,8 @@ namespace ElectronicsShop.Models.Products.Phones
                 return this.brand;
             }
             private set
-            {
-                if (string.IsNullOrEmpty(value))
+            { 
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException();
                 }
@@ -71,7 +71,7 @@ namespace ElectronicsShop.Models.Products.Phones
             }
             private set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException();
                 }
@@ -86,6 +86,14 @@ namespace ElectronicsShop.Models.Products.Phones
             }
             set
             {
+                //(TEnum)Enum.Parse(typeof(TEnum), strEnumValue);
+                //Enum.Parse(typeof(Colour), colour);
+                Colour colour;
+                if (!Enum.TryParse(value, out colour))
+                {
+                    throw new ArgumentException();
+                }
+
                 this.colour = value;
             }
         }
@@ -101,7 +109,7 @@ namespace ElectronicsShop.Models.Products.Phones
             get { return this.displaySize; }
             private set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
