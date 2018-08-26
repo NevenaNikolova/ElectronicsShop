@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using ElectronicsShop.Core.Commands;
 using ElectronicsShop.Core.Commands.Contracts;
 using ElectronicsShop.Core.Contracts;
 using ElectronicsShop.Core.Factories;
@@ -14,7 +13,6 @@ namespace ElectronicsShop.Core
 {
     public class Engine : IEngine
     {
-        private static IEngine instanceHolder;
         private ILogger logger;
         private string exitCommand = "exit";
 

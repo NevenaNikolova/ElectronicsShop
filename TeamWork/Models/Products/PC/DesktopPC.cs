@@ -1,6 +1,5 @@
 ﻿using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Contracts.ComputerContracts;
-using ElectronicsShop.Models.ComputerContracts;
 using System;
 using ElectronicsShop.Core.Tools;
 

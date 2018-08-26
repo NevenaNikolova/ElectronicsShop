@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ElectronicsShop.Models.Products;
 using ElectronicsShop.Models.Products.Phones;
 using ElectronicsShop.Models.Products.Common;
@@ -10,17 +9,6 @@ namespace ElectronicsShop.Core.Factories
 {
     public class ProductFactory : IProductFactory
     {
-
-
-        //smartphone command
-        //create smartphone gosho 900 Asus ZenPhone Black LiIon 16 3 3 3 Atom 4
-
-        //lanlinePhone command
-        //create landlinephone gosho 9 VIVACOM Home White LiIon 16 3 3 3 10
-
-        //laptop command
-        //create laptop MyLaptop Lenovo ThinkPad 14 4500 i5 8 500 4 1200
-
 
         public ProductFactory()
         {

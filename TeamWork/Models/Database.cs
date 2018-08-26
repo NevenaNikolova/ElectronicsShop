@@ -41,8 +41,7 @@ namespace ElectronicsShop.Models
         }
 
         public string GetList(string typeOfProduct)
-        {
-            //throw new NotImplementedException("not implemented Database method GetList()");
+        {           
             StringBuilder sb = new StringBuilder();
             var collection = this.products.Where(x => x.Name.ToLower().Contains(typeOfProduct)).ToList();
             collection.ForEach(x => sb.Append(x.Print()));

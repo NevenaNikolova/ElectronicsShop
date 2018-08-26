@@ -1,9 +1,8 @@
 ﻿using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Products;
-using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace ElectronicsShop.Core.Commands
 {
