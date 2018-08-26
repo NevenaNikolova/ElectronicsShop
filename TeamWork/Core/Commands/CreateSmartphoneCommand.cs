@@ -1,10 +1,8 @@
 ﻿using ElectronicsShop.Core.Factories;
 using ElectronicsShop.Models.Contracts;
 using ElectronicsShop.Models.Products;
-using ElectronicsShop.Models.Products.Common;
-using System;
 using System.Collections.Generic;
-using System.Text;
+
 
 namespace ElectronicsShop.Core.Commands
 {
@@ -38,7 +36,5 @@ namespace ElectronicsShop.Core.Commands
             this.data.Products.Add(smartphone);
             return $"Smartphone with ID:{smartphone.ID} created!";
         }
-
-
     }
 }
