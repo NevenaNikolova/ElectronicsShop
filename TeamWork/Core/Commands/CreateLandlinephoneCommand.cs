@@ -19,21 +19,20 @@ namespace ElectronicsShop.Core.Commands
 
         public string Execute(IList<string> parameters)
         {
+            /*
+             decimal price, string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines)
+      
+             */
             var brand = parameters[0];
             var model = parameters[1];
             var colour = parameters[2];
-            var battery = parameters[3];
-            var displaySize = parameters[4];
-            PhoneSize sizeOfPhone = new PhoneSize(int.Parse(parameters[5]), int.Parse(parameters[6]), int.Parse(parameters[7]));
-            PhoneSize size = sizeOfPhone;
-            var processor = parameters[8];
-            var ram = parameters[9];
-            var price = parameters[10];
-
-            var smartphone = this.factory.CreateSmartphone(brand, model, colour, battery, int.Parse(displaySize),
-                 size, processor, int.Parse(ram), decimal.Parse(price));
-            this.data.Products.Add(smartphone);
-            return $"Smartphone with ID:{smartphone.ID} created!";
+            int displaySize = int.Parse(parameters[3]);
+            PhoneSize phoneSize = new PhoneSize(double.Parse(parameters[4]), double.Parse(parameters[5]), double.Parse(parameters[6]));
+            int analogueLines = int.Parse(parameters[7]);
+            decimal price = decimal.Parse(parameters[8]);
+            var landlinephone = this.factory.CreateLandlinePhone(brand, model, colour, displaySize, phoneSize, analogueLines,price);
+            this.data.Products.Add(landlinephone);
+            return $"LandlinePhone with ID:{landlinephone.ID} created!";
         }
     }
 }

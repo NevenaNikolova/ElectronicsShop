@@ -9,8 +9,7 @@ namespace ElectronicsShop.Models.Products.Phones
 {
     public class LandlinePhone : ILandlinePhone, IPrintable
     {
-        private int analogueLines;
-        private string name;
+        private int analogueLines;      
         private PhoneSize size;
         private decimal price;
         private int id;
@@ -26,7 +25,7 @@ namespace ElectronicsShop.Models.Products.Phones
             }
             private set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException();
                 }
@@ -41,7 +40,7 @@ namespace ElectronicsShop.Models.Products.Phones
             }
             private set
             {
-                if (string.IsNullOrEmpty(value))
+                if (string.IsNullOrWhiteSpace(value))
                 {
                     throw new ArgumentNullException();
                 }
@@ -86,7 +85,7 @@ namespace ElectronicsShop.Models.Products.Phones
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentException("Too low price!");
+                    throw new ArgumentOutOfRangeException("Too low price!");
                 }
                 else this.price = value;
             }
@@ -97,16 +96,17 @@ namespace ElectronicsShop.Models.Products.Phones
             set => this.id = IdProvider.Instance().GetID();
         }
 
-        public LandlinePhone(int Id, decimal price, string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines)
+        public LandlinePhone(string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines, decimal price)
         {
-            this.ID = Id;
-            this.Price = price;
+            this.ID = id;
+            
             this.Brand = brand;
             this.Model = model;
             this.Colour = colour;
             this.DisplaySize = displaySize;
             this.Size = size;
             this.AnalogueLines = analogueLines;
+            this.Price = price;
 
         }
 

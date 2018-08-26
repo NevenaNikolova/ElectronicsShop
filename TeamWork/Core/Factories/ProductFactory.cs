@@ -14,9 +14,9 @@ namespace ElectronicsShop.Core.Factories
         {
 
         }
-        public ILandlinePhone CreateLandlinePhone(int Id, decimal price, string brand, string model, string colour, string battery, int displaySize, PhoneSize size, int analogueLines)
+        public ILandlinePhone CreateLandlinePhone(string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines, decimal price)
         {
-            return new LandlinePhone(Id, price, brand, model, colour, displaySize, size, analogueLines);
+            return new LandlinePhone(brand, model, colour, displaySize, size, analogueLines, price);
 
         }
 

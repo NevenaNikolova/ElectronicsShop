@@ -18,7 +18,6 @@ namespace ElectronicsShop.Models.Products
         private int videoCard;
         private decimal price;
         private int id;
-        private string name;
 
         public string Brand
         {
@@ -117,7 +116,7 @@ namespace ElectronicsShop.Models.Products
         {
             get
             {
-                return this.name;
+                return this.GetType().Name;
             }
         }
         

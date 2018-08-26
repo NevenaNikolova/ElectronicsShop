@@ -10,7 +10,7 @@ namespace ElectronicsShop.Core.Factories
     public interface IProductFactory
     {
 
-        ILandlinePhone CreateLandlinePhone(int Id, decimal price, string brand, string model, string colour, string battery, int displaySize, PhoneSize size, int analogueLines);
+        ILandlinePhone CreateLandlinePhone(string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines, decimal price);
 
         ISmartphone CreateSmartphone( string brand, string model, string colour, string battery, int displaySize,
             PhoneSize size, string processor, int ram, decimal price);
