@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ElectronicsShop.Core.Contracts
 {
-    interface IShoppingCart : IPrintable
+    public interface IShoppingCart : IPrintable
     {
         ICollection<IProduct> ProductList { get; }
 
