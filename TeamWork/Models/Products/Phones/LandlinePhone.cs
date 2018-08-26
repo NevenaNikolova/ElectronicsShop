@@ -9,7 +9,7 @@ namespace ElectronicsShop.Models.Products.Phones
 {
     public class LandlinePhone : ILandlinePhone, IPrintable
     {
-        private int analogueLines;      
+        private int analogueLines;
         private PhoneSize size;
         private decimal price;
         private int id;
@@ -17,17 +17,29 @@ namespace ElectronicsShop.Models.Products.Phones
         private string model;
         private string brand;
 
+        public LandlinePhone(string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines, decimal price)
+        {
+            this.ID = id;
+            this.Brand = brand;
+            this.Model = model;
+            this.Colour = colour;
+            this.DisplaySize = displaySize;
+            this.Size = size;
+            this.AnalogueLines = analogueLines;
+            this.Price = price;
+
+        }
         public string Brand
         {
             get
             {
                 return this.brand;
             }
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentNullException();
+                {                  
+                    throw new ArgumentNullException("The brand should be specified!");
                 }
                 this.brand = value;
             }
@@ -38,11 +50,11 @@ namespace ElectronicsShop.Models.Products.Phones
             {
                 return this.model;
             }
-            private set
+            set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException("The model should be specified!");
                 }
                 this.model = value;
             }
@@ -54,11 +66,11 @@ namespace ElectronicsShop.Models.Products.Phones
         public int DisplaySize
         {
             get { return this.displaySize; }
-            private set
+            set
             {
                 if (value < 0)
                 {
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException("The display size must be a positive number!");
                 }
                 this.displaySize = value;
             }
@@ -85,7 +97,7 @@ namespace ElectronicsShop.Models.Products.Phones
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("Too low price!");
+                    throw new ArgumentOutOfRangeException("The price must be a positive number!");
                 }
                 else this.price = value;
             }
@@ -96,19 +108,7 @@ namespace ElectronicsShop.Models.Products.Phones
             set => this.id = IdProvider.Instance().GetID();
         }
 
-        public LandlinePhone(string brand, string model, string colour, int displaySize, PhoneSize size, int analogueLines, decimal price)
-        {
-            this.ID = id;
-            
-            this.Brand = brand;
-            this.Model = model;
-            this.Colour = colour;
-            this.DisplaySize = displaySize;
-            this.Size = size;
-            this.AnalogueLines = analogueLines;
-            this.Price = price;
 
-        }
 
         public int AnalogueLines
         {
