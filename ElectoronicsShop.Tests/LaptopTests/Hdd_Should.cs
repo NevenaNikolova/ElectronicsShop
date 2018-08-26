@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ElectoronicsShop.Tests.LaptopTests
+namespace ElectronicsShop.Tests.LaptopTests
 {
     [TestClass]
     public class Hdd_Should

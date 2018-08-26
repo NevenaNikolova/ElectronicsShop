@@ -30,7 +30,7 @@ namespace ElectronicsShop.Core.Commands
             var processor = parameters[8];
             var ram = parameters[9];
             var price = parameters[10];
-
+            
             var smartphone = this.factory.CreateSmartphone(brand, model, colour, battery, int.Parse(displaySize),
                  size, processor, int.Parse(ram), decimal.Parse(price));
             this.data.Products.Add(smartphone);

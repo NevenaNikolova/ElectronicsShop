@@ -23,7 +23,7 @@ namespace ElectronicsShop.Core.Factories
         public ISmartphone CreateSmartphone(string brand, string model, string colour, string battery, int displaySize,
             PhoneSize size, string processor, int ram, decimal price)
         {
-
+            Colour phoneColour = (Colour)Enum.Parse(typeof(Colour), colour, true);
             return new Smartphone(brand, model, colour, this.getBatteryType(battery).ToString(), displaySize, size, processor, ram, price);
 
         }

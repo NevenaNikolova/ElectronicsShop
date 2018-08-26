@@ -21,6 +21,39 @@ namespace ElectronicsShop.Models.Products
         private int id;
 
 
+        public int ID
+        {
+            get
+            {
+                return this.id;
+            }
+            set => this.id = IdProvider.Instance().GetID();
+        }
+        public string Brand
+        {
+            get => brand;
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("Invalid brand value!");
+                }
+                this.brand = value;
+            }
+
+        }
+        public string Model
+        {
+            get => model;
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("Invalid model value!");
+                }
+                this.model = value;
+            }
+        }
         public string Processor
         {
             get { return this.processor; }
@@ -57,49 +90,12 @@ namespace ElectronicsShop.Models.Products
                 else this.hdd = value;
             }
         }
-        public int VideoCard
-        {
-            get { return this.videoCard; }
-            private set
-            {
-                if (value < 0)
-                {
-                    throw new ArgumentException("The videocard capacity cannot be negative!");
-                }
-                else this.videoCard = value;
-            }
-        }
-        public string Brand
-        {
-            get => brand;
-            private set
-            {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentNullException("Invalid brand value!");
-                }
-                this.brand = value;
-            }
-
-        }
-        public string Model
-        {
-            get => model;
-            private set
-            {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
-                {
-                    throw new ArgumentException("Invalid model value!");
-                }
-                this.model = value;
-            }
-        }
         public int DisplaySize
         {
             get => displaySize;
             private set
             {
-                if (value < 11 || value > 20 )
+                if (value < 11 || value > 20)
                 {
                     throw new ArgumentOutOfRangeException("Display size cannot be less than 11 and bigger than 20!");
                 }
@@ -125,7 +121,19 @@ namespace ElectronicsShop.Models.Products
                 return this.GetType().Name;
             }
         }
-        public virtual decimal Price
+        public int VideoCard
+        {
+            get { return this.videoCard; }
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("The videocard capacity cannot be negative!");
+                }
+                else this.videoCard = value;
+            }
+        }
+        public decimal Price
         {
             get { return this.price; }
             private set
@@ -137,17 +145,9 @@ namespace ElectronicsShop.Models.Products
                 else this.price = value;
             }
         }
-        public int ID
-        {
-            get
-            {
-                return this.id;
-            }
-            set => this.id = IdProvider.Instance().GetID();
-        }
 
         public Laptop(string brand, string model, int displaySize, int batteryCapacity,
-    string processor, int ram, int hdd, int videoCard, int price)
+    string processor, int ram, int hdd, int videoCard, decimal price)
         {
             this.ID = id;
             this.Brand = brand;
@@ -167,10 +167,12 @@ namespace ElectronicsShop.Models.Products
 
         public string Print()
         {
-            return "\n-----------------------" + $"\nProduct: {this.GetType().Name}" + $"\nID: {this.ID}" + $"\nBrand: {this.Brand}" +
+            return "\n-----------------------" +
+                $"\nProduct: {this.GetType().Name}" + $"\nID: {this.ID}" + $"\nBrand: {this.Brand}" +
                 $"\nModel: {this.Model}" + $"\nProcessor: {this.Processor}" + $"\nRAM: {this.Ram}GB" +
                 $"\nHDD: {this.Hdd}GB" + $"\nVideo card: {this.VideoCard}GB" + $"\nDisplay size: {this.DisplaySize}'" +
-                $"\nBattery capacity: {this.BatteryCapacity}mAh" + $"\nPrice: {this.Price}$" + "\n-----------------------";
+                $"\nBattery capacity: {this.BatteryCapacity}mAh" + $"\nPrice: {this.Price}$" +
+                   "\n-----------------------";
         }
     }
 }
