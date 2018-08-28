@@ -30,7 +30,7 @@ namespace ElectronicsShop.Models
         {
             if (product == null)
             {
-                throw new ArgumentNullException("Product");
+                throw new ArgumentNullException("The product is not valid!");
             }
             this.products.Add(product);
             product.ID = products.IndexOf(product);
