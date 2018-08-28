@@ -17,7 +17,7 @@ namespace ElectronicsShop.Models
         {
             get
             {
-                return new List<IProduct>(products);
+                return products;
             }
         }
 
