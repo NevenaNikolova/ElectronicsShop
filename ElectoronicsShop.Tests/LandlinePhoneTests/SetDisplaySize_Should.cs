@@ -8,18 +8,16 @@ using System.Text;
 namespace ElectronicsShop.Tests.LandlinePhoneTests
 {
     [TestClass]
-    public class SetBrand_Should
+    public class SetDisplaySize_Should
     {
-        [DataTestMethod]
-        [DataRow(null)]
-        [DataRow(" ")]
-        public void ThrowArgumentNullException_WhenTheBrandIsNullOrEmpty(string brand)
+        [TestMethod]
+        public void ThrowArgumentOutOfRangeException__WhenNegativeValueIsPassed()
         {
             //Arrange
             var phone = new LandlinePhone("Vivacom", "Home", "White", 10, new PhoneSize(2, 5, 4), 2, 500);
 
             //Act & Assert
-            Assert.ThrowsException<ArgumentNullException>(() => phone.Brand = brand);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => phone.DisplaySize=-2);
         }
     }
 }

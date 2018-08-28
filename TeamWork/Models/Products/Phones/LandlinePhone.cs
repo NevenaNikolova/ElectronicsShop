@@ -125,7 +125,7 @@ namespace ElectronicsShop.Models.Products.Phones
 
         public string Print()
         {
-            return "\n-----------------------" + $"\nProduct: {this.GetType().Name}" + $"\nID: {this.ID}" + $"\nBrand: {this.Brand}" + $"\nModel: {this.Model}" + $"\nColor: {this.Colour}" +
+            return "\n-----------------------" + $"\nProduct: {this.GetType().Name}" + $"\nID: {this.ID}" + $"\nBrand: {this.Brand}" + $"\nModel: {this.Model}" + $"\nColour: {this.Colour}" +
                 $"\nDisplay size: {this.DisplaySize}'" + $"\nHeight: {this.Size.Height}'" + $"\nWidth: {this.Size.Width}" +
                 $"\nTickness: {this.Size.Thickness}'" + $"\nAnalogueLines: {this.AnalogueLines}" + $"\nPrice: {this.Price}"
                 + "\n-----------------------";

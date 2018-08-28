@@ -8,18 +8,18 @@ using System.Text;
 namespace ElectronicsShop.Tests.LandlinePhoneTests
 {
     [TestClass]
-    public class SetBrand_Should
+    public class SetModel_Should
     {
         [DataTestMethod]
         [DataRow(null)]
         [DataRow(" ")]
-        public void ThrowArgumentNullException_WhenTheBrandIsNullOrEmpty(string brand)
+        public void ThrowsArgumentNullException_WhenTheValueIsNullOrEmpty(string model)
         {
             //Arrange
             var phone = new LandlinePhone("Vivacom", "Home", "White", 10, new PhoneSize(2, 5, 4), 2, 500);
 
             //Act & Assert
-            Assert.ThrowsException<ArgumentNullException>(() => phone.Brand = brand);
+            Assert.ThrowsException<ArgumentNullException>(() => phone.Model = model);
         }
     }
 }
