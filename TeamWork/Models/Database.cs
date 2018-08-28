@@ -59,10 +59,6 @@ namespace ElectronicsShop.Models
             {
                 throw new ArgumentException($"Unexisting type {typeOfProduct}!");
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> ee91687858c0a12addd4d4d4834014809a514702
             StringBuilder sb = new StringBuilder();
             var collection = this.products.Where(x => x.Name.ToLower().Contains(typeOfProduct)).ToList();
             collection.ForEach(x => sb.Append(x.Print()));
