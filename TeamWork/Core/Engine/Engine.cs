@@ -16,14 +16,6 @@ namespace ElectronicsShop.Core
         private ILogger logger;
         private string exitCommand = "exit";
 
-        private IList<ILaptop> Laptops { get; }
-
-        private IList<IProduct> Products { get; }
-
-        private IList<ISmartphone> Smartphones { get; }
-
-        private IList<ILandlinePhone> Landlinephones { get; }
-
         private ICommandFactory commandFactory;
 
         private IProductFactory factory;
@@ -35,10 +27,7 @@ namespace ElectronicsShop.Core
             this.factory = factory;
             this.logger = logger;
             this.commandFactory = commandFactory;
-            this.database = database;
-            this.Laptops = this.database.Products.Where(x => x.GetType().Name.ToLower() == "laptop").Select(x => x as ILaptop).ToList();
-            this.Smartphones = this.database.Products.Where(x => x.GetType().Name.ToLower() == "smartphone").Select(x => x as ISmartphone).ToList();
-            this.Landlinephones = this.database.Products.Where(x => x.GetType().Name.ToLower() == "landlinephone").Select(x => x as ILandlinePhone).ToList();
+            this.database = database;            
         }
 
         public void Start()
